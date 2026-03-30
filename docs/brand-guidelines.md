@@ -6,7 +6,7 @@
 
 ## Logo
 
-**Primary logo:** `src/assets/logos/cubewise-logo.svg`
+**Primary logo:** `src/assets/logos/Cubewise_Code_RGB.svg`
 **Logo dark variant:** `src/assets/logos/cubewise-logo-dark.svg`
 **Favicon:** `src/assets/logos/favicon.ico`
 
