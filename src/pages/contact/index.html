@@ -14,8 +14,56 @@
       <img src="/assets/logos/Cubewise_Code_RGB.svg" alt="Cubewise" height="32">
     </a>
     <ul class="nav-links">
-      <li><a href="/platform/">Platform</a></li>
-      <li><a href="/pricing/">Pricing</a></li>
+      <li class="nav-item-dropdown">
+        <a href="/platform/">Platform</a>
+        <div class="nav-mega-menu">
+          <div class="mega-menu-inner">
+            <div class="mega-col">
+              <h4 class="mega-heading">Cubewise For&hellip;</h4>
+              <a href="/platform/developers/" class="mega-link">
+                <strong>Developers</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/platform/administrators/" class="mega-link">
+                <strong>Administrators</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/platform/power-users/" class="mega-link">
+                <strong>Power Users</strong>
+                <span><!-- tagline --></span>
+              </a>
+            </div>
+            <div class="mega-col">
+              <h4 class="mega-heading">Platform Components</h4>
+              <a href="/arc/" class="mega-link">
+                <strong>Arc</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/arc-plus/" class="mega-link">
+                <strong>Arc+</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/pulse/" class="mega-link">
+                <strong>Pulse</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/slice/" class="mega-link">
+                <strong>Slice</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/atmosphere/" class="mega-link">
+                <strong>Atmosphere</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/powerconnect/" class="mega-link">
+                <strong>PowerConnect</strong>
+                <span><!-- tagline --></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a></li>
       <li><a href="/docs/">Docs</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="/partners/">Partners</a></li>
@@ -25,7 +73,91 @@
   </nav>
 </header>
 
-<main><section class="page-content"><h1>Contact Us</h1><p><!-- contact content --></p></section></main>
+<main>
+  <section class="component-hero component-hero--dark">
+    <div class="component-label">Contact</div>
+    <h1>Get in touch</h1>
+    <p>We would love to hear from you</p>
+  </section>
+
+  <form class="contact-form" action="https://formspree.io/f/PLACEHOLDER" method="POST">
+
+    <div class="name-row">
+      <div>
+        <label for="first-name">First name <span aria-hidden="true" style="color:var(--orange-gold)">*</span></label>
+        <input type="text" id="first-name" name="first-name" required autocomplete="given-name">
+      </div>
+      <div>
+        <label for="last-name">Last name <span aria-hidden="true" style="color:var(--orange-gold)">*</span></label>
+        <input type="text" id="last-name" name="last-name" required autocomplete="family-name">
+      </div>
+    </div>
+
+    <div>
+      <label for="email">Email <span aria-hidden="true" style="color:var(--orange-gold)">*</span></label>
+      <input type="email" id="email" name="email" required autocomplete="email">
+    </div>
+
+    <div>
+      <label for="region">Region <span aria-hidden="true" style="color:var(--orange-gold)">*</span></label>
+      <select id="region" name="region" required>
+        <option value="" disabled selected>Select your region…</option>
+        <option>Africa</option>
+        <option>Australia (NSW &amp; Queensland)</option>
+        <option>Australia (Victoria, SA, WA)</option>
+        <option>Austria</option>
+        <option>Belgium, Netherlands</option>
+        <option>Canada</option>
+        <option>France</option>
+        <option>Germany</option>
+        <option>Hong Kong</option>
+        <option>India</option>
+        <option>People's Republic of China</option>
+        <option>Poland</option>
+        <option>Singapore</option>
+        <option>Switzerland</option>
+        <option>Taiwan</option>
+        <option>Ukraine</option>
+        <option>United Kingdom</option>
+        <option>United States - East</option>
+        <option>United States - Central</option>
+        <option>United States - West</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div>
+      <label>What would you like to discuss?</label>
+      <div class="product-pills">
+        <label><input type="checkbox" name="interest" value="Arc"><span class="pill-label">Arc</span></label>
+        <label><input type="checkbox" name="interest" value="Arc+"><span class="pill-label">Arc+</span></label>
+        <label><input type="checkbox" name="interest" value="Atmosphere"><span class="pill-label">Atmosphere</span></label>
+        <label><input type="checkbox" name="interest" value="PowerConnect"><span class="pill-label">PowerConnect</span></label>
+        <label><input type="checkbox" name="interest" value="Pulse"><span class="pill-label">Pulse</span></label>
+        <label><input type="checkbox" name="interest" value="Slice"><span class="pill-label">Slice</span></label>
+        <label><input type="checkbox" name="interest" value="TM1py"><span class="pill-label">TM1py</span></label>
+        <label><input type="checkbox" name="interest" value="Other"><span class="pill-label">Other</span></label>
+      </div>
+    </div>
+
+    <div>
+      <label for="message">Message <span style="font-size:0.85rem;font-weight:400;color:var(--charcoal)">(optional)</span></label>
+      <textarea id="message" name="message"></textarea>
+    </div>
+
+    <div class="consent-block">
+      <input type="checkbox" id="consent" name="consent" value="yes" required>
+      <label for="consent" style="font-weight:400;margin-bottom:0">We would like to reach you via email with the latest news and best practices in FP&amp;A and TM1 development — no more than once a month. <span aria-hidden="true" style="color:var(--orange-gold)">*</span></label>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Submit details</button>
+
+  </form>
+
+  <div class="contact-support-note" style="max-width:560px;margin:0 auto;padding-left:2rem;padding-right:2rem;padding-bottom:3rem">
+    Need technical support? <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Visit our support portal →</a>
+  </div>
+</main>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -35,7 +167,7 @@
     </div>
     <nav class="footer-nav">
       <a href="/platform/">Platform</a>
-      <a href="/pricing/">Pricing</a>
+      <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a>
       <a href="/docs/">Docs</a>
       <a href="/blog/">Blog</a>
       <a href="/partners/">Partners</a>
@@ -46,5 +178,6 @@
   </div>
 </footer>
 
+  <script src="/assets/js/nav.js"></script>
 </body>
 </html>
