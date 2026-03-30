@@ -89,6 +89,119 @@ a:hover { color: var(--charcoal); }
 main { min-height: 60vh; }
 
 /* ============================================================
+   Mega menu (Platform dropdown)
+   ============================================================ */
+.nav-item-dropdown { position: static; }
+
+.nav-item-dropdown > a::after {
+  content: ' ▾';
+  font-size: 0.7em;
+  opacity: 0.6;
+}
+
+.nav-mega-menu {
+  display: none;
+  position: fixed;
+  top: 61px;
+  left: 0;
+  right: 0;
+  background: var(--light-gray);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  z-index: 99;
+}
+
+.nav-item-dropdown.is-open .nav-mega-menu { display: block; }
+
+.mega-menu-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+
+.mega-heading {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--charcoal);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.mega-link {
+  display: block;
+  text-decoration: none;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+  color: inherit;
+  transition: color 0.15s;
+}
+
+.mega-link:last-child { border-bottom: none; }
+
+.mega-link strong {
+  display: block;
+  color: var(--dark-night);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  transition: color 0.15s;
+}
+
+.mega-link span {
+  display: block;
+  color: var(--charcoal);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.mega-link:hover strong { color: var(--orange-gold); }
+
+/* ============================================================
+   Component sub-navigation
+   ============================================================ */
+.component-subnav {
+  background: var(--light-gray);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 57px; /* height of .site-header */
+  z-index: 90;
+}
+
+.component-subnav-inner {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.component-subnav-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark-night);
+  margin-right: auto;
+  padding: 0.75rem 0;
+}
+
+.component-subnav a {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  color: var(--charcoal);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.component-subnav a:hover { color: var(--dark-night); border-bottom-color: var(--border); }
+.component-subnav a.active { color: var(--orange-gold); border-bottom-color: var(--orange-gold); }
+
+/* ============================================================
    Buttons
    ============================================================ */
 .btn {
@@ -318,3 +431,65 @@ main { min-height: 60vh; }
 .footer-nav a:hover { opacity: 1; color: var(--orange-gold); }
 
 .footer-copy { font-size: 0.8rem; color: var(--charcoal); width: 100%; }
+
+/* ============================================================
+   Feature rows (product overview pages)
+   ============================================================ */
+.feature-row {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.feature-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.feature-row-media {
+  flex: 1;
+}
+
+.feature-row-media img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  display: block;
+}
+
+.feature-row-text {
+  flex: 1;
+}
+
+.feature-row-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-night);
+}
+
+.feature-row-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-row-text ul li {
+  padding: 0.35rem 0;
+  padding-left: 1.25rem;
+  position: relative;
+  color: var(--charcoal);
+  line-height: 1.5;
+}
+
+.feature-row-text ul li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--orange-gold);
+}
+
+@media (max-width: 700px) {
+  .feature-row,
+  .feature-row:nth-child(even) {
+    flex-direction: column;
+  }
+}
