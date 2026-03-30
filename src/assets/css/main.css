@@ -493,3 +493,53 @@ main { min-height: 60vh; }
     flex-direction: column;
   }
 }
+
+/* ============================================================
+   Testimonials
+   ============================================================ */
+.testimonial-section {
+  padding: 3rem 0 1rem;
+}
+
+.testimonial-section h2 {
+  font-size: 1.25rem;
+  color: var(--charcoal);
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.testimonial-row {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  flex: 1;
+  min-width: 220px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.testimonial-card img {
+  max-height: 32px;
+  width: auto;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.testimonial-card blockquote {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--charcoal);
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+.testimonial-card cite {
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--dark-night);
+  font-weight: 600;
+}
