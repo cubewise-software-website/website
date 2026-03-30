@@ -14,8 +14,56 @@
       <img src="/assets/logos/Cubewise_Code_RGB.svg" alt="Cubewise" height="32">
     </a>
     <ul class="nav-links">
-      <li><a href="/platform/">Platform</a></li>
-      <li><a href="/pricing/">Pricing</a></li>
+      <li class="nav-item-dropdown">
+        <a href="/platform/">Platform</a>
+        <div class="nav-mega-menu">
+          <div class="mega-menu-inner">
+            <div class="mega-col">
+              <h4 class="mega-heading">Cubewise For&hellip;</h4>
+              <a href="/platform/developers/" class="mega-link">
+                <strong>Developers</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/platform/administrators/" class="mega-link">
+                <strong>Administrators</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/platform/power-users/" class="mega-link">
+                <strong>Power Users</strong>
+                <span><!-- tagline --></span>
+              </a>
+            </div>
+            <div class="mega-col">
+              <h4 class="mega-heading">Platform Components</h4>
+              <a href="/arc/" class="mega-link">
+                <strong>Arc</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/arc-plus/" class="mega-link">
+                <strong>Arc+</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/pulse/" class="mega-link">
+                <strong>Pulse</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/slice/" class="mega-link">
+                <strong>Slice</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/atmosphere/" class="mega-link">
+                <strong>Atmosphere</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/powerconnect/" class="mega-link">
+                <strong>PowerConnect</strong>
+                <span><!-- tagline --></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a></li>
       <li><a href="/docs/">Docs</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="/partners/">Partners</a></li>
@@ -25,16 +73,84 @@
   </nav>
 </header>
 
+<nav class="component-subnav">
+  <div class="component-subnav-inner">
+    <span class="component-subnav-title">Arc+</span>
+    <a href="/arc-plus/" class="active">Overview</a>
+    <a href="/arc-plus/features/">Features</a>
+  </div>
+</nav>
+
 <main>
   <section class="component-hero">
-    <div class="component-label">Cubewise Platform</div>
+    <div class="component-label">The DevOps solution for IBM Planning Analytics</div>
     <h1>Arc+</h1>
-    <p><!-- tagline --></p>
+    <p>Plan. Build. Test. Migrate. Operate. Support.</p>
     <a href="/docs/" class="btn btn-primary">Read the Docs</a>
     <a href="/contact/" class="btn btn-secondary">Get in Touch</a>
   </section>
   <section class="component-detail">
-    <!-- Features / detail content -->
+
+    <div class="feature-row">
+      <div class="feature-row-media">
+        <img src="/assets/images/arc-plus/arc-plus-flow-diagram-1.gif" alt="Arc+ planning and impact analysis">
+      </div>
+      <div class="feature-row-text">
+        <h2>Plan with confidence</h2>
+        <ul>
+          <li>Know the full impact of every change before you make it</li>
+          <li>Manage your development backlog with a built-in To Do List</li>
+          <li>Visualise dependencies across your TM1 model</li>
+          <li>Reduce risk when working in complex models</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row-media">
+        <img src="/assets/images/arc-plus/arc-plus-best-practice-rules-for-all-1.gif" alt="Arc+ best practice rules and code sharing">
+      </div>
+      <div class="feature-row-text">
+        <h2>Build higher quality applications</h2>
+        <ul>
+          <li>Don't compromise speed for quality</li>
+          <li>Reuse and share battle-tested code across your team</li>
+          <li>Enforce best practices automatically</li>
+          <li>One centralised platform for all your developments</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row-media">
+        <img src="/assets/images/arc-plus/arc-plus-test-hub-coverage-1.gif" alt="Arc+ automated unit testing and code coverage">
+      </div>
+      <div class="feature-row-text">
+        <h2>Test with automated unit testing</h2>
+        <ul>
+          <li>Set up unit tests as part of your development phase</li>
+          <li>Run test collections in sequence</li>
+          <li>Code coverage analysis shows exactly what's being tested</li>
+          <li>Catch regressions before they reach production</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row-media">
+        <img src="/assets/images/arc-plus/arc-plus-migration-create-package-1.gif" alt="Arc+ migration package creation">
+      </div>
+      <div class="feature-row-text">
+        <h2>Migrate faster with confidence</h2>
+        <ul>
+          <li>Automatically resolves all object dependencies for you</li>
+          <li>Deploy changes to production live</li>
+          <li>Full deployment history with downloadable migration logs</li>
+          <li>Rollback changes quickly if something goes wrong</li>
+        </ul>
+      </div>
+    </div>
+
   </section>
 </main>
 
@@ -46,7 +162,7 @@
     </div>
     <nav class="footer-nav">
       <a href="/platform/">Platform</a>
-      <a href="/pricing/">Pricing</a>
+      <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a>
       <a href="/docs/">Docs</a>
       <a href="/blog/">Blog</a>
       <a href="/partners/">Partners</a>
@@ -57,5 +173,6 @@
   </div>
 </footer>
 
+  <script src="/assets/js/nav.js"></script>
 </body>
 </html>

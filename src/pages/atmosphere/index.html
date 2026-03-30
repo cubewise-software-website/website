@@ -14,8 +14,56 @@
       <img src="/assets/logos/Cubewise_Code_RGB.svg" alt="Cubewise" height="32">
     </a>
     <ul class="nav-links">
-      <li><a href="/platform/">Platform</a></li>
-      <li><a href="/pricing/">Pricing</a></li>
+      <li class="nav-item-dropdown">
+        <a href="/platform/">Platform</a>
+        <div class="nav-mega-menu">
+          <div class="mega-menu-inner">
+            <div class="mega-col">
+              <h4 class="mega-heading">Cubewise For&hellip;</h4>
+              <a href="/platform/developers/" class="mega-link">
+                <strong>Developers</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/platform/administrators/" class="mega-link">
+                <strong>Administrators</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/platform/power-users/" class="mega-link">
+                <strong>Power Users</strong>
+                <span><!-- tagline --></span>
+              </a>
+            </div>
+            <div class="mega-col">
+              <h4 class="mega-heading">Platform Components</h4>
+              <a href="/arc/" class="mega-link">
+                <strong>Arc</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/arc-plus/" class="mega-link">
+                <strong>Arc+</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/pulse/" class="mega-link">
+                <strong>Pulse</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/slice/" class="mega-link">
+                <strong>Slice</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/atmosphere/" class="mega-link">
+                <strong>Atmosphere</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/powerconnect/" class="mega-link">
+                <strong>PowerConnect</strong>
+                <span><!-- tagline --></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a></li>
       <li><a href="/docs/">Docs</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="/partners/">Partners</a></li>
@@ -25,17 +73,211 @@
   </nav>
 </header>
 
+<nav class="component-subnav">
+  <div class="component-subnav-inner">
+    <span class="component-subnav-title">Atmosphere</span>
+    <a href="/atmosphere/" class="active">Overview</a>
+    <a href="/atmosphere/integrations/">Integrations</a>
+  </div>
+</nav>
+
 <main>
-  <section class="component-hero">
-    <div class="component-label">Cubewise Platform</div>
-    <h1>Atmosphere</h1>
-    <p><!-- tagline --></p>
-    <a href="/docs/" class="btn btn-primary">Read the Docs</a>
-    <a href="/contact/" class="btn btn-secondary">Get in Touch</a>
+
+  <!-- Hero: two-column with image -->
+  <section class="component-hero component-hero--split">
+    <div class="component-hero-text">
+      <div class="component-label">Get all your cloud data for IBM Planning Analytics</div>
+      <h1>Atmosphere</h1>
+      <p>Secure, two-way pipelines that automate data movement from any source to keep your forecasts always current.</p>
+      <ul>
+        <li>Always-current actuals and plans</li>
+        <li>Two-way data pipelines across your FP&amp;A stack</li>
+        <li>Workflows Finance can own without the complexity</li>
+      </ul>
+      <div class="hero-actions">
+        <a href="/contact/" class="btn btn-primary">Get a demo</a>
+        <a href="/docs/" class="btn btn-secondary">Read the Docs</a>
+      </div>
+    </div>
+    <div class="component-hero-media">
+      <img src="/assets/images/atmosphere/AtmosphereHeader.svg" alt="Atmosphere data pipelines">
+    </div>
   </section>
+
+  <!-- Why choose Atmosphere -->
+  <section class="why-section">
+    <div class="why-section-inner">
+      <h2 class="why-section-heading">Why teams choose Atmosphere for their data</h2>
+      <div class="why-cards">
+        <div class="why-card">
+          <img src="/assets/images/atmosphere/IconsAHP-04.svg" alt="" class="why-card-icon">
+          <h3>Speed at any scale</h3>
+          <p>Handles high-volume, high-frequency data movement that accelerates forecast and close cycles.</p>
+        </div>
+        <div class="why-card">
+          <img src="/assets/images/atmosphere/IconsAHP-05.svg" alt="" class="why-card-icon">
+          <h3>Finance-aware automation</h3>
+          <p>Pipelines that understand your GL and ERP structures, delivering ready-to-use data without manual mapping.</p>
+        </div>
+        <div class="why-card">
+          <img src="/assets/images/atmosphere/IconsAHP-06.svg" alt="" class="why-card-icon">
+          <h3>Control without complexity</h3>
+          <p>Finance-owned schedules and updates that eliminate IT backlog — designed for departmental control.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust banner -->
+  <section class="trust-banner">
+    <img src="/assets/images/atmosphere/FDB-40.svg" alt="" class="trust-banner-icon">
+    <div class="trust-banner-text">
+      <strong>Owned by Finance. Trusted by IT.</strong>
+      <span>Encrypted in-transit. No data stored. Enterprise-grade access controls.</span>
+    </div>
+  </section>
+
+  <!-- Feature rows -->
   <section class="component-detail">
-    <!-- Features / detail content -->
+
+    <div class="feature-row">
+      <div class="feature-row-media">
+        <img src="/assets/images/atmosphere/Quickly-securely-get-your-data.svg" alt="Quickly and securely get your data into IBM Planning Analytics">
+      </div>
+      <div class="feature-row-text">
+        <h2>Quickly and securely get your data</h2>
+        <ul>
+          <li>Bring operational, financial, and master data across with one click</li>
+          <li>Refresh only what's changed using filters, deltas, and selective loads</li>
+          <li>Map fields, clean data, and shape it into flexible hierarchies ready for planning, analysis, and month-end reporting</li>
+          <li>Encrypted in-transit — no data stored</li>
+        </ul>
+        <a href="/atmosphere/features/" class="btn btn-secondary btn-sm">See all integrations</a>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row-media">
+        <img src="/assets/images/atmosphere/Update-downstream-systems.svg" alt="Continually update your downstream systems">
+      </div>
+      <div class="feature-row-text">
+        <h2>Continually update your downstream systems</h2>
+        <ul>
+          <li>Continuously update BI, data warehouse, and data lake environments with the latest actuals and forecasts</li>
+          <li>Push back plan data and business structures automatically — even during busy cycles</li>
+          <li>Optimised for large datasets and fast ingestion formats, keeping downstream teams aligned</li>
+          <li>Finance-owned schedules that eliminate IT backlog</li>
+        </ul>
+        <a href="/atmosphere/features/" class="btn btn-secondary btn-sm">See datalake integrations</a>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row-media">
+        <img src="/assets/images/atmosphere/EnrichPlans.svg" alt="Enrich plans with public data and advanced analytics">
+      </div>
+      <div class="feature-row-text">
+        <h2>Enrich plans with external data and analytics</h2>
+        <ul>
+          <li>Combine internal and external data — FX rates, macroeconomic indicators, and more</li>
+          <li>Add machine learning and predictive forecasting to strengthen planning</li>
+          <li>Improve accuracy with outlier detection, financial calculations, and data reconciliation</li>
+          <li>Connect to any endpoint in D365 Finance &amp; Operations</li>
+        </ul>
+      </div>
+    </div>
+
   </section>
+
+  <!-- Without / With comparison -->
+  <section class="comparison-section">
+    <div class="comparison-inner">
+      <div class="comparison-col comparison-col--without">
+        <h3 class="comparison-heading">Without Atmosphere</h3>
+        <ul>
+          <li>Manual updates in spreadsheets with errors</li>
+          <li>Late reports and inaccurate plans from slow or delayed processing</li>
+          <li>Confidential business data copied in insecure files</li>
+          <li>Little visibility into what changed, when, or why</li>
+          <li>Heavy dependency on IT or technical specialists</li>
+        </ul>
+      </div>
+      <div class="comparison-col comparison-col--with">
+        <h3 class="comparison-heading">With Atmosphere</h3>
+        <ul>
+          <li>Automated pipelines that move data reliably on-demand and on-schedule</li>
+          <li>Actuals, plans, and downstream systems kept aligned</li>
+          <li>Secure transfer with no data stored and clear access controls</li>
+          <li>Transparent tracking across all integrations and updates</li>
+          <li>Workflows Finance can run without burdening IT</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Source tabs -->
+  <section class="source-tabs-section">
+    <div class="source-tabs-inner">
+      <h2 class="source-tabs-heading">All your financial data, when you need it</h2>
+      <div class="source-tabs-nav">
+        <button class="source-tab-btn active" data-tab="d365">D365 Pipeline</button>
+        <button class="source-tab-btn" data-tab="netsuite">Netsuite</button>
+        <button class="source-tab-btn" data-tab="snowflake">Snowflake</button>
+        <button class="source-tab-btn" data-tab="databricks">Databricks</button>
+        <button class="source-tab-btn" data-tab="sap">SAP</button>
+      </div>
+      <div class="source-tabs-content">
+        <div class="source-tab-panel active" id="tab-d365">
+          <div class="source-tab-text">
+            <h3>D365 Pipeline</h3>
+            <p>The Atmosphere D365 Pipeline connects to any endpoint in D365 Finance &amp; Operations. It includes predefined endpoints that understand your structures — such as Departments and Accounts — and turns them into clear hierarchies for reporting and planning.</p>
+            <p>The Pipeline works on its own or alongside Microsoft Fabric and supports real-time refreshes during busy periods like month-end.</p>
+            <a href="/contact/" class="btn btn-primary btn-sm">Get a demo</a>
+          </div>
+          <div class="source-tab-media">
+            <img src="/assets/images/atmosphere/Screenshot-2026-02-03-at-18.47.28.png" alt="D365 Pipeline screenshot">
+          </div>
+        </div>
+        <div class="source-tab-panel" id="tab-netsuite">
+          <div class="source-tab-text">
+            <h3>Netsuite</h3>
+            <p>Connect Netsuite directly to IBM Planning Analytics. Pull financial and operational data on demand or on schedule, keeping your models current with the latest ERP data.</p>
+            <a href="/contact/" class="btn btn-primary btn-sm">Get a demo</a>
+          </div>
+        </div>
+        <div class="source-tab-panel" id="tab-snowflake">
+          <div class="source-tab-text">
+            <h3>Snowflake</h3>
+            <p>Load and refresh data from Snowflake directly into your Planning Analytics cubes. Support for large datasets and incremental loads keeps performance high even at scale.</p>
+            <a href="/contact/" class="btn btn-primary btn-sm">Get a demo</a>
+          </div>
+        </div>
+        <div class="source-tab-panel" id="tab-databricks">
+          <div class="source-tab-text">
+            <h3>Databricks</h3>
+            <p>Bring Databricks analytics and ML outputs into IBM Planning Analytics. Enrich your forecasts with advanced analytics without leaving the planning environment.</p>
+            <a href="/contact/" class="btn btn-primary btn-sm">Get a demo</a>
+          </div>
+        </div>
+        <div class="source-tab-panel" id="tab-sap">
+          <div class="source-tab-text">
+            <h3>SAP</h3>
+            <p>Extract data from SAP ERP and S/4HANA into IBM Planning Analytics. Atmosphere handles the complexity of SAP's data structures so your Finance team doesn't have to.</p>
+            <a href="/contact/" class="btn btn-primary btn-sm">Get a demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="page-cta">
+    <h2>Ready to bridge the gap in your financial data?</h2>
+    <p>Stop manual exports and start making decisions with live, two-way data pipelines.</p>
+    <a href="/contact/" class="btn btn-primary">Get a demo</a>
+    <a href="/docs/" class="btn btn-secondary">Read the Docs</a>
+  </section>
+
 </main>
 
 <footer class="site-footer">
@@ -46,7 +288,7 @@
     </div>
     <nav class="footer-nav">
       <a href="/platform/">Platform</a>
-      <a href="/pricing/">Pricing</a>
+      <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a>
       <a href="/docs/">Docs</a>
       <a href="/blog/">Blog</a>
       <a href="/partners/">Partners</a>
@@ -57,5 +299,7 @@
   </div>
 </footer>
 
+  <script src="/assets/js/nav.js"></script>
+  <script src="/assets/js/tabs.js"></script>
 </body>
 </html>

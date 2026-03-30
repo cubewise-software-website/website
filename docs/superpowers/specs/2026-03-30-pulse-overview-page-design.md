@@ -56,7 +56,7 @@ Three customer quotes in a horizontal row (wraps on mobile). Each card contains:
 
 ## CSS Additions (`main.css`)
 
-Two new rule groups appended to the existing stylesheet:
+Three new rule groups appended to the existing stylesheet:
 
 ### `.feature-row`
 Flexbox row, `gap: 3rem`, `align-items: center`, `margin-bottom: 4rem`.

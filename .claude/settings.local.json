@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(node -e \"import\\(''cheerio''\\).then\\(m => console.log\\(''cheerio OK:'', Object.keys\\(m\\)\\)\\)\")",
+      "Bash(npm test:*)",
+      "Bash(gh auth:*)",
+      "Bash(gh api:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npm run:*)",
+      "WebFetch(domain:www.elastic.co)",
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(rm -rf dist)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(node -e \":*)",
+      "Bash(python -c \":*)",
+      "Bash(grep -E \"\\\\.\\(gif|png|svg\\)$\")",
+      "Bash(python3:*)",
+      "Bash(npm --version)",
+      "Bash(C:/Users/vviau/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.6/skills/brainstorming/scripts/start-server.sh --project-dir \"D:/Projects/src/cubewise/website\")",
+      "Bash(__NEW_LINE_8e7d7d9df762eb3f__ echo:*)",
+      "Bash(grep -l \"Atmosphere\" '/d/Projects/src/cubewise/website/docs'/*.md '/d/Projects/src/cubewise/website/docs/superpowers'/*/*.md)",
+      "Bash(xargs grep:*)",
+      "Bash(grep -v \"^$\")",
+      "Bash(grep -oP '>\\([^<]{20,200}\\)</[a-z]')",
+      "Bash(tr '<' '\\\\n')",
+      "Bash(grep -oP '\\(?<=>\\)[^<]*\\(?=<|$\\)')",
+      "Bash(grep -v '^[[:space:]]*$')",
+      "Bash(for term:*)",
+      "Bash(do echo:*)",
+      "Bash(tr '<' '\\\\n<')",
+      "Bash(/tmp/feature_mapping.txt:*)",
+      "Bash(/tmp/extract_features.py:*)",
+      "Bash(__NEW_LINE_3399aa9596e2825a__ cat:*)",
+      "Bash(__NEW_LINE_f87d39f87f8f1766__ grep:*)",
+      "Bash(__NEW_LINE_1250cf771ce92e0d__ wc:*)"
+    ]
+  }
+}

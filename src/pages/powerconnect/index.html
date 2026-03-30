@@ -14,8 +14,56 @@
       <img src="/assets/logos/Cubewise_Code_RGB.svg" alt="Cubewise" height="32">
     </a>
     <ul class="nav-links">
-      <li><a href="/platform/">Platform</a></li>
-      <li><a href="/pricing/">Pricing</a></li>
+      <li class="nav-item-dropdown">
+        <a href="/platform/">Platform</a>
+        <div class="nav-mega-menu">
+          <div class="mega-menu-inner">
+            <div class="mega-col">
+              <h4 class="mega-heading">Cubewise For&hellip;</h4>
+              <a href="/platform/developers/" class="mega-link">
+                <strong>Developers</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/platform/administrators/" class="mega-link">
+                <strong>Administrators</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/platform/power-users/" class="mega-link">
+                <strong>Power Users</strong>
+                <span><!-- tagline --></span>
+              </a>
+            </div>
+            <div class="mega-col">
+              <h4 class="mega-heading">Platform Components</h4>
+              <a href="/arc/" class="mega-link">
+                <strong>Arc</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/arc-plus/" class="mega-link">
+                <strong>Arc+</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/pulse/" class="mega-link">
+                <strong>Pulse</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/slice/" class="mega-link">
+                <strong>Slice</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/atmosphere/" class="mega-link">
+                <strong>Atmosphere</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/powerconnect/" class="mega-link">
+                <strong>PowerConnect</strong>
+                <span><!-- tagline --></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a></li>
       <li><a href="/docs/">Docs</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="/partners/">Partners</a></li>
@@ -25,16 +73,69 @@
   </nav>
 </header>
 
+<nav class="component-subnav">
+  <div class="component-subnav-inner">
+    <span class="component-subnav-title">PowerConnect</span>
+    <a href="/powerconnect/" class="active">Overview</a>
+    <a href="/powerconnect/features/">Features</a>
+  </div>
+</nav>
+
 <main>
   <section class="component-hero">
-    <div class="component-label">Cubewise Platform</div>
+    <div class="component-label">Effortlessly integrate IBM Planning Analytics with Microsoft Power BI</div>
     <h1>PowerConnect</h1>
-    <p><!-- tagline --></p>
+    <p>Unprecedented connectivity between IBM Planning Analytics and Power BI — on-premises, cloud, or hybrid.</p>
     <a href="/docs/" class="btn btn-primary">Read the Docs</a>
     <a href="/contact/" class="btn btn-secondary">Get in Touch</a>
   </section>
   <section class="component-detail">
-    <!-- Features / detail content -->
+
+    <div class="feature-row">
+      <div class="feature-row-media">
+        <img src="/assets/images/powerconnect/DataChange.gif" alt="PowerConnect data synchronization">
+      </div>
+      <div class="feature-row-text">
+        <h2>Data synchronization</h2>
+        <ul>
+          <li>Access IBM Planning Analytics on-premises and cloud data in Power BI</li>
+          <li>Ad-hoc and scheduled data refreshes</li>
+          <li>Always up-to-date reports without manual intervention</li>
+          <li>Works with Power BI Desktop, Service, and mobile</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row-media">
+        <img src="/assets/images/powerconnect/MetadataChange.gif" alt="PowerConnect metadata synchronization">
+      </div>
+      <div class="feature-row-text">
+        <h2>Metadata synchronization</h2>
+        <ul>
+          <li>IBM Planning Analytics hierarchies and dimensions sync automatically</li>
+          <li>No manual updates needed when your model changes</li>
+          <li>Reports always reflect the latest structure</li>
+          <li>Eliminate broken reports caused by dimensional changes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row-media">
+        <img src="/assets/images/powerconnect/SecurityChange.gif" alt="PowerConnect security synchronization">
+      </div>
+      <div class="feature-row-text">
+        <h2>Security synchronization</h2>
+        <ul>
+          <li>Integrates with your existing IBM Planning Analytics security model</li>
+          <li>Get the right data to the right people</li>
+          <li>Data always stays within your established security protocols</li>
+          <li>Supports on-premises, cloud, and hybrid configurations</li>
+        </ul>
+      </div>
+    </div>
+
   </section>
 </main>
 
@@ -46,7 +147,7 @@
     </div>
     <nav class="footer-nav">
       <a href="/platform/">Platform</a>
-      <a href="/pricing/">Pricing</a>
+      <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a>
       <a href="/docs/">Docs</a>
       <a href="/blog/">Blog</a>
       <a href="/partners/">Partners</a>
@@ -57,5 +158,6 @@
   </div>
 </footer>
 
+  <script src="/assets/js/nav.js"></script>
 </body>
 </html>

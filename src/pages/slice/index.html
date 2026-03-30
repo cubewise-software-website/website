@@ -14,8 +14,56 @@
       <img src="/assets/logos/Cubewise_Code_RGB.svg" alt="Cubewise" height="32">
     </a>
     <ul class="nav-links">
-      <li><a href="/platform/">Platform</a></li>
-      <li><a href="/pricing/">Pricing</a></li>
+      <li class="nav-item-dropdown">
+        <a href="/platform/">Platform</a>
+        <div class="nav-mega-menu">
+          <div class="mega-menu-inner">
+            <div class="mega-col">
+              <h4 class="mega-heading">Cubewise For&hellip;</h4>
+              <a href="/platform/developers/" class="mega-link">
+                <strong>Developers</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/platform/administrators/" class="mega-link">
+                <strong>Administrators</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/platform/power-users/" class="mega-link">
+                <strong>Power Users</strong>
+                <span><!-- tagline --></span>
+              </a>
+            </div>
+            <div class="mega-col">
+              <h4 class="mega-heading">Platform Components</h4>
+              <a href="/arc/" class="mega-link">
+                <strong>Arc</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/arc-plus/" class="mega-link">
+                <strong>Arc+</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/pulse/" class="mega-link">
+                <strong>Pulse</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/slice/" class="mega-link">
+                <strong>Slice</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/atmosphere/" class="mega-link">
+                <strong>Atmosphere</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/powerconnect/" class="mega-link">
+                <strong>PowerConnect</strong>
+                <span><!-- tagline --></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a></li>
       <li><a href="/docs/">Docs</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="/partners/">Partners</a></li>
@@ -25,16 +73,41 @@
   </nav>
 </header>
 
+<nav class="component-subnav">
+  <div class="component-subnav-inner">
+    <span class="component-subnav-title">Slice</span>
+    <a href="/slice/" class="active">Overview</a>
+    <a href="/slice/features/">Features</a>
+  </div>
+</nav>
+
 <main>
   <section class="component-hero">
-    <div class="component-label">Cubewise Platform</div>
+    <div class="component-label">The Excel add-in for IBM Planning Analytics</div>
     <h1>Slice</h1>
-    <p><!-- tagline --></p>
+    <p>Fast, modern Excel reporting with full hierarchy support and backwards compatibility with Perspectives.</p>
     <a href="/docs/" class="btn btn-primary">Read the Docs</a>
     <a href="/contact/" class="btn btn-secondary">Get in Touch</a>
   </section>
   <section class="component-detail">
-    <!-- Features / detail content -->
+
+    <div class="feature-row">
+      <div class="feature-row-media">
+        <img src="/assets/images/slice/slice-export-af-1.gif" alt="Slice Active Forms with hierarchy support">
+      </div>
+      <div class="feature-row-text">
+        <h2>Everything you need for TM1 Excel reporting</h2>
+        <ul>
+          <li>Familiar look and feel — support for all TM1 Excel functions</li>
+          <li>Snapshot, Slice and Active Forms with hierarchy support</li>
+          <li>Cube Viewer and Subset Editor built in</li>
+          <li>Buttons, Drillthrough, Annotations and Sandboxes</li>
+          <li>Create Active Forms with dynamic columns</li>
+          <li>Cell audit feature to troubleshoot errors faster</li>
+        </ul>
+      </div>
+    </div>
+
   </section>
 </main>
 
@@ -46,7 +119,7 @@
     </div>
     <nav class="footer-nav">
       <a href="/platform/">Platform</a>
-      <a href="/pricing/">Pricing</a>
+      <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a>
       <a href="/docs/">Docs</a>
       <a href="/blog/">Blog</a>
       <a href="/partners/">Partners</a>
@@ -57,5 +130,6 @@
   </div>
 </footer>
 
+  <script src="/assets/js/nav.js"></script>
 </body>
 </html>
