@@ -61,7 +61,6 @@ a:hover { color: var(--charcoal); }
   display: flex;
   list-style: none;
   gap: 1.5rem;
-  margin-left: auto;
   align-items: center;
 }
 
@@ -73,6 +72,8 @@ a:hover { color: var(--charcoal); }
 }
 
 .nav-links a:hover { color: var(--dark-night); }
+
+.nav-cta-item { margin-left: auto; }
 
 .nav-cta {
   background: var(--orange-gold);
@@ -2628,3 +2629,216 @@ main { min-height: 60vh; }
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   Docs filter pills
+   ============================================================ */
+.docs-filter-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.filter-pill {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--charcoal);
+  cursor: pointer;
+  transition: border-color 0.12s ease, color 0.12s ease;
+  font-family: inherit;
+}
+
+.filter-pill:hover { border-color: var(--orange-gold); color: var(--orange-gold); }
+.filter-pill.active { border-color: var(--orange-gold); color: var(--orange-gold); font-weight: 600; }
+
+/* ============================================================
+   Docs breadcrumb
+   ============================================================ */
+.docs-breadcrumb {
+  font-size: 0.82rem;
+  color: var(--charcoal);
+  margin-bottom: 1.25rem;
+  opacity: 0.7;
+}
+
+.docs-breadcrumb a { color: inherit; text-decoration: none; }
+.docs-breadcrumb a:hover { color: var(--orange-gold); opacity: 1; }
+
+/* ============================================================
+   Docs TOC ("on this page")
+   ============================================================ */
+.docs-toc {
+  background: var(--light-gray);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+}
+
+.docs-toc::before {
+  content: 'On this page';
+  display: block;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--charcoal);
+  margin-bottom: 0.5rem;
+}
+
+.docs-toc ul { list-style: none; }
+.docs-toc li { margin-bottom: 0.25rem; }
+.docs-toc a { text-decoration: none; color: var(--charcoal); }
+.docs-toc a:hover { color: var(--orange-gold); }
+.docs-toc li.toc-h3 { padding-left: 0.75rem; font-size: 0.82rem; }
+
+/* ============================================================
+   Docs landing page
+   ============================================================ */
+.docs-hero {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.docs-hero h1 { font-size: 2.25rem; margin-bottom: 0.5rem; }
+.docs-hero p  { color: var(--charcoal); margin-bottom: 2rem; }
+
+.docs-search-wrap {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.docs-search-input {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: var(--pearl-white);
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.docs-search-input:focus {
+  border-color: var(--orange-gold);
+  box-shadow: 0 0 0 3px rgba(184,124,38,0.12);
+}
+
+.docs-search-results {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  background: var(--pearl-white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  z-index: 50;
+  overflow: hidden;
+}
+
+.docs-search-results.is-open { display: block; }
+
+.docs-search-result {
+  display: block;
+  padding: 0.65rem 1rem;
+  text-decoration: none;
+  color: var(--dark-night);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+
+.docs-search-result:last-child { border-bottom: none; }
+.docs-search-result:hover,
+.docs-search-result.is-active { background: var(--light-gray); }
+
+.docs-search-result-title { font-weight: 600; font-size: 0.9rem; display: block; }
+
+.docs-search-result-meta {
+  font-size: 0.78rem;
+  color: var(--charcoal);
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.15rem;
+}
+
+.docs-search-badge {
+  background: var(--light-gray);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+/* ============================================================
+   Docs product grid (landing page)
+   ============================================================ */
+.docs-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 3rem auto;
+  padding: 0 2rem 4rem;
+}
+
+@media (max-width: 700px) {
+  .docs-product-grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 701px) and (max-width: 960px) {
+  .docs-product-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.docs-product-card {
+  background: var(--pearl-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: box-shadow 0.15s ease;
+}
+
+.docs-product-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+
+.docs-product-card img {
+  height: 36px;
+  width: auto;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.docs-product-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--dark-night);
+}
+
+.docs-product-card a {
+  display: block;
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: var(--charcoal);
+  padding: 0.3rem 0;
+  transition: color 0.12s;
+}
+
+.docs-product-card a:hover { color: var(--orange-gold); }
