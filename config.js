@@ -2,19 +2,25 @@ export const confluenceBaseUrl = process.env.CONFLUENCE_BASE_URL
 export const confluenceEmail = process.env.CONFLUENCE_EMAIL
 export const confluenceApiToken = process.env.CONFLUENCE_API_TOKEN
 
-// Add your actual Confluence space keys here.
-// isDocsSpace: true means the space key is auto-injected as a label on each page.
 export const spaces = [
   {
-    key: 'WEBSITE-BLOG',
+    key: 'CS',
     section: 'blog',
     template: 'blog-post',
     indexTemplate: 'blog-index',
     isDocsSpace: false,
+    contentType: 'blogpost',
   },
-  // Example docs spaces — replace with real keys:
-  // { key: 'DOCS-ARC', section: 'docs', template: 'docs', isDocsSpace: true },
-  // { key: 'DOCS-PULSE', section: 'docs', template: 'docs', isDocsSpace: true },
+  { key: 'AIAC1', section: 'docs', template: 'docs', isDocsSpace: false, product: 'arc',          docType: 'installation' },
+  { key: 'AUM',   section: 'docs', template: 'docs', isDocsSpace: false, product: 'arc',          docType: 'manual' },
+  { key: 'AIAC',  section: 'docs', template: 'docs', isDocsSpace: false, product: 'arc-plus',     docType: 'installation' },
+  { key: 'AUM1',  section: 'docs', template: 'docs', isDocsSpace: false, product: 'arc-plus',     docType: 'manual' },
+  { key: 'PIC',   section: 'docs', template: 'docs', isDocsSpace: false, product: 'powerconnect', docType: 'installation' },
+  { key: 'PUM1',  section: 'docs', template: 'docs', isDocsSpace: false, product: 'powerconnect', docType: 'manual' },
+  { key: 'PIAC',  section: 'docs', template: 'docs', isDocsSpace: false, product: 'pulse',        docType: 'installation' },
+  { key: 'PUM',   section: 'docs', template: 'docs', isDocsSpace: false, product: 'pulse',        docType: 'manual' },
+  { key: 'SIAC',  section: 'docs', template: 'docs', isDocsSpace: false, product: 'slice',        docType: 'installation' },
+  { key: 'SUM',   section: 'docs', template: 'docs', isDocsSpace: false, product: 'slice',        docType: 'manual' },
 ]
 
 export const DIST_DIR = 'dist'
