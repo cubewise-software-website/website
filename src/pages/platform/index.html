@@ -60,6 +60,11 @@
                 <span><!-- tagline --></span>
               </a>
             </div>
+            <div class="mega-col">
+              <h4 class="mega-heading">Deployment Options</h4>
+              <a href="/deployment/self-hosted/" class="mega-link"><strong>Self-Hosted</strong><span>Run on your own infrastructure</span></a>
+              <a href="/deployment/cubewise-cloud/" class="mega-link"><strong>Cubewise Cloud</strong><span>Managed hosting by Cubewise</span></a>
+            </div>
           </div>
         </div>
       </li>
@@ -68,26 +73,84 @@
       <li><a href="/blog/">Blog</a></li>
       <li><a href="/partners/">Partners</a></li>
       <li><a href="/about/">About</a></li>
-      <li><a href="/contact/" class="nav-cta">Contact</a></li>
+      <li><a href="https://forum.cubewise.com/" target="_blank" rel="noopener">Forum</a></li>
+      <li class="nav-cta-item"><a href="/contact/" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
+
+  <!-- Hero -->
   <section class="platform-hero">
     <h1>The Cubewise Platform</h1>
     <p>A complete suite of components for IBM Planning Analytics / TM1 — built together, deployed your way.</p>
   </section>
-  <section class="platform-components">
-    <h2>Components</h2>
-    <div class="component-grid">
-      <a href="/arc-plus/" class="component-card"><h3>Arc+</h3><p><!-- tagline --></p></a>
-      <a href="/pulse/" class="component-card"><h3>Pulse</h3><p><!-- tagline --></p></a>
-      <a href="/slice/" class="component-card"><h3>Slice</h3><p><!-- tagline --></p></a>
-      <a href="/atmosphere/" class="component-card"><h3>Atmosphere</h3><p><!-- tagline --></p></a>
-      <a href="/powerconnect/" class="component-card"><h3>PowerConnect</h3><p><!-- tagline --></p></a>
+
+  <!-- Ecosystem intro -->
+  <section class="platform-ecosystem">
+    <div class="platform-ecosystem-inner">
+      <h2>Built to work together</h2>
+      <p>Arc is the central hub for IBM Planning Analytics. Every other component in the platform either extends Arc's capabilities, integrates with it to surface data and insights, or connects your existing systems to it. Together they cover the full lifecycle — from building and managing TM1 applications to reporting, monitoring, and data integration.</p>
     </div>
   </section>
+
+  <!-- Arc hub card -->
+  <div class="platform-hub">
+    <p class="platform-hub-label">Central Hub</p>
+    <a href="/arc/" class="platform-hub-card">
+      <img src="/assets/logos/Products/Arc/Logo-arc.svg" alt="Arc">
+      <div class="platform-hub-card-body">
+        <h3>Arc</h3>
+        <p>Faster to build and easier to manage IBM Planning Analytics applications. The TM1 development IDE that all other components connect to.</p>
+        <span class="platform-hub-link">Learn more →</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Spoke components -->
+  <div class="platform-spokes">
+    <p class="platform-spokes-label">Platform Components</p>
+    <div class="platform-spoke-grid">
+
+      <a href="/arc-plus/" class="platform-spoke-card">
+        <img src="/assets/logos/Products/Arc+/Arc+-01.svg" alt="Arc+">
+        <h3>Arc+</h3>
+        <p>Connect Arc to Pulse to unlock many new features. We call this Pulse-powered mode "Arc+".</p>
+        <span class="platform-spoke-link">Learn more →</span>
+      </a>
+
+      <a href="/pulse/" class="platform-spoke-card">
+        <img src="/assets/logos/Products/Pulse/Pulse.svg" alt="Pulse">
+        <h3>Pulse</h3>
+        <p>Application lifecycle management for TM1. Monitor servers, migrate changes, and understand your applications — integrates directly with Arc.</p>
+        <span class="platform-spoke-link">Learn more →</span>
+      </a>
+
+      <a href="/slice/" class="platform-spoke-card">
+        <img src="/assets/logos/Products/Slice/Slice.svg" alt="Slice">
+        <h3>Slice</h3>
+        <p>Excel add-in for TM1 reporting. Works alongside Arc for development workflows and connects with Pulse for monitoring and lifecycle management.</p>
+        <span class="platform-spoke-link">Learn more →</span>
+      </a>
+
+      <a href="/atmosphere/" class="platform-spoke-card">
+        <img src="/assets/logos/Products/Atmosphere/Atmosphere.svg" alt="Atmosphere">
+        <h3>Atmosphere</h3>
+        <p>Secure data pipelines that bring cloud and ERP data into IBM Planning Analytics. Feeds Arc with always-current actuals and plans.</p>
+        <span class="platform-spoke-link">Learn more →</span>
+      </a>
+
+      <a href="/powerconnect/" class="platform-spoke-card">
+        <img src="/assets/logos/Products/PowerConnect/logo-powerconnect.svg" alt="PowerConnect">
+        <h3>PowerConnect</h3>
+        <p>Connect TM1 to external systems and data sources, extending Arc's reach across your existing infrastructure.</p>
+        <span class="platform-spoke-link">Learn more →</span>
+      </a>
+
+    </div>
+  </div>
+
 </main>
 
 <footer class="site-footer">
