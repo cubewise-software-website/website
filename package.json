@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.js",
+    "build:static": "node scripts/build-static.js",
     "preview": "node scripts/preview.js && npx serve dist",
     "test": "vitest run",
     "test:watch": "vitest"
@@ -12,6 +13,7 @@
     "cheerio": "1.0.0"
   },
   "devDependencies": {
+    "dotenv": "^17.3.1",
     "vitest": "^2.0.0"
   }
 }
