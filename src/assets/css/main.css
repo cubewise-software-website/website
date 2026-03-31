@@ -140,13 +140,11 @@ main { min-height: 60vh; }
 .mega-link {
   display: block;
   text-decoration: none;
-  padding: 0.65rem 0;
-  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 0.65rem;
+  border-radius: 6px;
   color: inherit;
-  transition: color 0.15s;
+  transition: background 0.12s ease;
 }
-
-.mega-link:last-child { border-bottom: none; }
 
 .mega-link strong {
   display: block;
@@ -154,7 +152,7 @@ main { min-height: 60vh; }
   font-size: 0.95rem;
   font-weight: 600;
   margin-bottom: 0.2rem;
-  transition: color 0.15s;
+  transition: color 0.12s ease;
 }
 
 .mega-link span {
@@ -164,6 +162,7 @@ main { min-height: 60vh; }
   line-height: 1.4;
 }
 
+.mega-link:hover { background: var(--light-gray); }
 .mega-link:hover strong { color: var(--orange-gold); }
 
 /* ============================================================
