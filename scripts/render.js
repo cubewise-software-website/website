@@ -1,5 +1,18 @@
 import { load } from 'cheerio'
 
+const PRODUCT_DISPLAY = {
+  'arc': 'Arc',
+  'arc-plus': 'Arc+',
+  'powerconnect': 'PowerConnect',
+  'pulse': 'Pulse',
+  'slice': 'Slice',
+}
+
+const DOC_TYPE_DISPLAY = {
+  'installation': 'Installation & Config',
+  'manual': 'User Manual',
+}
+
 export function slugify(title) {
   return title
     .toLowerCase()
@@ -55,14 +68,25 @@ function buildPath(page, spaceConfig, isRoot) {
   return slugify(page.title)
 }
 
+function buildBreadcrumb(title, spaceConfig) {
+  const product = PRODUCT_DISPLAY[spaceConfig.product] ?? spaceConfig.product
+  const type = DOC_TYPE_DISPLAY[spaceConfig.docType] ?? spaceConfig.docType
+  return `<a href="/docs/">Docs</a> &rsaquo; ${product} &rsaquo; ${type} &rsaquo; ${title}`
+}
+
 export function renderPage(page, spaceConfig) {
   const labels = extractLabels(page)
+  if (spaceConfig.product) labels.push(spaceConfig.product)
+  if (spaceConfig.docType) labels.push(spaceConfig.docType)
+
   const isRoot = page.ancestors.length === 0
   const path = buildPath(page, spaceConfig, isRoot)
   const body = renderStorageFormat(page.body.storage.value)
   const date = page.version?.when
     ? new Date(page.version.when).toISOString().split('T')[0]
     : ''
+
+  const isDocsPage = spaceConfig.section === 'docs'
 
   return {
     path,
@@ -76,5 +100,8 @@ export function renderPage(page, spaceConfig) {
     slug: slugify(page.title),
     isRoot,
     section: spaceConfig.section,
+    product: spaceConfig.product ?? null,
+    docType: spaceConfig.docType ?? null,
+    breadcrumb: isDocsPage ? buildBreadcrumb(page.title, spaceConfig) : '',
   }
 }

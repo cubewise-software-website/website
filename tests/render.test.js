@@ -90,3 +90,51 @@ describe('renderPage', () => {
     expect(result.labels).toEqual(['docs-arc', 'featured'])
   })
 })
+
+describe('renderPage docs enhancements', () => {
+  const mockPage = (overrides = {}) => ({
+    id: '123',
+    title: 'Getting Started',
+    ancestors: [],
+    body: { storage: { value: '<p>Hello world</p>' } },
+    metadata: { labels: { results: [] } },
+    version: { when: '2025-06-01T10:00:00.000Z' },
+    ...overrides,
+  })
+
+  it('injects product and docType as labels for docs pages', () => {
+    const spaceConfig = { key: 'AIAC1', section: 'docs', template: 'docs', isDocsSpace: false, product: 'arc', docType: 'installation' }
+    const result = renderPage(mockPage(), spaceConfig)
+    expect(result.labels).toContain('arc')
+    expect(result.labels).toContain('installation')
+  })
+
+  it('exposes product and docType on the returned object', () => {
+    const spaceConfig = { key: 'PUM', section: 'docs', template: 'docs', isDocsSpace: false, product: 'pulse', docType: 'manual' }
+    const result = renderPage(mockPage(), spaceConfig)
+    expect(result.product).toBe('pulse')
+    expect(result.docType).toBe('manual')
+  })
+
+  it('generates a breadcrumb string for docs pages', () => {
+    const spaceConfig = { key: 'AUM', section: 'docs', template: 'docs', isDocsSpace: false, product: 'arc', docType: 'manual' }
+    const result = renderPage(mockPage(), spaceConfig)
+    expect(result.breadcrumb).toContain('Docs')
+    expect(result.breadcrumb).toContain('Arc')
+    expect(result.breadcrumb).toContain('User Manual')
+    expect(result.breadcrumb).toContain('Getting Started')
+  })
+
+  it('breadcrumb is empty string for non-docs pages', () => {
+    const spaceConfig = { key: 'CS', section: 'blog', template: 'blog-post', indexTemplate: 'blog-index', isDocsSpace: false, contentType: 'blogpost' }
+    const result = renderPage(mockPage({ ancestors: [{ id: '1' }] }), spaceConfig)
+    expect(result.breadcrumb).toBe('')
+  })
+
+  it('product and docType are null for non-docs pages', () => {
+    const spaceConfig = { key: 'CS', section: 'blog', template: 'blog-post', indexTemplate: 'blog-index', isDocsSpace: false, contentType: 'blogpost' }
+    const result = renderPage(mockPage({ ancestors: [{ id: '1' }] }), spaceConfig)
+    expect(result.product).toBeNull()
+    expect(result.docType).toBeNull()
+  })
+})
