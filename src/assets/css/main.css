@@ -515,9 +515,8 @@ main { min-height: 60vh; }
 }
 
 .platform-hub-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
+  height: 48px;
+  width: auto;
   flex-shrink: 0;
 }
 
@@ -591,9 +590,8 @@ main { min-height: 60vh; }
 }
 
 .platform-spoke-card img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
+  height: 40px;
+  width: auto;
 }
 
 
