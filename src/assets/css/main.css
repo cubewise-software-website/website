@@ -124,10 +124,8 @@ main { min-height: 60vh; }
 .mega-menu-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2.5rem 2rem;
+  gap: 2.5rem;
+  padding: 1.75rem 2rem;
 }
 
 .mega-heading {
