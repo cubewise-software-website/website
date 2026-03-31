@@ -100,18 +100,26 @@ main { min-height: 60vh; }
 }
 
 .nav-mega-menu {
-  display: none;
-  position: fixed;
-  top: 61px;
+  position: absolute;
+  top: calc(100% + 0.5rem);
   left: 0;
-  right: 0;
-  background: var(--light-gray);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  width: 700px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
   z-index: 99;
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
-.nav-item-dropdown.is-open .nav-mega-menu { display: block; }
+.nav-item-dropdown.is-open .nav-mega-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
 
 .mega-menu-inner {
   display: grid;
