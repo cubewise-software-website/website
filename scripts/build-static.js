@@ -11,4 +11,6 @@ async function buildStatic() {
   console.log('Static build complete.')
 }
 
-buildStatic().catch(err => { console.error(err); process.exit(1) })
+if (process.argv[1]?.endsWith('build-static.js')) {
+  buildStatic().catch(err => { console.error(err); process.exit(1) })
+}
