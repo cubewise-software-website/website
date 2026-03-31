@@ -434,7 +434,7 @@ main { min-height: 60vh; }
 }
 
 .platform-benefit-icon {
-  font-size: 1.5rem;
+  color: var(--sand-gold);
   margin-bottom: 0.75rem;
 }
 
