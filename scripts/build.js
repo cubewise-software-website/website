@@ -77,6 +77,16 @@ ${groups}
     .join('\n')
 }
 
+export function generateSearchIndex(pages) {
+  return pages.map(p => ({
+    title: p.title,
+    slug: p.slug,
+    excerpt: p.body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 150),
+    product: p.product,
+    docType: p.docType,
+  }))
+}
+
 async function build() {
   await mkdir(DIST_DIR, { recursive: true })
 
@@ -129,6 +139,12 @@ async function build() {
   try {
     await cp(PAGES_DIR, DIST_DIR, { recursive: true })
   } catch { /* no pages yet */ }
+
+  // Write docs search index
+  if (docPages.length) {
+    const searchIndex = generateSearchIndex(docPages)
+    await writeFile(join(DIST_DIR, 'assets', 'search-index.json'), JSON.stringify(searchIndex, null, 2))
+  }
 
   console.log('Build complete.')
 }

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { injectTemplate, generatePostList, generateDocsSidebar } from '../scripts/build.js'
+import { injectTemplate, generatePostList, generateDocsSidebar, generateSearchIndex } from '../scripts/build.js'
 
 describe('injectTemplate', () => {
   it('replaces {{key}} with context values', () => {
@@ -68,5 +68,37 @@ describe('generateDocsSidebar', () => {
     expect(html).toContain('Arc — Installation &amp; Config')
     expect(html).toContain('Arc — User Manual')
     expect(html).toContain('Pulse — Installation &amp; Config')
+  })
+})
+
+describe('generateSearchIndex', () => {
+  it('produces one entry per page with required fields', () => {
+    const pages = [
+      { title: 'Installing Arc', slug: 'installing-arc', body: '<p>Follow these steps to install Arc.</p>', product: 'arc', docType: 'installation' },
+    ]
+    const index = generateSearchIndex(pages)
+    expect(index).toHaveLength(1)
+    expect(index[0].title).toBe('Installing Arc')
+    expect(index[0].slug).toBe('installing-arc')
+    expect(index[0].product).toBe('arc')
+    expect(index[0].docType).toBe('installation')
+  })
+
+  it('strips HTML tags from excerpt', () => {
+    const pages = [
+      { title: 'Page', slug: 'page', body: '<h2>Section</h2><p>Plain text here.</p>', product: 'arc', docType: 'manual' },
+    ]
+    const index = generateSearchIndex(pages)
+    expect(index[0].excerpt).not.toContain('<')
+    expect(index[0].excerpt).toContain('Plain text here')
+  })
+
+  it('truncates excerpt to 150 characters', () => {
+    const longText = 'a'.repeat(300)
+    const pages = [
+      { title: 'Page', slug: 'page', body: `<p>${longText}</p>`, product: 'arc', docType: 'manual' },
+    ]
+    const index = generateSearchIndex(pages)
+    expect(index[0].excerpt.length).toBeLessThanOrEqual(150)
   })
 })
