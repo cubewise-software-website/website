@@ -457,18 +457,12 @@ main { min-height: 60vh; }
 }
 
 .platform-hub-card img {
-  width: 56px;
-  height: 56px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   flex-shrink: 0;
 }
 
-.platform-hub-card-body h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-  color: var(--text);
-}
 
 .platform-hub-card-body p {
   font-size: 0.9rem;
@@ -539,17 +533,11 @@ main { min-height: 60vh; }
 }
 
 .platform-spoke-card img {
-  width: 36px;
-  height: 36px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
 }
 
-.platform-spoke-card h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text);
-  margin: 0;
-}
 
 .platform-spoke-card p {
   font-size: 0.875rem;
