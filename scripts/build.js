@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import { readFile, writeFile, mkdir, cp } from 'fs/promises'
 import { join, dirname } from 'path'
 import { fetchSpace } from './fetch.js'
@@ -28,29 +29,51 @@ export function generatePostList(posts) {
     .join('\n')
 }
 
-export function generateDocsSidebar(pages) {
-  const groups = {}
-  for (const page of pages) {
-    const label = page.labels.find(l => l.startsWith('docs-')) ?? 'docs'
-    if (!groups[label]) groups[label] = []
-    groups[label].push(page)
-  }
+const PRODUCT_ORDER = ['arc', 'arc-plus', 'powerconnect', 'pulse', 'slice']
+const PRODUCT_DISPLAY = {
+  'arc': 'Arc',
+  'arc-plus': 'Arc+',
+  'powerconnect': 'PowerConnect',
+  'pulse': 'Pulse',
+  'slice': 'Slice',
+}
+const DOC_TYPE_DISPLAY = {
+  'installation': 'Installation &amp; Config',
+  'manual': 'User Manual',
+}
 
-  return Object.entries(groups)
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([label, groupPages]) => {
-      const groupName = label.replace(/^docs-/, '').replace(/-/g, ' ')
-      const links = [...groupPages]
-        .sort((a, b) => a.title.localeCompare(b.title))
-        .map(p => `    <li><a href="/docs/${p.slug}/">${p.title}</a></li>`)
-        .join('\n')
-      return `<div class="sidebar-group">
-  <h4>${groupName}</h4>
-  <ul>
+export function generateDocsSidebar(pages) {
+  return PRODUCT_ORDER
+    .map(product => {
+      const productPages = pages.filter(p => p.product === product)
+      if (!productPages.length) return ''
+
+      const groups = ['installation', 'manual']
+        .map(docType => {
+          const typePages = productPages
+            .filter(p => p.docType === docType)
+            .sort((a, b) => a.title.localeCompare(b.title))
+          if (!typePages.length) return ''
+
+          const links = typePages
+            .map(p => `      <li><a href="/docs/${p.slug}/" data-product="${product}" data-doc-type="${docType}">${p.title}</a></li>`)
+            .join('\n')
+
+          return `  <div class="sidebar-group" data-doc-type="${docType}">
+    <h4>${PRODUCT_DISPLAY[product]} — ${DOC_TYPE_DISPLAY[docType]}</h4>
+    <ul>
 ${links}
-  </ul>
+    </ul>
+  </div>`
+        })
+        .filter(Boolean)
+        .join('\n')
+
+      return `<div class="sidebar-product" data-product="${product}">
+${groups}
 </div>`
     })
+    .filter(Boolean)
     .join('\n')
 }
 
@@ -59,9 +82,13 @@ async function build() {
 
   const allRendered = []
   for (const spaceConfig of spaces) {
-    const pages = await fetchSpace(spaceConfig)
-    for (const page of pages) {
-      allRendered.push(renderPage(page, spaceConfig))
+    try {
+      const pages = await fetchSpace(spaceConfig)
+      for (const page of pages) {
+        allRendered.push(renderPage(page, spaceConfig))
+      }
+    } catch (err) {
+      console.warn(`Skipping space ${spaceConfig.key}: ${err.message}`)
     }
   }
 

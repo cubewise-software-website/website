@@ -32,22 +32,41 @@ describe('generatePostList', () => {
 })
 
 describe('generateDocsSidebar', () => {
-  it('groups pages by their docs- label', () => {
-    const pages = [
-      { title: 'Intro', slug: 'intro', labels: ['docs-arc'] },
-      { title: 'Setup', slug: 'setup', labels: ['docs-arc'] },
-      { title: 'Overview', slug: 'overview', labels: ['docs-pulse'] },
-    ]
+  const pages = [
+    { title: 'Installing Arc', slug: 'installing-arc', product: 'arc', docType: 'installation' },
+    { title: 'Arc Overview', slug: 'arc-overview', product: 'arc', docType: 'manual' },
+    { title: 'Install Pulse', slug: 'install-pulse', product: 'pulse', docType: 'installation' },
+  ]
+
+  it('wraps each product in a sidebar-product div with data-product', () => {
     const html = generateDocsSidebar(pages)
-    expect(html).toContain('arc')
-    expect(html).toContain('pulse')
-    expect(html).toContain('/docs/intro/')
-    expect(html).toContain('/docs/overview/')
+    expect(html).toContain('<div class="sidebar-product" data-product="arc">')
+    expect(html).toContain('<div class="sidebar-product" data-product="pulse">')
   })
 
-  it('falls back to "docs" group when no docs- label present', () => {
-    const pages = [{ title: 'Page', slug: 'page', labels: [] }]
+  it('wraps each docType in a sidebar-group div with data-doc-type', () => {
     const html = generateDocsSidebar(pages)
-    expect(html).toContain('/docs/page/')
+    expect(html).toContain('<div class="sidebar-group" data-doc-type="installation">')
+    expect(html).toContain('<div class="sidebar-group" data-doc-type="manual">')
+  })
+
+  it('adds data-product and data-doc-type attributes to each link', () => {
+    const html = generateDocsSidebar(pages)
+    expect(html).toContain('href="/docs/installing-arc/"')
+    expect(html).toContain('data-product="arc"')
+    expect(html).toContain('data-doc-type="installation"')
+  })
+
+  it('omits products with no pages', () => {
+    const html = generateDocsSidebar(pages)
+    expect(html).not.toContain('data-product="slice"')
+    expect(html).not.toContain('data-product="powerconnect"')
+  })
+
+  it('renders product display names in group headings', () => {
+    const html = generateDocsSidebar(pages)
+    expect(html).toContain('Arc — Installation &amp; Config')
+    expect(html).toContain('Arc — User Manual')
+    expect(html).toContain('Pulse — Installation &amp; Config')
   })
 })
