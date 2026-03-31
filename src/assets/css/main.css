@@ -444,15 +444,16 @@ main { min-height: 60vh; }
   border: 2px solid var(--orange-gold);
   border-radius: var(--radius);
   padding: 1.5rem 2rem;
-  background: #fffaf4;
+  background: var(--pearl-white);
   text-decoration: none;
   color: inherit;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .platform-hub-card:hover {
-  border-color: #c07010;
-  box-shadow: 0 4px 16px rgba(247,142,32,0.15);
+  border-color: var(--orange-gold);
+  filter: brightness(0.85);
+  box-shadow: 0 4px 16px rgba(247, 142, 32, 0.15);
 }
 
 .platform-hub-card img {
@@ -557,7 +558,7 @@ main { min-height: 60vh; }
   flex: 1;
 }
 
-.platform-spoke-card .spoke-link {
+.platform-spoke-card .platform-spoke-link {
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--charcoal);
@@ -566,7 +567,7 @@ main { min-height: 60vh; }
   margin-top: auto;
 }
 
-.platform-spoke-card .spoke-link:hover {
+.platform-spoke-card .platform-spoke-link:hover {
   opacity: 1;
   text-decoration: underline;
 }
