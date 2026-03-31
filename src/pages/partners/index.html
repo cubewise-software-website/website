@@ -5,6 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Partners — Cubewise</title>
   <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    .partner-benefits {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem;
+    }
+    .partner-benefits h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .benefit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .benefit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      background: var(--white, #fff);
+      border-radius: 6px;
+      border: 1px solid var(--border, #e8e8e4);
+    }
+    .benefit-icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .benefit-text strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+    .benefit-text span {
+      font-size: 0.85rem;
+      color: var(--charcoal, #555);
+      line-height: 1.5;
+    }
+    .partner-cta {
+      background: #f0ede6;
+      border-top: 1px solid #e0ddd6;
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+    .partner-cta h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .partner-cta p {
+      color: var(--charcoal, #555);
+      font-size: 0.95rem;
+      margin-bottom: 1.75rem;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
 
@@ -60,6 +122,11 @@
                 <span><!-- tagline --></span>
               </a>
             </div>
+            <div class="mega-col">
+              <h4 class="mega-heading">Deployment Options</h4>
+              <a href="/deployment/self-hosted/" class="mega-link"><strong>Self-Hosted</strong><span>Run on your own infrastructure</span></a>
+              <a href="/deployment/cubewise-cloud/" class="mega-link"><strong>Cubewise Cloud</strong><span>Managed hosting by Cubewise</span></a>
+            </div>
           </div>
         </div>
       </li>
@@ -68,12 +135,80 @@
       <li><a href="/blog/">Blog</a></li>
       <li><a href="/partners/">Partners</a></li>
       <li><a href="/about/">About</a></li>
-      <li><a href="/contact/" class="nav-cta">Contact</a></li>
+      <li><a href="https://forum.cubewise.com/" target="_blank" rel="noopener">Forum</a></li>
+      <li class="nav-cta-item"><a href="/contact/" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<main><section class="page-content"><h1>Partners</h1><p><!-- partners content --></p></section></main>
+<main>
+  <section class="component-hero component-hero--dark">
+    <div class="component-label">Partners</div>
+    <h1>Grow your business with Cubewise</h1>
+    <p>Join our partner program and offer your clients best-in-class IBM Planning Analytics / TM1 software.</p>
+  </section>
+
+  <section class="partner-benefits">
+    <h2>What's included</h2>
+    <ul class="benefit-list">
+      <li>
+        <div class="benefit-icon">💰</div>
+        <div class="benefit-text">
+          <strong>Reseller Margin</strong>
+          <span>Competitive discounts on Cubewise licenses to resell to your clients.</span>
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">🎓</div>
+        <div class="benefit-text">
+          <strong>Technical Training</strong>
+          <span>Access to product training and certification resources for your team.</span>
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">🖥</div>
+        <div class="benefit-text">
+          <strong>Demo Licenses</strong>
+          <span>Not-for-resale licenses so you can demo and evaluate products internally.</span>
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">🤝</div>
+        <div class="benefit-text">
+          <strong>Deal Registration</strong>
+          <span>Register your opportunities for pricing protection and support.</span>
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">📣</div>
+        <div class="benefit-text">
+          <strong>Co-Marketing</strong>
+          <span>Joint marketing support and visibility across Cubewise channels.</span>
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">🛟</div>
+        <div class="benefit-text">
+          <strong>Dedicated Support</strong>
+          <span>A priority technical support channel for partner enquiries.</span>
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">📋</div>
+        <div class="benefit-text">
+          <strong>Sales Enablement</strong>
+          <span>Access to sales decks, datasheets, and ready-to-use collateral.</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="partner-cta">
+    <h2>Ready to partner with us?</h2>
+    <p>Contact us to register for the Cubewise Partner Program and a member of our team will be in touch.</p>
+    <a href="/contact/" class="btn btn-primary">Contact us to register &rarr;</a>
+  </section>
+</main>
 
 <footer class="site-footer">
   <div class="footer-inner">
