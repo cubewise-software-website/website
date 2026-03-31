@@ -1,9 +1,26 @@
 <div class="docs-layout">
   <aside class="docs-sidebar">
+    <div class="docs-filter-pills">
+      <div class="filter-row" id="filter-product">
+        <button class="filter-pill active" data-filter-product="all">All</button>
+        <button class="filter-pill" data-filter-product="arc">Arc</button>
+        <button class="filter-pill" data-filter-product="arc-plus">Arc+</button>
+        <button class="filter-pill" data-filter-product="powerconnect">PowerConnect</button>
+        <button class="filter-pill" data-filter-product="pulse">Pulse</button>
+        <button class="filter-pill" data-filter-product="slice">Slice</button>
+      </div>
+      <div class="filter-row" id="filter-type">
+        <button class="filter-pill active" data-filter-type="all">All</button>
+        <button class="filter-pill" data-filter-type="installation">Installation &amp; Config</button>
+        <button class="filter-pill" data-filter-type="manual">User Manual</button>
+      </div>
+    </div>
     {{sidebar}}
   </aside>
   <article class="docs-content">
+    <nav class="docs-breadcrumb">{{breadcrumb}}</nav>
     <h1>{{title}}</h1>
+    <nav class="docs-toc" id="docs-toc"></nav>
     {{body}}
   </article>
 </div>
