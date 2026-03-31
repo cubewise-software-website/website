@@ -398,6 +398,19 @@ main { min-height: 60vh; }
    Platform benefits
    ============================================================ */
 
+.platform-hero {
+  background: var(--dark-night);
+  color: var(--pearl-white);
+}
+
+.platform-hero h1 {
+  color: var(--pearl-white);
+}
+
+.platform-hero > p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
 .platform-benefits {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
