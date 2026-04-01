@@ -1,0 +1,272 @@
+# Partners Page Implementation Plan
+
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** Replace the stub partners page with a complete partner program information page.
+
+**Architecture:** Single static HTML file following the hand-coded page pattern used throughout the site. No new CSS classes, no JavaScript, no backend. The page reuses existing CSS classes (`component-hero`, `component-hero--dark`, `btn`, `btn-primary`) from `src/assets/css/main.css` and adds minimal page-specific styles in a `<style>` block.
+
+**Tech Stack:** Static HTML, existing `main.css`
+
+---
+
+### Task 1: Build the partners page
+
+**Files:**
+- Modify: `src/pages/partners/index.html`
+
+- [ ] **Step 1: Replace the file contents**
+
+Replace the entire contents of `src/pages/partners/index.html` with:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partners — Cubewise</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    .partner-benefits {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem;
+    }
+    .partner-benefits h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .benefit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .benefit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      background: var(--white, #fff);
+      border-radius: 6px;
+      border: 1px solid var(--border, #e8e8e4);
+    }
+    .benefit-icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .benefit-text strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+    .benefit-text span {
+      font-size: 0.85rem;
+      color: var(--charcoal, #555);
+      line-height: 1.5;
+    }
+    .partner-cta {
+      background: #f0ede6;
+      border-top: 1px solid #e0ddd6;
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+    .partner-cta h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .partner-cta p {
+      color: var(--charcoal, #555);
+      font-size: 0.95rem;
+      margin-bottom: 1.75rem;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/Cubewise_Code_RGB.svg" alt="Cubewise" height="32">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item-dropdown">
+        <a href="/platform/">Platform</a>
+        <div class="nav-mega-menu">
+          <div class="mega-menu-inner">
+            <div class="mega-col">
+              <h4 class="mega-heading">Cubewise For&hellip;</h4>
+              <a href="/platform/developers/" class="mega-link">
+                <strong>Developers</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/platform/administrators/" class="mega-link">
+                <strong>Administrators</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/platform/power-users/" class="mega-link">
+                <strong>Power Users</strong>
+                <span><!-- tagline --></span>
+              </a>
+            </div>
+            <div class="mega-col">
+              <h4 class="mega-heading">Platform Components</h4>
+              <a href="/arc/" class="mega-link">
+                <strong>Arc</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/arc-plus/" class="mega-link">
+                <strong>Arc+</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/pulse/" class="mega-link">
+                <strong>Pulse</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/slice/" class="mega-link">
+                <strong>Slice</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/atmosphere/" class="mega-link">
+                <strong>Atmosphere</strong>
+                <span><!-- tagline --></span>
+              </a>
+              <a href="/powerconnect/" class="mega-link">
+                <strong>PowerConnect</strong>
+                <span><!-- tagline --></span>
+              </a>
+            </div>
+            <div class="mega-col">
+              <h4 class="mega-heading">Deployment Options</h4>
+              <a href="/deployment/self-hosted/" class="mega-link"><strong>Self-Hosted</strong><span>Run on your own infrastructure</span></a>
+              <a href="/deployment/cubewise-cloud/" class="mega-link"><strong>Cubewise Cloud</strong><span>Managed hosting by Cubewise</span></a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a></li>
+      <li><a href="/docs/">Docs</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/partners/">Partners</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="https://forum.cubewise.com/" target="_blank" rel="noopener">Forum</a></li>
+      <li class="nav-cta-item"><a href="/contact/" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="component-hero component-hero--dark">
+    <div class="component-label">Partners</div>
+    <h1>Grow your business with Cubewise</h1>
+    <p>Join our partner program and offer your clients best-in-class IBM Planning Analytics / TM1 software.</p>
+  </section>
+
+  <section class="partner-benefits">
+    <h2>What's included</h2>
+    <ul class="benefit-list">
+      <li>
+        <div class="benefit-icon">💰</div>
+        <div class="benefit-text">
+          <strong>Reseller Margin</strong>
+          <span>Competitive discounts on Cubewise licenses to resell to your clients.</span>
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">🎓</div>
+        <div class="benefit-text">
+          <strong>Technical Training</strong>
+          <span>Access to product training and certification resources for your team.</span>
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">🖥</div>
+        <div class="benefit-text">
+          <strong>Demo Licenses</strong>
+          <span>Not-for-resale licenses so you can demo and evaluate products internally.</span>
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">🤝</div>
+        <div class="benefit-text">
+          <strong>Deal Registration</strong>
+          <span>Register your opportunities for pricing protection and support.</span>
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">📣</div>
+        <div class="benefit-text">
+          <strong>Co-Marketing</strong>
+          <span>Joint marketing support and visibility across Cubewise channels.</span>
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">🛟</div>
+        <div class="benefit-text">
+          <strong>Dedicated Support</strong>
+          <span>A priority technical support channel for partner enquiries.</span>
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">📋</div>
+        <div class="benefit-text">
+          <strong>Sales Enablement</strong>
+          <span>Access to sales decks, datasheets, and ready-to-use collateral.</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="partner-cta">
+    <h2>Ready to partner with us?</h2>
+    <p>Contact us to register for the Cubewise Partner Program and a member of our team will be in touch.</p>
+    <a href="/contact/" class="btn btn-primary">Contact us to register &rarr;</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="/assets/logos/Cubewise_Code_RGB.svg" alt="Cubewise" height="24">
+      <p>IBM Planning Analytics / TM1 specialists.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="/platform/">Platform</a>
+      <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a>
+      <a href="/docs/">Docs</a>
+      <a href="/blog/">Blog</a>
+      <a href="/partners/">Partners</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <p class="footer-copy">&copy; Cubewise</p>
+  </div>
+</footer>
+
+  <script src="/assets/js/nav.js"></script>
+</body>
+</html>
+```
+
+- [ ] **Step 2: Verify the file visually**
+
+Open `src/pages/partners/index.html` in a browser (or run the local preview if available). Confirm:
+- Dark hero with "Partners" label, correct headline and subtext
+- 7 benefit items each with icon, bold name, and description
+- CTA section with button linking to `/contact/`
+- Nav and footer match other pages
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add src/pages/partners/index.html
+git commit -m "feat: build partners page with program benefits and CTA"
+```

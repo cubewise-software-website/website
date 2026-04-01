@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-Hosted Deployment — Cubewise</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/Cubewise_Code_RGB.svg" alt="Cubewise" height="32">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item-dropdown">
+        <a href="/platform/">Platform</a>
+        <div class="nav-mega-menu">
+          <div class="mega-menu-inner">
+            <div class="mega-col">
+              <h4 class="mega-heading">Cubewise For&hellip;</h4>
+              <a href="/platform/developers/" class="mega-link"><strong>Developers</strong><span>Build faster with Arc &amp; Arc+</span></a>
+              <a href="/platform/administrators/" class="mega-link"><strong>Administrators</strong><span>Monitor &amp; manage with Pulse</span></a>
+              <a href="/platform/power-users/" class="mega-link"><strong>Power Users</strong><span>Excel, Power BI &amp; data integration</span></a>
+            </div>
+            <div class="mega-col">
+              <h4 class="mega-heading">Platform Components</h4>
+              <a href="/arc/" class="mega-link"><strong>Arc</strong><span>The professional TM1 IDE</span></a>
+              <a href="/arc-plus/" class="mega-link"><strong>Arc+</strong><span>DevOps for IBM Planning Analytics</span></a>
+              <a href="/pulse/" class="mega-link"><strong>Pulse</strong><span>Monitor, understand &amp; manage</span></a>
+              <a href="/slice/" class="mega-link"><strong>Slice</strong><span>The modern Excel add-in</span></a>
+              <a href="/atmosphere/" class="mega-link"><strong>Atmosphere</strong><span>Self-service data integration</span></a>
+              <a href="/powerconnect/" class="mega-link"><strong>PowerConnect</strong><span>IBM PA data in Power BI</span></a>
+            </div>
+            <div class="mega-col">
+              <h4 class="mega-heading">Deployment Options</h4>
+              <a href="/deployment/self-hosted/" class="mega-link"><strong>Self-Hosted</strong><span>Run on your own infrastructure</span></a>
+              <a href="/deployment/cubewise-cloud/" class="mega-link"><strong>Cubewise Cloud</strong><span>Managed hosting by Cubewise</span></a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a></li>
+      <li><a href="/docs/">Docs</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/partners/">Partners</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="https://forum.cubewise.com/" target="_blank" rel="noopener">Forum</a></li>
+      <li class="nav-cta-item"><a href="/contact/" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="sh-hero reveal">
+    <div class="component-label">Deploy on your own infrastructure</div>
+    <h1>Self-Hosted</h1>
+    <p>Install the full Cubewise Platform on your own infrastructure — on-premises or private cloud. Your servers, your rules.</p>
+    <div class="hero-actions">
+      <a href="/docs/" class="btn btn-primary btn-lg">Browse the Docs</a>
+      <a href="/contact/" class="btn btn-secondary btn-lg">Talk to us</a>
+    </div>
+  </section>
+
+  <!-- Why self-host -->
+  <section class="why-section">
+    <div class="why-section-inner">
+      <h2 class="why-section-heading reveal">Why self-host?</h2>
+      <div class="why-cards">
+        <div class="why-card reveal">
+          <svg class="why-card-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <h3>Full control</h3>
+          <p>You decide when to upgrade, how to configure, and who has access — no shared infrastructure, no external dependencies.</p>
+        </div>
+        <div class="why-card reveal">
+          <svg class="why-card-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <h3>Data stays on-premises</h3>
+          <p>All metadata and configuration lives within your own network. No cube data ever leaves your environment.</p>
+        </div>
+        <div class="why-card reveal">
+          <svg class="why-card-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
+          <h3>Fits your environment</h3>
+          <p>Integrates with your existing Active Directory, SSO, and internal security policies straight out of the box.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product download grid -->
+  <section class="sh-products">
+    <div class="sh-products-inner">
+      <h2 class="why-section-heading reveal">Download and get started</h2>
+      <div class="sh-product-grid">
+
+        <div class="sh-product-card reveal">
+          <div class="sh-product-logo">
+            <img src="/assets/logos/Products/Arc/Logo-arc.svg" alt="Arc">
+          </div>
+          <p>The professional TM1 IDE — installs on Windows, connects to any TM1 server.</p>
+          <a href="/arc/download/" class="btn btn-primary">Download Arc</a>
+          <a href="/arc/" class="sh-product-learn">Learn more →</a>
+        </div>
+
+        <div class="sh-product-card reveal">
+          <div class="sh-product-logo">
+            <img src="/assets/logos/Products/Arc+/Arc+-01.svg" alt="Arc+">
+          </div>
+          <p>DevOps for IBM Planning Analytics — server-side component, fully self-deployable.</p>
+          <a href="/contact/" class="btn btn-primary">Get in touch</a>
+          <a href="/arc-plus/" class="sh-product-learn">Learn more →</a>
+        </div>
+
+        <div class="sh-product-card reveal">
+          <div class="sh-product-logo">
+            <img src="/assets/logos/Products/Pulse/Pulse.svg" alt="Pulse">
+          </div>
+          <p>Monitor, understand &amp; manage — Windows Server install with browser-based access.</p>
+          <a href="/pulse/download/" class="btn btn-primary">Download Pulse</a>
+          <a href="/pulse/" class="sh-product-learn">Learn more →</a>
+        </div>
+
+        <div class="sh-product-card reveal">
+          <div class="sh-product-logo">
+            <img src="/assets/logos/Products/Slice/Slice.svg" alt="Slice">
+          </div>
+          <p>The modern Excel add-in — installs per user on Windows, free community edition available.</p>
+          <a href="/slice/download/" class="btn btn-primary">Download Slice</a>
+          <a href="/slice/" class="sh-product-learn">Learn more →</a>
+        </div>
+
+        <div class="sh-product-card reveal">
+          <div class="sh-product-logo">
+            <img src="/assets/logos/Products/Atmosphere/Atmosphere.svg" alt="Atmosphere">
+          </div>
+          <p>Self-service data integration — self-hosted pipeline engine for IBM Planning Analytics.</p>
+          <a href="/contact/" class="btn btn-primary">Get in touch</a>
+          <a href="/atmosphere/" class="sh-product-learn">Learn more →</a>
+        </div>
+
+        <div class="sh-product-card reveal">
+          <div class="sh-product-logo">
+            <img src="/assets/logos/Products/PowerConnect/logo-powerconnect.svg" alt="PowerConnect">
+          </div>
+          <p>IBM PA data in Power BI — gateway service installed alongside your TM1 server.</p>
+          <a href="/contact/" class="btn btn-primary">Get in touch</a>
+          <a href="/powerconnect/" class="sh-product-learn">Learn more →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="component-hero component-hero--dark reveal">
+    <h2>Need help with your deployment?</h2>
+    <p>The Cubewise team can help with installation, configuration, and best practices.</p>
+    <a href="/contact/" class="btn btn-primary">Contact us</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="/assets/logos/Cubewise_Code_RGB.svg" alt="Cubewise" height="24">
+      <p>IBM Planning Analytics / TM1 specialists.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="/platform/">Platform</a>
+      <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a>
+      <a href="/docs/">Docs</a>
+      <a href="/blog/">Blog</a>
+      <a href="/partners/">Partners</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <p class="footer-copy">&copy; Cubewise</p>
+  </div>
+</footer>
+
+  <script src="/assets/js/nav.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

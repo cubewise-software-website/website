@@ -1,5 +1,5 @@
 // Builds the site without fetching from Confluence — for local preview only.
-import { mkdir, cp, rm } from 'fs/promises'
+import { mkdir, cp, rm, writeFile } from 'fs/promises'
 import { join } from 'path'
 import { DIST_DIR, ASSETS_DIR, PAGES_DIR } from '../config.js'
 
@@ -9,5 +9,9 @@ await mkdir(DIST_DIR, { recursive: true })
 
 try { await cp(ASSETS_DIR, join(DIST_DIR, 'assets'), { recursive: true }) } catch {}
 try { await cp(PAGES_DIR, DIST_DIR, { recursive: true }) } catch {}
+
+// Write an empty search index so the docs search fetch doesn't 404
+await mkdir(join(DIST_DIR, 'assets'), { recursive: true })
+await writeFile(join(DIST_DIR, 'assets', 'search-index.json'), '[]')
 
 console.log('Preview build complete → dist/')

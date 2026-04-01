@@ -7,7 +7,7 @@ function authHeader() {
   return `Basic ${token}`
 }
 
-async function fetchPages(spaceKey) {
+async function fetchPages(spaceKey, contentType = 'page') {
   const pages = []
   let start = 0
   const limit = 50
@@ -16,7 +16,7 @@ async function fetchPages(spaceKey) {
     const url = `${confluenceBaseUrl}/wiki/rest/api/content` +
       `?spaceKey=${spaceKey}` +
       `&expand=body.storage,ancestors,metadata.labels,version` +
-      `&type=page&limit=${limit}&start=${start}`
+      `&type=${contentType}&limit=${limit}&start=${start}`
 
     const res = await fetch(url, {
       headers: { Authorization: authHeader(), Accept: 'application/json' },
@@ -43,15 +43,15 @@ async function fetchAttachments(pageId) {
 }
 
 async function downloadAttachment(attachment) {
-  const url = `${confluenceBaseUrl}${attachment._links.download}`
+  const url = `${confluenceBaseUrl}/wiki${attachment._links.download}`
   const res = await fetch(url, { headers: { Authorization: authHeader() } })
   if (!res.ok) return null
   return Buffer.from(await res.arrayBuffer())
 }
 
 export async function fetchSpace(spaceConfig) {
-  const { key: spaceKey, isDocsSpace } = spaceConfig
-  const pages = await fetchPages(spaceKey)
+  const { key: spaceKey, isDocsSpace, contentType = 'page' } = spaceConfig
+  const pages = await fetchPages(spaceKey, contentType)
 
   await mkdir(join(CACHE_DIR, spaceKey), { recursive: true })
   await mkdir(join(CACHE_DIR, 'attachments'), { recursive: true })

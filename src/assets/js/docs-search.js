@@ -1,6 +1,8 @@
 (function () {
   const input = document.querySelector('.docs-search-input')
   const resultsEl = document.querySelector('.docs-search-results')
+  const recentList = document.querySelector('.docs-recent-list')
+  const recentEmpty = document.querySelector('.docs-recent-empty')
   if (!input || !resultsEl) return
 
   const PRODUCT_DISPLAY = {
@@ -23,6 +25,37 @@
       .catch(() => { index = [] })
   }
 
+  function badgesHtml(entry) {
+    return `<span class="docs-search-result-meta">
+      <span class="docs-search-badge">${PRODUCT_DISPLAY[entry.product] ?? entry.product}</span>
+      <span class="docs-search-badge">${DOC_TYPE_DISPLAY[entry.docType] ?? entry.docType}</span>
+    </span>`
+  }
+
+  function renderRecentList(entries) {
+    if (!recentList) return
+    recentList.innerHTML = entries.map(e => `
+      <li class="docs-recent-item" data-title="${e.title.toLowerCase()}" data-excerpt="${e.excerpt.toLowerCase()}">
+        <a href="/docs/${e.slug}/">
+          <span class="docs-recent-title">${e.title}</span>
+          ${badgesHtml(e)}
+        </a>
+      </li>`).join('')
+  }
+
+  function filterRecentList(query) {
+    if (!recentList) return
+    const q = query.trim().toLowerCase()
+    const items = recentList.querySelectorAll('.docs-recent-item')
+    let visibleCount = 0
+    items.forEach(item => {
+      const match = !q || item.dataset.title.includes(q) || item.dataset.excerpt.includes(q)
+      item.hidden = !match
+      if (match) visibleCount++
+    })
+    if (recentEmpty) recentEmpty.hidden = visibleCount > 0
+  }
+
   function score(entry, query) {
     const q = query.toLowerCase()
     const titleMatch = entry.title.toLowerCase().includes(q)
@@ -41,15 +74,13 @@
     resultsEl.innerHTML = results.map((r, i) => `
       <a class="docs-search-result" href="/docs/${r.slug}/" data-idx="${i}">
         <span class="docs-search-result-title">${r.title}</span>
-        <span class="docs-search-result-meta">
-          <span class="docs-search-badge">${PRODUCT_DISPLAY[r.product] ?? r.product}</span>
-          <span class="docs-search-badge">${DOC_TYPE_DISPLAY[r.docType] ?? r.docType}</span>
-        </span>
+        ${badgesHtml(r)}
       </a>`).join('')
     resultsEl.classList.add('is-open')
   }
 
   function search(query) {
+    filterRecentList(query)
     if (!query.trim() || !index) { resultsEl.classList.remove('is-open'); return }
     const scored = index
       .map(e => ({ entry: e, score: score(e, query) }))
@@ -60,8 +91,16 @@
     renderResults(scored)
   }
 
+  // Load index and populate recent list immediately (script runs after DOM is ready)
+  loadIndex().then(() => {
+    if (index && index.length) renderRecentList(index)
+  })
+
   input.addEventListener('focus', () => {
-    loadIndex().then(() => { if (input.value.trim()) search(input.value) })
+    loadIndex().then(() => {
+      if (!recentList.children.length && index && index.length) renderRecentList(index)
+      if (input.value.trim()) search(input.value)
+    })
   })
 
   input.addEventListener('input', () => {
