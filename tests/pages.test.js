@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { readFileSync } from 'fs'
 
 const css = readFileSync('src/assets/css/main.css', 'utf8')
+const baseHtml = readFileSync('src/templates/base.html', 'utf8')
 
 describe('dark hero modifier CSS', () => {
   it('defines .component-hero--dark with dark-night background', () => {
@@ -121,5 +122,48 @@ describe('announcement bar CSS', () => {
 
   it('hides announcement bar on mobile', () => {
     expect(css).toContain('.announcement-bar { display: none; }')
+  })
+})
+
+describe('announcement bar HTML (base template)', () => {
+  it('contains .announcement-bar element', () => {
+    expect(baseHtml).toContain('class="announcement-bar"')
+  })
+
+  it('contains .announcement-bar__badge', () => {
+    expect(baseHtml).toContain('class="announcement-bar__badge"')
+  })
+
+  it('contains .announcement-bar__links nav', () => {
+    expect(baseHtml).toContain('class="announcement-bar__links"')
+  })
+
+  it('announcement bar links include About, Partners, Support, Forum', () => {
+    const barIdx = baseHtml.indexOf('announcement-bar__links')
+    const barSection = baseHtml.slice(barIdx, barIdx + 600)
+    expect(barSection).toContain('/about/')
+    expect(barSection).toContain('/partners/')
+    expect(barSection).toContain('cubewisecare.atlassian.net')
+    expect(barSection).toContain('forum.cubewise.com')
+  })
+
+  it('Forum link opens in new tab', () => {
+    const barIdx = baseHtml.indexOf('announcement-bar__links')
+    const barSection = baseHtml.slice(barIdx, barIdx + 600)
+    expect(barSection).toContain('target="_blank"')
+    expect(barSection).toContain('rel="noopener"')
+  })
+
+  it('nav-links no longer contains standalone About link', () => {
+    const navLinksIdx = baseHtml.indexOf('class="nav-links"')
+    const navLinksSection = baseHtml.slice(navLinksIdx, navLinksIdx + 1000)
+    // About should not be a bare nav-links item (it moved to announcement bar)
+    expect(navLinksSection).not.toContain('<li><a href="/about/">')
+  })
+
+  it('nav-links no longer contains standalone Partners link', () => {
+    const navLinksIdx = baseHtml.indexOf('class="nav-links"')
+    const navLinksSection = baseHtml.slice(navLinksIdx, navLinksIdx + 1000)
+    expect(navLinksSection).not.toContain('<li><a href="/partners/">')
   })
 })
