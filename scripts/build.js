@@ -78,13 +78,26 @@ ${groups}
 }
 
 export function generateSearchIndex(pages) {
-  return pages.map(p => ({
-    title: p.title,
-    slug: p.slug,
-    excerpt: p.body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 150),
-    product: p.product,
-    docType: p.docType,
-  }))
+  return pages.map(p => {
+    const imgMatch = p.body.match(/<img[^>]+src="([^"]+)"/)
+    return {
+      title: p.title,
+      slug: p.slug,
+      excerpt: p.body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 150),
+      product: p.product,
+      docType: p.docType,
+      image: imgMatch ? imgMatch[1] : null,
+    }
+  })
+}
+
+export function generateBlogIndex(blogPosts) {
+  return blogPosts.slice(0, 6).map(p => {
+    const imgMatch = p.body.match(/<img[^>]+src="([^"]+)"/)
+    const image = imgMatch ? imgMatch[1] : null
+    const excerpt = p.body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 150)
+    return { title: p.title, path: p.path, date: p.date, excerpt, image }
+  })
 }
 
 async function build() {
@@ -144,6 +157,12 @@ async function build() {
   if (docPages.length) {
     const searchIndex = generateSearchIndex(docPages)
     await writeFile(join(DIST_DIR, 'assets', 'search-index.json'), JSON.stringify(searchIndex, null, 2))
+  }
+
+  // Write blog index for recent articles widgets
+  if (blogPosts.length) {
+    const blogIndex = generateBlogIndex(blogPosts)
+    await writeFile(join(DIST_DIR, 'assets', 'blog-index.json'), JSON.stringify(blogIndex, null, 2))
   }
 
   console.log('Build complete.')

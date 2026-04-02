@@ -3251,7 +3251,7 @@ main { min-height: 60vh; }
 .docs-product-card a:hover { color: var(--orange-gold); }
 
 .docs-recent {
-  max-width: 860px;
+  max-width: 1100px;
   margin: 3rem auto 4rem;
   padding: 0 1.5rem;
 }
@@ -3259,37 +3259,70 @@ main { min-height: 60vh; }
 .docs-recent-heading {
   font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: var(--dark-night);
 }
 
-.docs-recent-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border-top: 1px solid var(--border);
+.docs-recent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
-.docs-recent-item {
-  border-bottom: 1px solid var(--border);
-}
-
-.docs-recent-item a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.75rem 0.25rem;
+.docs-recent-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
   text-decoration: none;
-  color: var(--dark-night);
-  transition: color 0.15s;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
 }
 
-.docs-recent-item a:hover { color: var(--orange-gold); }
+.docs-recent-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.docs-recent-card-image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--border);
+}
+
+.docs-recent-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.docs-recent-card-body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
 
 .docs-recent-title {
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark-night);
+  line-height: 1.4;
+}
+
+.docs-recent-card:hover .docs-recent-title {
+  color: var(--orange-gold);
+}
+
+.docs-recent-excerpt {
+  font-size: 0.82rem;
+  color: var(--charcoal);
+  line-height: 1.55;
+  margin: 0;
 }
 
 .docs-recent-empty {
@@ -3297,4 +3330,118 @@ main { min-height: 60vh; }
   font-size: 0.9rem;
   padding: 1rem 0.25rem;
   opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+  .docs-recent-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .docs-recent-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   Recent Articles
+   ============================================================ */
+.recent-articles {
+  padding: 4rem 2rem;
+  background: #f7f7f5;
+}
+
+.recent-articles-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.recent-articles-inner h2 {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--dark-night);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.article-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.article-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+}
+
+.article-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+}
+
+.article-card-image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--border);
+}
+
+.article-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.article-card-body {
+  padding: 1.25rem;
+  flex: 1;
+}
+
+.article-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark-night);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.article-card-excerpt {
+  font-size: 0.85rem;
+  color: var(--charcoal);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.recent-articles-link {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--orange-gold);
+  text-decoration: none;
+}
+
+.recent-articles-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .article-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .article-card-grid {
+    grid-template-columns: 1fr;
+  }
 }

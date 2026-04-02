@@ -1,7 +1,7 @@
 (function () {
   const input = document.querySelector('.docs-search-input')
   const resultsEl = document.querySelector('.docs-search-results')
-  const recentList = document.querySelector('.docs-recent-list')
+  const recentList = document.querySelector('.docs-recent-grid')
   const recentEmpty = document.querySelector('.docs-recent-empty')
   if (!input || !resultsEl) return
 
@@ -34,19 +34,20 @@
 
   function renderRecentList(entries) {
     if (!recentList) return
-    recentList.innerHTML = entries.map(e => `
-      <li class="docs-recent-item" data-title="${e.title.toLowerCase()}" data-excerpt="${e.excerpt.toLowerCase()}">
-        <a href="/docs/${e.slug}/">
+    recentList.innerHTML = entries.slice(0, 6).map(e => `
+      <a class="docs-recent-card" href="/docs/${e.slug}/" data-title="${e.title.toLowerCase()}" data-excerpt="${e.excerpt.toLowerCase()}">
+        ${e.image ? `<div class="docs-recent-card-image"><img src="${e.image}" alt="${e.title}"></div>` : ''}
+        <div class="docs-recent-card-body">
           <span class="docs-recent-title">${e.title}</span>
-          ${badgesHtml(e)}
-        </a>
-      </li>`).join('')
+          <p class="docs-recent-excerpt">${e.excerpt}</p>
+        </div>
+      </a>`).join('')
   }
 
   function filterRecentList(query) {
     if (!recentList) return
     const q = query.trim().toLowerCase()
-    const items = recentList.querySelectorAll('.docs-recent-item')
+    const items = recentList.querySelectorAll('.docs-recent-card')
     let visibleCount = 0
     items.forEach(item => {
       const match = !q || item.dataset.title.includes(q) || item.dataset.excerpt.includes(q)
@@ -86,7 +87,7 @@
       .map(e => ({ entry: e, score: score(e, query) }))
       .filter(s => s.score > 0)
       .sort((a, b) => b.score - a.score)
-      .slice(0, 5)
+      .slice(0, 10)
       .map(s => s.entry)
     renderResults(scored)
   }

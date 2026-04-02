@@ -3,4 +3,5 @@ dist/
 cache/
 .env
 .superpowers/
+docs/superpowers/
 current_site/

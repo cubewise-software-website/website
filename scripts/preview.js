@@ -10,8 +10,21 @@ await mkdir(DIST_DIR, { recursive: true })
 try { await cp(ASSETS_DIR, join(DIST_DIR, 'assets'), { recursive: true }) } catch {}
 try { await cp(PAGES_DIR, DIST_DIR, { recursive: true }) } catch {}
 
-// Write an empty search index so the docs search fetch doesn't 404
+// Write mock indexes for local preview (real build fetches these from Confluence)
 await mkdir(join(DIST_DIR, 'assets'), { recursive: true })
-await writeFile(join(DIST_DIR, 'assets', 'search-index.json'), '[]')
+const mockSearchIndex = [
+  { title: 'Arc Installation Guide', slug: 'arc-installation', excerpt: 'Step-by-step instructions for installing Arc on your system.', product: 'arc', docType: 'installation', image: null },
+  { title: 'Arc User Manual', slug: 'arc-manual', excerpt: 'Complete user manual for the Arc TM1 IDE.', product: 'arc', docType: 'manual', image: null },
+  { title: 'Arc+ Installation Guide', slug: 'arc-plus-installation', excerpt: 'How to install and configure Arc+ for DevOps workflows.', product: 'arc-plus', docType: 'installation', image: null },
+  { title: 'Arc+ User Manual', slug: 'arc-plus-manual', excerpt: 'User guide for Arc+ DevOps features and pipelines.', product: 'arc-plus', docType: 'manual', image: null },
+  { title: 'Pulse Installation Guide', slug: 'pulse-installation', excerpt: 'Installing Pulse to monitor and manage IBM Planning Analytics.', product: 'pulse', docType: 'installation', image: null },
+  { title: 'Pulse User Manual', slug: 'pulse-manual', excerpt: 'How to use Pulse dashboards, alerts, and audit logs.', product: 'pulse', docType: 'manual', image: null },
+  { title: 'Slice Installation Guide', slug: 'slice-installation', excerpt: 'Setting up the Slice Excel add-in for IBM Planning Analytics.', product: 'slice', docType: 'installation', image: null },
+  { title: 'Slice User Manual', slug: 'slice-manual', excerpt: 'Working with slices, writeback, and data entry in Excel.', product: 'slice', docType: 'manual', image: null },
+  { title: 'PowerConnect Installation Guide', slug: 'powerconnect-installation', excerpt: 'Connecting IBM Planning Analytics data to Power BI.', product: 'powerconnect', docType: 'installation', image: null },
+  { title: 'PowerConnect User Manual', slug: 'powerconnect-manual', excerpt: 'Building Power BI reports with live TM1 data using PowerConnect.', product: 'powerconnect', docType: 'manual', image: null },
+]
+await writeFile(join(DIST_DIR, 'assets', 'search-index.json'), JSON.stringify(mockSearchIndex, null, 2))
+await writeFile(join(DIST_DIR, 'assets', 'blog-index.json'), '[]')
 
 console.log('Preview build complete → dist/')
