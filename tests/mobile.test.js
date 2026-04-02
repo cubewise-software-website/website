@@ -103,3 +103,34 @@ test.describe('mobile — page structure', () => {
     })
   }
 })
+
+// ─── Announcement bar visibility ─────────────────────────────
+test.describe('announcement bar — desktop', () => {
+  test.use({ viewport: { width: 1280, height: 800 } })
+
+  test('announcement bar is visible on desktop', async ({ page }) => {
+    await page.goto('/')
+    await expect(page.locator('.announcement-bar')).toBeVisible()
+  })
+
+  test('announcement bar shows About link', async ({ page }) => {
+    await page.goto('/')
+    const links = page.locator('.announcement-bar__links a')
+    await expect(links.filter({ hasText: 'About' })).toBeVisible()
+  })
+
+  test('About is no longer in the main nav links', async ({ page }) => {
+    await page.goto('/')
+    const navLinks = page.locator('.nav-links')
+    await expect(navLinks.locator('a[href="/about/"]')).toHaveCount(0)
+  })
+})
+
+test.describe('announcement bar — mobile', () => {
+  test.use({ viewport: { width: 393, height: 851 } })
+
+  test('announcement bar is hidden on mobile', async ({ page }) => {
+    await page.goto('/')
+    await expect(page.locator('.announcement-bar')).toBeHidden()
+  })
+})
