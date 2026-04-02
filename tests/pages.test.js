@@ -166,4 +166,16 @@ describe('announcement bar HTML (base template)', () => {
     const navLinksSection = baseHtml.slice(navLinksIdx, navLinksIdx + 1000)
     expect(navLinksSection).not.toContain('<li><a href="/partners/">')
   })
+
+  it('nav-links no longer contains standalone Support link', () => {
+    const navLinksIdx = baseHtml.indexOf('class="nav-links"')
+    const navLinksSection = baseHtml.slice(navLinksIdx, navLinksIdx + 1000)
+    expect(navLinksSection).not.toContain('<li><a href="https://cubewisecare.atlassian.net')
+  })
+
+  it('nav-links no longer contains standalone Forum link', () => {
+    const navLinksIdx = baseHtml.indexOf('class="nav-links"')
+    const navLinksSection = baseHtml.slice(navLinksIdx, navLinksIdx + 1000)
+    expect(navLinksSection).not.toContain('<li><a href="https://forum.cubewise.com/')
+  })
 })
