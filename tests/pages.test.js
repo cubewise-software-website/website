@@ -89,3 +89,37 @@ describe('contact page HTML', () => {
     expect(contactHtml).toContain('cubewisecare.atlassian.net')
   })
 })
+
+describe('announcement bar CSS', () => {
+  it('defines .announcement-bar as sticky with z-index 210', () => {
+    expect(css).toContain('.announcement-bar')
+    expect(css).toContain('z-index: 210')
+    expect(css).toContain('position: sticky')
+  })
+
+  it('defines .announcement-bar__badge with orange-gold background', () => {
+    expect(css).toContain('.announcement-bar__badge')
+    expect(css).toContain('text-transform: uppercase')
+  })
+
+  it('defines .announcement-bar__links as flex row', () => {
+    expect(css).toContain('.announcement-bar__links')
+    expect(css).toContain('flex-shrink: 0')
+  })
+
+  it('site-header top offset is 36px on desktop', () => {
+    // After the banner is added, site-header sits below it
+    // The rule will contain "top: 36px" (not "top: 0")
+    // We check the CSS string contains the updated value in the site-header block
+    const siteHeaderBlock = css.slice(css.indexOf('.site-header'), css.indexOf('.site-header') + 200)
+    expect(siteHeaderBlock).toContain('top: 36px')
+  })
+
+  it('component-subnav top offset is 93px on desktop', () => {
+    expect(css).toContain('top: 93px')
+  })
+
+  it('hides announcement bar on mobile', () => {
+    expect(css).toContain('.announcement-bar { display: none; }')
+  })
+})
