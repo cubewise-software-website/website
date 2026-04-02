@@ -124,6 +124,18 @@ test.describe('announcement bar — desktop', () => {
     const navLinks = page.locator('.nav-links')
     await expect(navLinks.locator('a[href="/about/"]')).toHaveCount(0)
   })
+
+  test('Partners is no longer in the main nav links', async ({ page }) => {
+    await page.goto('/')
+    const navLinks = page.locator('.nav-links')
+    await expect(navLinks.locator('a[href="/partners/"]')).toHaveCount(0)
+  })
+
+  test('Support is no longer in the main nav links', async ({ page }) => {
+    await page.goto('/')
+    const navLinks = page.locator('.nav-links')
+    await expect(navLinks.locator('a[href*="cubewisecare.atlassian.net"]')).toHaveCount(0)
+  })
 })
 
 test.describe('announcement bar — mobile', () => {
