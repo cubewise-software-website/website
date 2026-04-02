@@ -1,6 +1,6 @@
 # Cubewise Website
 
-The official website for [Cubewise](https://cubewise.com) — IBM Planning Analytics / TM1 specialists.
+The official website for [Cubewise Software](https://code.cubewise.com) — IBM Planning Analytics / TM1 specialists.
 
 ## Overview
 
@@ -63,27 +63,97 @@ website/
         └── plans/        # Implementation plan
 ```
 
+## Prerequisites
+
+| Requirement | Version | Notes |
+|---|---|---|
+| [Node.js](https://nodejs.org/) | 18 or later | Used for the build pipeline and scripts |
+| npm | Comes with Node.js | Run `npm install` after cloning |
+| Git | Any recent version | For branching and pull requests |
+
+Check your versions:
+
+```bash
+node -v   # should print v18 or higher
+npm -v
+git --version
+```
+
 ## Local development
+
+**Install dependencies** after cloning:
 
 ```bash
 npm install
 ```
 
-To run a local build (requires Confluence credentials):
+**Preview the site locally** (no Confluence credentials needed — uses hand-coded pages only):
 
 ```bash
-# Create a .env file with your credentials
-cp .env.example .env  # then fill in values
+node scripts/preview.js
+npx serve dist
+```
+
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
+
+**Full build** (requires Confluence credentials for Blog and Docs content):
+
+```bash
+# Copy the example env file and fill in your credentials
+cp .env.example .env
 
 npx dotenv -e .env -- npm run build
 npx serve dist
 ```
 
-To run tests:
+**Run tests:**
 
 ```bash
-npm test
+npm test                # unit tests (Vitest)
+npm run test:mobile     # browser integration tests (Playwright) — requires a server running on port 3000
 ```
+
+## Contributing — local changes and pull requests
+
+1. **Create a branch** from `master`:
+
+   ```bash
+   git checkout master
+   git pull
+   git checkout -b your-branch-name
+   ```
+
+2. **Make your changes.** Hand-coded pages are in `src/pages/`. Styles are in `src/assets/css/main.css`. The base template (used for Blog and Docs pages) is in `src/templates/base.html`.
+
+3. **Preview locally** to check your changes look correct:
+
+   ```bash
+   node scripts/preview.js
+   npx serve dist
+   ```
+
+4. **Run tests** to make sure nothing is broken:
+
+   ```bash
+   npm test
+   ```
+
+5. **Commit your changes:**
+
+   ```bash
+   git add <files>
+   git commit -m "description of what you changed"
+   ```
+
+6. **Push your branch and open a pull request:**
+
+   ```bash
+   git push -u origin your-branch-name
+   ```
+
+   Then go to [github.com/cubewise-code/website](https://github.com/cubewise-code/website), open a pull request from your branch into `master`, and request a review.
+
+7. Once approved and merged to `master`, the site deploys automatically via GitHub Actions.
 
 ## Configuration
 
