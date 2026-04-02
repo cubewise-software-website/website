@@ -95,13 +95,18 @@ a:hover { color: var(--charcoal); }
   position: sticky;
   top: 0;
   z-index: 210;
-  background: #f5f0ea;
+  background: var(--pearl-white);
   border-bottom: 1px solid var(--border);
-  padding: 7px 24px;
+  font-size: 0.8125rem;
+}
+
+.announcement-bar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 7px 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.8125rem;
 }
 
 .announcement-bar__badge {
