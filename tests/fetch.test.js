@@ -1,5 +1,10 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 
+vi.mock('fs/promises', () => ({
+  writeFile: vi.fn().mockResolvedValue(undefined),
+  mkdir: vi.fn().mockResolvedValue(undefined),
+}))
+
 const mockPage = (id, title, ancestors = []) => ({
   id,
   title,
@@ -26,10 +31,6 @@ describe('fetch.js', () => {
     process.env.CONFLUENCE_EMAIL = 'test@test.com'
     process.env.CONFLUENCE_API_TOKEN = 'token123'
     vi.stubGlobal('fetch', vi.fn())
-    vi.mock('fs/promises', () => ({
-      writeFile: vi.fn().mockResolvedValue(undefined),
-      mkdir: vi.fn().mockResolvedValue(undefined),
-    }))
   })
 
   afterEach(() => {
