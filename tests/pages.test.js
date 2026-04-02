@@ -151,7 +151,7 @@ describe('announcement bar HTML (base template)', () => {
     const barIdx = baseHtml.indexOf('announcement-bar__links')
     const barSection = baseHtml.slice(barIdx, barIdx + 600)
     expect(barSection).toContain('target="_blank"')
-    expect(barSection).toContain('rel="noopener"')
+    expect(barSection).toContain('rel="noopener noreferrer"')
   })
 
   it('nav-links no longer contains standalone About link', () => {
