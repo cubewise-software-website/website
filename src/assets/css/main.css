@@ -89,11 +89,60 @@ a:hover { color: var(--charcoal); }
 /* ============================================================
    Nav
    ============================================================ */
+
+/* Announcement bar */
+.announcement-bar {
+  position: sticky;
+  top: 0;
+  z-index: 210;
+  background: #f5f0ea;
+  border-bottom: 1px solid var(--border);
+  padding: 7px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8125rem;
+}
+
+.announcement-bar__badge {
+  background: var(--orange-gold);
+  color: var(--pearl-white);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 3px;
+  margin-right: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.announcement-bar__message a {
+  color: var(--orange-gold);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.announcement-bar__links {
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+  margin-left: 24px;
+}
+
+.announcement-bar__links a {
+  color: var(--charcoal);
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+
+.announcement-bar__links a:hover { color: var(--dark-night); }
+
 .site-header {
   border-bottom: 1px solid var(--border);
   background: var(--pearl-white);
   position: sticky;
-  top: 0;
+  top: 36px;
   z-index: 200;
 }
 
@@ -178,7 +227,7 @@ main { min-height: 60vh; }
 
 .nav-backdrop {
   position: fixed;
-  top: var(--header-height, 57px);
+  top: 93px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -253,7 +302,7 @@ main { min-height: 60vh; }
   background: var(--light-gray);
   border-bottom: 1px solid var(--border);
   position: sticky;
-  top: 57px; /* height of .site-header */
+  top: 93px; /* height of .announcement-bar + .site-header */
   z-index: 90;
 }
 
@@ -3519,6 +3568,9 @@ main { min-height: 60vh; }
   .nav-item-dropdown > a::after { display: none; }
   .nav-mega-menu { display: none !important; }
   .nav-backdrop { display: none !important; }
+  .announcement-bar { display: none; }
+  .site-header { top: 0; }
+  .component-subnav { top: 57px; }
 
   /* ── Component subnav — horizontal scroll ── */
   .component-subnav-inner {
