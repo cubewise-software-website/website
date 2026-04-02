@@ -5,6 +5,7 @@ const BASE = 'http://localhost:3000'
 // Each entry: [path, expectedTitle]
 const PAGES = [
   ['/', 'Cubewise — The Platform for IBM Planning Analytics / TM1'],
+  ['/blog/', 'Blog — Cubewise'],
   ['/about/', 'About — Cubewise'],
   ['/contact/', 'Contact — Cubewise'],
   ['/docs/', 'Docs — Cubewise'],
