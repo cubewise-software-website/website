@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pulse Customers — Cubewise Platform</title>
+  <title>OptimusPy — Cubewise Open Source</title>
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
@@ -68,91 +68,70 @@
   </nav>
 </header>
 
-<nav class="component-subnav">
-  <div class="component-subnav-inner">
-    <span class="component-subnav-title">Pulse</span>
-    <a href="/pulse/">Overview</a>
-    <a href="/pulse/features/">Features</a>
-    <a href="/pulse/customers/" class="active">Customers</a>
-    <a href="/pulse/download/">Download</a>
-  </div>
-</nav>
-
 <main>
-
   <section class="component-hero">
-    <div class="component-label">Pulse</div>
-    <h1>Stories from customers like you</h1>
-    <p>See how TM1 teams around the world use Pulse to monitor, understand, and manage their environments.</p>
+    <div class="component-label">Free dimension order optimiser for IBM Planning Analytics</div>
+    <h1>OptimusPy</h1>
+    <p>Automatically find the ideal dimension order for every cube in your TM1 server — based on real RAM usage and query speed measurements.</p>
+    <a href="https://github.com/cubewise-code/optimuspy" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+    <a href="/open-source/tm1py/" class="btn btn-secondary">Built on TM1py</a>
   </section>
 
-  <section class="customer-cards-section">
-    <div class="customer-cards-inner">
+  <section class="component-detail">
 
-      <a href="/pulse/customers/pattonair/" class="customer-card">
-        <div class="customer-card-logo">
-          <img src="/assets/images/pulse/customers/logos/pattonair.png" alt="Pattonair">
-        </div>
-        <div class="customer-card-body">
-          <p class="customer-card-industry">Aerospace &amp; Defence</p>
-          <blockquote>"Pulse has helped us to significantly reduce user locks and allowed us to be notified via email if any user is locked in TM1 for more than 5 minutes."</blockquote>
-        </div>
-        <span class="customer-card-cta">Read the story →</span>
-      </a>
-
-      <a href="/pulse/customers/scc/" class="customer-card">
-        <div class="customer-card-logo">
-          <img src="/assets/images/pulse/customers/logos/scc-logo.png" alt="SCC">
-        </div>
-        <div class="customer-card-body">
-          <p class="customer-card-industry">Technology Solutions</p>
-          <blockquote>"Pulse gives us as developers the option to migrate packages live without the need to bring down services."</blockquote>
-        </div>
-        <span class="customer-card-cta">Read the story →</span>
-      </a>
-
-      <a href="/pulse/customers/aveva/" class="customer-card">
-        <div class="customer-card-logo">
-          <img src="/assets/images/pulse/customers/logos/aveva.png" alt="Aveva">
-        </div>
-        <div class="customer-card-body">
-          <p class="customer-card-industry">Engineering Software</p>
-          <blockquote>"Pulse has given us great confidence knowing that everything necessary will have been migrated."</blockquote>
-        </div>
-        <span class="customer-card-cta">Read the story →</span>
-      </a>
-
-      <a href="/pulse/customers/norgine/" class="customer-card">
-        <div class="customer-card-logo">
-          <img src="/assets/images/pulse/customers/logos/norgineLogo.png" alt="Norgine">
-        </div>
-        <div class="customer-card-body">
-          <p class="customer-card-industry">Pharmaceutical</p>
-          <blockquote>"Pulse has standard functionality which gives reports showing a great amount of detail as to the actions of users in TM1 workbooks and TM1 Web."</blockquote>
-        </div>
-        <span class="customer-card-cta">Read the story →</span>
-      </a>
-
-      <a href="/pulse/customers/stockland/" class="customer-card">
-        <div class="customer-card-logo">
-          <img src="/assets/images/pulse/customers/logos/stockland-logo.png" alt="Stockland">
-        </div>
-        <div class="customer-card-body">
-          <p class="customer-card-industry">Property &amp; Real Estate</p>
-          <blockquote>"With the change tracking feature in Pulse, every time an object is changed it is tracked and logged — helping us verify correct changes have been made in production."</blockquote>
-        </div>
-        <span class="customer-card-cta">Read the story →</span>
-      </a>
-
+    <div class="feature-row">
+      <div class="feature-row-text">
+        <h2>Dimension order matters more than you think</h2>
+        <p>In IBM Planning Analytics / TM1, the order of dimensions in a cube directly affects RAM consumption and query performance. The wrong order can result in significantly higher memory usage and slower calculations — but finding the right order manually across many cubes is impractical.</p>
+        <ul>
+          <li>Dimension order directly impacts RAM usage and query speed</li>
+          <li>The optimal order differs for every cube based on its data distribution</li>
+          <li>Manual analysis across a large TM1 server is time-consuming and error-prone</li>
+          <li>OptimusPy automates the entire analysis and recommendation process</li>
+        </ul>
+      </div>
     </div>
-  </section>
 
-  <section class="page-cta">
-    <h2>Join these teams on Pulse</h2>
-    <p>See how Pulse can give your team visibility and control over your TM1 environment.</p>
-    <a href="/contact/" class="btn btn-primary">Request a demo</a>
-  </section>
+    <div class="feature-row">
+      <div class="feature-row-text">
+        <h2>Measure, compare, and recommend</h2>
+        <p>OptimusPy tests permutations of dimension order for each cube, measuring actual RAM consumption and query performance for each combination. It then identifies and reports the optimal ordering — backed by real measurements, not guesswork.</p>
+        <ul>
+          <li>Tests dimension order permutations against your live TM1 data</li>
+          <li>Measures RAM usage and query execution time for each combination</li>
+          <li>Identifies the optimal order per cube automatically</li>
+          <li>Generates a clear report of recommended changes</li>
+        </ul>
+      </div>
+    </div>
 
+    <div class="feature-row">
+      <div class="feature-row-text">
+        <h2>Built on TM1py</h2>
+        <p>OptimusPy is powered by TM1py — the open-source Python framework for IBM Planning Analytics. It connects directly to your TM1 server, performs its analysis, and outputs recommendations without requiring any changes to your environment.</p>
+        <ul>
+          <li>Uses TM1py for all TM1 server interactions</li>
+          <li>Connects securely to your TM1 instance — no additional infrastructure needed</li>
+          <li>Works with IBM Planning Analytics on-premises and cloud deployments</li>
+          <li>Simple configuration — point it at your server and run</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row-text">
+        <h2>Free and open source</h2>
+        <p>OptimusPy is free to use and open source. The source code is hosted on GitHub — contributions and bug reports from the community are welcome.</p>
+        <ul>
+          <li>Free to use with no licensing restrictions</li>
+          <li>Actively maintained by Cubewise</li>
+          <li>All code provided without warranty — use and modify freely</li>
+          <li>Pairs naturally with TM1py, RushTI, and other Cubewise open source projects</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
 </main>
 
 <footer class="site-footer">
@@ -163,9 +142,9 @@
     </div>
     <nav class="footer-nav">
       <a href="/platform/">Platform</a>
+      <a href="/open-source/">Open Source</a>
       <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a>
       <a href="/docs/">Docs</a>
-      <a href="/blog/">Blog</a>
       <a href="/partners/">Partners</a>
       <a href="/about/">About</a>
       <a href="/contact/">Contact</a>

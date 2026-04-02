@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pulse Customers — Cubewise Platform</title>
+  <title>RushTI — Cubewise Open Source</title>
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
@@ -68,91 +68,70 @@
   </nav>
 </header>
 
-<nav class="component-subnav">
-  <div class="component-subnav-inner">
-    <span class="component-subnav-title">Pulse</span>
-    <a href="/pulse/">Overview</a>
-    <a href="/pulse/features/">Features</a>
-    <a href="/pulse/customers/" class="active">Customers</a>
-    <a href="/pulse/download/">Download</a>
-  </div>
-</nav>
-
 <main>
-
   <section class="component-hero">
-    <div class="component-label">Pulse</div>
-    <h1>Stories from customers like you</h1>
-    <p>See how TM1 teams around the world use Pulse to monitor, understand, and manage their environments.</p>
+    <div class="component-label">Free parallel execution engine for IBM Planning Analytics</div>
+    <h1>RushTI</h1>
+    <p>Run multiple TurboIntegrator processes simultaneously — with dependency scheduling, fault tolerance, and self-optimisation.</p>
+    <a href="https://github.com/cubewise-code/rushti" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+    <a href="https://cubewise-code.github.io/rushti/docs/" class="btn btn-secondary" target="_blank" rel="noopener">Read the Docs</a>
   </section>
 
-  <section class="customer-cards-section">
-    <div class="customer-cards-inner">
+  <section class="component-detail">
 
-      <a href="/pulse/customers/pattonair/" class="customer-card">
-        <div class="customer-card-logo">
-          <img src="/assets/images/pulse/customers/logos/pattonair.png" alt="Pattonair">
-        </div>
-        <div class="customer-card-body">
-          <p class="customer-card-industry">Aerospace &amp; Defence</p>
-          <blockquote>"Pulse has helped us to significantly reduce user locks and allowed us to be notified via email if any user is locked in TM1 for more than 5 minutes."</blockquote>
-        </div>
-        <span class="customer-card-cta">Read the story →</span>
-      </a>
-
-      <a href="/pulse/customers/scc/" class="customer-card">
-        <div class="customer-card-logo">
-          <img src="/assets/images/pulse/customers/logos/scc-logo.png" alt="SCC">
-        </div>
-        <div class="customer-card-body">
-          <p class="customer-card-industry">Technology Solutions</p>
-          <blockquote>"Pulse gives us as developers the option to migrate packages live without the need to bring down services."</blockquote>
-        </div>
-        <span class="customer-card-cta">Read the story →</span>
-      </a>
-
-      <a href="/pulse/customers/aveva/" class="customer-card">
-        <div class="customer-card-logo">
-          <img src="/assets/images/pulse/customers/logos/aveva.png" alt="Aveva">
-        </div>
-        <div class="customer-card-body">
-          <p class="customer-card-industry">Engineering Software</p>
-          <blockquote>"Pulse has given us great confidence knowing that everything necessary will have been migrated."</blockquote>
-        </div>
-        <span class="customer-card-cta">Read the story →</span>
-      </a>
-
-      <a href="/pulse/customers/norgine/" class="customer-card">
-        <div class="customer-card-logo">
-          <img src="/assets/images/pulse/customers/logos/norgineLogo.png" alt="Norgine">
-        </div>
-        <div class="customer-card-body">
-          <p class="customer-card-industry">Pharmaceutical</p>
-          <blockquote>"Pulse has standard functionality which gives reports showing a great amount of detail as to the actions of users in TM1 workbooks and TM1 Web."</blockquote>
-        </div>
-        <span class="customer-card-cta">Read the story →</span>
-      </a>
-
-      <a href="/pulse/customers/stockland/" class="customer-card">
-        <div class="customer-card-logo">
-          <img src="/assets/images/pulse/customers/logos/stockland-logo.png" alt="Stockland">
-        </div>
-        <div class="customer-card-body">
-          <p class="customer-card-industry">Property &amp; Real Estate</p>
-          <blockquote>"With the change tracking feature in Pulse, every time an object is changed it is tracked and logged — helping us verify correct changes have been made in production."</blockquote>
-        </div>
-        <span class="customer-card-cta">Read the story →</span>
-      </a>
-
+    <div class="feature-row">
+      <div class="feature-row-text">
+        <h2>Run TI processes in parallel</h2>
+        <p>TurboIntegrator processes typically run one at a time. RushTI removes that constraint, executing multiple processes simultaneously over a single TM1 connection — dramatically reducing total runtime for complex load cycles.</p>
+        <ul>
+          <li>Execute many TI processes concurrently with one connection</li>
+          <li>Reduce load cycle runtimes by running independent processes in parallel</li>
+          <li>Define execution order with simple task files — no code required</li>
+          <li>Works with any IBM Planning Analytics / TM1 instance</li>
+        </ul>
+      </div>
     </div>
-  </section>
 
-  <section class="page-cta">
-    <h2>Join these teams on Pulse</h2>
-    <p>See how Pulse can give your team visibility and control over your TM1 environment.</p>
-    <a href="/contact/" class="btn btn-primary">Request a demo</a>
-  </section>
+    <div class="feature-row">
+      <div class="feature-row-text">
+        <h2>Dependency-aware scheduling</h2>
+        <p>Not all processes can run at the same time. RushTI uses a directed acyclic graph (DAG) to model dependencies between tasks, ensuring processes only run once their prerequisites are complete — in the correct order, every time.</p>
+        <ul>
+          <li>Define dependencies between processes declaratively</li>
+          <li>DAG-based scheduling guarantees correct execution order</li>
+          <li>Maximises parallelism while respecting data dependencies</li>
+          <li>Visual dependency graphs for debugging and documentation</li>
+        </ul>
+      </div>
+    </div>
 
+    <div class="feature-row">
+      <div class="feature-row-text">
+        <h2>Fault tolerant and self-optimising</h2>
+        <p>Long-running load cycles shouldn&rsquo;t fail silently. RushTI includes checkpoint and resume capabilities so that a failed process doesn&rsquo;t force a full restart, and self-optimisation continually improves scheduling based on past run times.</p>
+        <ul>
+          <li>Resume from the last successful checkpoint after a failure</li>
+          <li>Detailed logging for every process execution</li>
+          <li>Self-optimises scheduling order based on historical runtimes</li>
+          <li>Configurable retry logic for transient failures</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row-text">
+        <h2>Free and open source</h2>
+        <p>RushTI is built on TM1py and is free to use. The source is hosted on GitHub — contributions and bug reports from the community are welcome.</p>
+        <ul>
+          <li>Free to use with no licensing restrictions</li>
+          <li>Built on TM1py — the Python framework for IBM Planning Analytics</li>
+          <li>Actively maintained by Cubewise</li>
+          <li>All code provided without warranty — use and modify freely</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
 </main>
 
 <footer class="site-footer">
@@ -163,9 +142,9 @@
     </div>
     <nav class="footer-nav">
       <a href="/platform/">Platform</a>
+      <a href="/open-source/">Open Source</a>
       <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a>
       <a href="/docs/">Docs</a>
-      <a href="/blog/">Blog</a>
       <a href="/partners/">Partners</a>
       <a href="/about/">About</a>
       <a href="/contact/">Contact</a>

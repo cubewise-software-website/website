@@ -5,6 +5,205 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Cubewise</title>
   <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    /* ── Hero stats ── */
+    .about-hero { padding-bottom: 3rem; }
+    .about-hero-stats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 2rem;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .about-hero-stat {
+      flex: 1;
+      text-align: center;
+    }
+    .about-hero-stat-number {
+      display: block;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: var(--orange-gold);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .about-hero-stat-label {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--sand-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+    .about-hero-stat-divider {
+      width: 1px;
+      height: 2.5rem;
+      background: rgba(255,255,255,0.15);
+      flex-shrink: 0;
+    }
+
+    /* ── Mission ── */
+    .about-mission {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-mission-quote {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--dark-night);
+      line-height: 1.4;
+      border-left: 3px solid var(--orange-gold);
+      padding-left: 1.25rem;
+    }
+    .about-mission-body p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+
+    /* ── Journey ── */
+    .about-journey {
+      background: var(--light-gray);
+      padding: 4rem 2rem;
+    }
+    .about-journey-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .about-journey-header {
+      margin-bottom: 2.5rem;
+    }
+    .about-journey-header h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 700;
+      color: var(--dark-night);
+      margin-bottom: 0.5rem;
+    }
+    .about-journey-header p {
+      color: var(--charcoal);
+      font-size: 1rem;
+      max-width: 560px;
+    }
+    .about-chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .about-chapter-card {
+      background: var(--pearl-white);
+      border: 1px solid var(--border, #e8e8e4);
+      border-radius: 10px;
+      padding: 0;
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+      overflow: hidden;
+    }
+    .about-chapter-icon {
+      color: var(--sand-gold);
+      flex-shrink: 0;
+      background: var(--dark-night);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 1.75rem 1.25rem;
+    }
+    .about-chapter-body { min-width: 0; padding: 1.75rem; }
+    .about-chapter-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--dark-night);
+      margin-bottom: 0.5rem;
+    }
+    .about-chapter-problem {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--orange-gold);
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+    }
+    .about-chapter-body p {
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    .about-chapter-impact {
+      font-size: 0.82rem;
+      color: var(--charcoal);
+      font-style: italic;
+      border-top: 1px solid var(--border, #e8e8e4);
+      padding-top: 0.65rem;
+      margin-top: 0.5rem;
+    }
+
+    /* ── Foundation callout ── */
+    .about-foundation {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .about-foundation-block h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark-night);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .about-foundation-block h3 span { color: var(--orange-gold); }
+    .about-foundation-block p {
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      line-height: 1.65;
+    }
+
+    /* ── CTA ── */
+    .about-cta {
+      background: var(--dark-night);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .about-cta h2 {
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      font-weight: 700;
+      color: var(--pearl-white);
+      margin-bottom: 0.75rem;
+    }
+    .about-cta p {
+      color: var(--sand-gold);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .about-hero-stats { gap: 0; padding-top: 1.5rem; margin-top: 1.75rem; }
+      .about-mission { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 1.25rem; }
+      .about-chapter-grid { grid-template-columns: 1fr; }
+      .about-journey { padding: 2.5rem 1.25rem; }
+      .about-foundation { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.25rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -41,18 +240,171 @@
           </div>
         </div>
       </li>
+      <li class="nav-item-dropdown">
+        <a href="/open-source/">Open Source</a>
+        <div class="nav-mega-menu nav-mega-menu--narrow">
+          <div class="mega-menu-inner">
+            <div class="mega-col">
+              <h4 class="mega-heading">Open Source</h4>
+              <a href="/open-source/tm1py/" class="mega-link"><strong>TM1py</strong><span>Python framework for IBM Planning Analytics</span></a>
+              <a href="/open-source/bedrock/" class="mega-link"><strong>Bedrock</strong><span>Best practice foundation for TM1</span></a>
+            </div>
+            <div class="mega-col">
+              <h4 class="mega-heading">&nbsp;</h4>
+              <a href="/open-source/rushti/" class="mega-link"><strong>RushTI</strong><span>Parallel TI process execution</span></a>
+              <a href="/open-source/optimuspy/" class="mega-link"><strong>OptimusPy</strong><span>Optimal dimension order for TM1 cubes</span></a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="/docs/">Help</a></li>
+      <li><a href="https://forum.cubewise.com/" target="_blank" rel="noopener">Forum</a></li>
       <li><a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a></li>
-      <li><a href="/docs/">Docs</a></li>
-      <li><a href="/blog/">Blog</a></li>
       <li><a href="/partners/">Partners</a></li>
       <li><a href="/about/">About</a></li>
-      <li><a href="https://forum.cubewise.com/" target="_blank" rel="noopener">Forum</a></li>
       <li class="nav-cta-item"><a href="/contact/" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<main><section class="page-content"><h1>About Cubewise</h1><p><!-- about content --></p></section></main>
+<main>
+
+  <section class="component-hero component-hero--dark about-hero">
+    <div class="component-label">Our Story</div>
+    <h1>Built by TM1 experts,<br>for TM1 teams</h1>
+    <p>We build software that helps IBM Planning Analytics / TM1 teams work faster, smarter, and with more confidence — informed by deep expertise and close collaboration with the people who use it every day.</p>
+    <div class="about-hero-stats">
+      <div class="about-hero-stat">
+        <span class="about-hero-stat-number" data-target="22" data-suffix="">0</span>
+        <span class="about-hero-stat-label">Years of innovation</span>
+      </div>
+      <div class="about-hero-stat-divider"></div>
+      <div class="about-hero-stat">
+        <span class="about-hero-stat-number" data-target="340" data-suffix="+">0</span>
+        <span class="about-hero-stat-label">Customers worldwide</span>
+      </div>
+      <div class="about-hero-stat-divider"></div>
+      <div class="about-hero-stat">
+        <span class="about-hero-stat-number" data-target="6" data-suffix="">0</span>
+        <span class="about-hero-stat-label">Software</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="about-mission">
+    <p class="about-mission-quote">"Cubewise didn't set out to build software. We set out to solve problems."</p>
+    <div class="about-mission-body">
+      <p>IBM Planning Analytics / TM1 is one of the most powerful planning platforms in the world — built for calculation speed, deep Excel integration, and data volumes that other platforms struggle to match. Cubewise was founded by experts who understood that power deeply, and who set out to make it even more accessible, productive, and professional for every team that relies on it.</p>
+      <p>We listened to developers, administrators, and finance teams — and built software that amplifies what they can do with IBM Planning Analytics / TM1. The result is a platform of six specialised software, each one grounded in real-world experience and designed to work together seamlessly.</p>
+      <p>The foundation was laid even earlier, with <strong>Bedrock</strong> — a living library of TI code templates, best practices, and toolkits distilled from years of project work across industries. Bedrock reduced TI coding effort by up to 50% and established the standards on which everything else was built.</p>
+    </div>
+  </section>
+
+  <!-- Journey -->
+  <section class="about-journey">
+    <div class="about-journey-inner">
+      <div class="about-journey-header">
+        <h2>Solving real life challenges for IBM Planning Analytics teams.</h2>
+      </div>
+      <div class="about-chapter-grid">
+
+        <div class="about-chapter-card">
+          <div class="about-chapter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div class="about-chapter-body">
+            <h3>Arc</h3>
+            <p class="about-chapter-problem">TM1 developers deserved a professional IDE — not a basic editor that slowed them down.</p>
+            <p>Arc is the professional IDE for IBM Planning Analytics / TM1, with smart search, templates, blueprints, and a lightweight install. It gives developers a modern environment that makes development faster, more precise, and more enjoyable.</p>
+            <div class="about-chapter-impact">Developers work faster, with greater precision and unified coding practices.</div>
+          </div>
+        </div>
+
+        <div class="about-chapter-card">
+          <div class="about-chapter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><line x1="3" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="21"/></svg></div>
+          <div class="about-chapter-body">
+            <h3>Arc+</h3>
+            <p class="about-chapter-problem">TM1 teams were ready for DevOps — but had no platform for automated testing, impact analysis, and structured deployment.</p>
+            <p>Arc+ brings DevOps to IBM Planning Analytics / TM1 — automated testing, impact analysis, and deployment pipelines in one platform. Teams can build, test, and deploy with the same rigour as any modern software project.</p>
+            <div class="about-chapter-impact">TM1 teams adopted modern software practices without leaving their ecosystem.</div>
+          </div>
+        </div>
+
+        <div class="about-chapter-card">
+          <div class="about-chapter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <div class="about-chapter-body">
+            <h3>Pulse</h3>
+            <p class="about-chapter-problem">Administrators had limited visibility inside their TM1 environments — making monitoring, auditing, and migration unnecessarily risky.</p>
+            <p>Pulse gives administrators complete visibility and control over their IBM Planning Analytics environment. Real-time monitoring, alerting, migration tooling, and full audit trails — in one place.</p>
+            <div class="about-chapter-impact">Support calls dropped. User locks resolved proactively. Migrations de-risked.</div>
+          </div>
+        </div>
+
+        <div class="about-chapter-card">
+          <div class="about-chapter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <div class="about-chapter-body">
+            <h3>Slice</h3>
+            <p class="about-chapter-problem">Finance teams needed a modern Excel experience for IBM Planning Analytics — with hierarchies, cloud connectivity, and REST API support.</p>
+            <p>Slice is the modern Excel add-in for IBM Planning Analytics, with Active Forms, writeback, cross-drill, dynamic columns, and direct REST API connectivity. It honours Excel familiarity and adds the capabilities teams have always needed.</p>
+            <div class="about-chapter-impact">Smooth transition from Perspectives, with richer reporting and built-in auditing.</div>
+          </div>
+        </div>
+
+        <div class="about-chapter-card">
+          <div class="about-chapter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="about-chapter-body">
+            <h3>PowerConnect</h3>
+            <p class="about-chapter-problem">Business intelligence teams wanted TM1 data in Power BI — but there was no reliable, secure way to connect the two platforms.</p>
+            <p>PowerConnect brings IBM Planning Analytics data directly into Microsoft Power BI — with seamless synchronisation of data, metadata, and security. Executives and analysts can build live, interactive dashboards without manual exports.</p>
+            <div class="about-chapter-impact">Executives gained real-time visibility into planning data with scheduled refreshes.</div>
+          </div>
+        </div>
+
+        <div class="about-chapter-card">
+          <div class="about-chapter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
+          <div class="about-chapter-body">
+            <h3>Atmosphere</h3>
+            <p class="about-chapter-problem">Integrating TM1 with cloud data sources required complex middleware, long delivery cycles, and ongoing maintenance.</p>
+            <p>Atmosphere connects IBM Planning Analytics / TM1 to the cloud with speed, security, and simplicity. With 34+ pre-built connectors, real-time data capture, and an intuitive admin portal — teams focus on planning, not plumbing.</p>
+            <div class="about-chapter-impact">Integration became seamless, secure, and focused on outcomes rather than plumbing.</div>
+          </div>
+        </div>
+
+
+        <div class="about-chapter-card">
+          <div class="about-chapter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <div class="about-chapter-body">
+            <h3>TM1py</h3>
+            <p class="about-chapter-problem">Python was transforming data science and automation — but TM1 had no way to participate in that ecosystem.</p>
+            <p>TM1py bridges IBM Planning Analytics / TM1 and Python, unlocking integrations with Salesforce, SAP, Google Sheets, and more. It opens the door to machine learning, forecasting, and anomaly detection on planning data.</p>
+            <div class="about-chapter-impact">TM1 became programmable, flexible, and future-ready.</div>
+          </div>
+        </div>
+
+        <div class="about-chapter-card">
+          <div class="about-chapter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div class="about-chapter-body">
+            <h3>Canvas &amp; Apliqo UX</h3>
+            <p class="about-chapter-problem">Customers needed rich, branded web interfaces on top of TM1 — but building them required deep developer expertise and significant effort.</p>
+            <p>Canvas is a developer framework for building custom web frontends via the TM1 REST API. Cubewise partnered with Apliqo to evolve it into Apliqo UX — a no-code platform for rich web applications on top of IBM Planning Analytics.</p>
+            <div class="about-chapter-impact">From code to no-code — TM1 became accessible to a broader audience.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta">
+    <h2>Innovation isn't a destination — it's a way of life</h2>
+    <p>As IBM Planning Analytics / TM1 evolves, so will the Cubewise Platform. Talk to our team to find the right components for yours.</p>
+    <div class="home-hero-actions" style="justify-content: center;">
+      <a href="/contact/" class="btn btn-primary btn-lg">Get in touch</a>
+      <a href="/platform/" class="btn btn-outline-light btn-lg">Explore the Platform</a>
+    </div>
+  </section>
+
+</main>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -73,6 +425,36 @@
   </div>
 </footer>
 
-  <script src="/assets/js/nav.js"></script>
+<script src="/assets/js/nav.js"></script>
+<script>
+  const statEls = document.querySelectorAll('.about-hero-stat-number[data-target]')
+  const duration = 1800
+
+  const animateStat = (el) => {
+    const target = +el.dataset.target
+    const suffix = el.dataset.suffix || ''
+    const start = performance.now()
+    const step = (now) => {
+      const elapsed = now - start
+      const progress = Math.min(elapsed / duration, 1)
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3)
+      el.textContent = Math.round(eased * target) + suffix
+      if (progress < 1) requestAnimationFrame(step)
+    }
+    requestAnimationFrame(step)
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateStat(entry.target)
+        observer.unobserve(entry.target)
+      }
+    })
+  }, { threshold: 0.5 })
+
+  statEls.forEach(el => observer.observe(el))
+</script>
 </body>
 </html>
