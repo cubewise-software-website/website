@@ -114,6 +114,7 @@ a:hover { color: var(--charcoal); }
   list-style: none;
   gap: 1.5rem;
   align-items: center;
+  flex: 1;
 }
 
 .nav-links a {
@@ -3444,4 +3445,130 @@ main { min-height: 60vh; }
   .article-card-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ============================================================
+   Mobile / Responsive — global overrides
+   ============================================================ */
+
+/* Hamburger button — hidden on desktop */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.375rem;
+  color: var(--charcoal);
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.nav-toggle-close { display: none; }
+
+.nav.is-open .nav-toggle-open  { display: none; }
+.nav.is-open .nav-toggle-close { display: block; }
+
+@media (max-width: 768px) {
+  /* ── Nav ── */
+  .nav {
+    gap: 0;
+    padding: 0.75rem 1.25rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .nav-logo { flex: 1; }
+
+  .nav-toggle { display: flex; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0;
+    border-top: 1px solid var(--border);
+    padding: 0.5rem 0 1rem;
+    flex: none;
+  }
+
+  .nav.is-open .nav-links { display: flex; }
+
+  .nav-links > li > a {
+    display: block;
+    padding: 0.75rem 0.25rem;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-cta-item {
+    margin-left: 0;
+    padding-left: 0;
+    padding-top: 1rem;
+  }
+
+  /* Disable mega menu on mobile — Platform links to /platform/ */
+  .nav-item-dropdown > a::after { display: none; }
+  .nav-mega-menu { display: none !important; }
+  .nav-backdrop { display: none !important; }
+
+  /* ── Component subnav — horizontal scroll ── */
+  .component-subnav-inner {
+    overflow-x: auto;
+    padding: 0 1.25rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+  }
+
+  .component-subnav-inner::-webkit-scrollbar { display: none; }
+  .component-subnav-title { display: none; }
+
+  /* ── Docs layout — hide sidebar on mobile ── */
+  .docs-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  .docs-sidebar { display: none; }
+
+  .docs-content {
+    padding: 1.5rem 1.25rem;
+    min-width: 0;
+  }
+
+  /* ── Docs hero ── */
+  .docs-hero { padding: 2.5rem 1.25rem 2rem; }
+
+  /* ── Home hero ── */
+  .home-hero-inner { padding: 3rem 1.25rem; }
+  .home-hero-actions { flex-direction: column; align-items: stretch; }
+  .home-hero-actions .btn { text-align: center; }
+
+  /* ── Home role cards ── */
+  .home-role-cards { grid-template-columns: 1fr; }
+
+  /* ── Component hero ── */
+  .component-hero { padding: 2.5rem 1.25rem; }
+
+  /* ── Footer ── */
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem 1.25rem;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+  }
+
+  /* ── General section padding ── */
+  .home-products-inner,
+  .home-roles-inner,
+  .home-testimonials-inner,
+  .home-bottom-cta-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
 }
