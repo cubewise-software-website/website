@@ -28,3 +28,7 @@ export const TEMPLATES_DIR = 'src/templates'
 export const ASSETS_DIR = 'src/assets'
 export const PAGES_DIR = 'src/pages'
 export const CACHE_DIR = 'cache'
+
+export const LOCALES = ['fr', 'de', 'zh-hans']
+export const SITE_URL = 'https://cubewise.com'
+export const I18N_DIR = 'src/i18n'
