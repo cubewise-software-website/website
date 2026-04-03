@@ -28,7 +28,7 @@ async function walkAndWrite(srcDir, distDir, translations, relDir = '') {
       await writeFile(enOut, enHtml)
       for (const locale of LOCALES) {
         const localeHtml = injectHreflang(
-          applyTranslations(html, pageTranslations[locale] ?? {}, locale),
+          applyTranslations(html, translations[locale] ?? {}, locale),
           pagePath, SITE_URL, LOCALES
         )
         const localeOut = join(distDir, locale, rel)
