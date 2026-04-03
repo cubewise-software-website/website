@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RushTI — Cubewise Open Source</title>
+  <title data-i18n="open-source-rushti.page-title">RushTI — Cubewise Open Source</title>
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
@@ -93,63 +93,63 @@
 
 <main>
   <section class="component-hero">
-    <div class="component-label">Free parallel execution engine for IBM Planning Analytics</div>
+    <div class="component-label" data-i18n="open-source-rushti.hero-label">Free parallel execution engine for IBM Planning Analytics</div>
     <h1>RushTI</h1>
-    <p>Run multiple TurboIntegrator processes simultaneously — with dependency scheduling, fault tolerance, and self-optimisation.</p>
-    <a href="https://github.com/cubewise-code/rushti" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
-    <a href="https://cubewise-code.github.io/rushti/docs/" class="btn btn-secondary" target="_blank" rel="noopener">Read the Docs</a>
+    <p data-i18n="open-source-rushti.hero-body">Run multiple TurboIntegrator processes simultaneously — with dependency scheduling, fault tolerance, and self-optimisation.</p>
+    <a href="https://github.com/cubewise-code/rushti" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="open-source-rushti.hero-cta-github">View on GitHub</a>
+    <a href="https://cubewise-code.github.io/rushti/docs/" class="btn btn-secondary" target="_blank" rel="noopener" data-i18n="open-source-rushti.hero-cta-docs">Read the Docs</a>
   </section>
 
   <section class="component-detail">
 
     <div class="feature-row">
       <div class="feature-row-text">
-        <h2>Run TI processes in parallel</h2>
-        <p>TurboIntegrator processes typically run one at a time. RushTI removes that constraint, executing multiple processes simultaneously over a single TM1 connection — dramatically reducing total runtime for complex load cycles.</p>
+        <h2 data-i18n="open-source-rushti.parallel-heading">Run TI processes in parallel</h2>
+        <p data-i18n="open-source-rushti.parallel-body">TurboIntegrator processes typically run one at a time. RushTI removes that constraint, executing multiple processes simultaneously over a single TM1 connection — dramatically reducing total runtime for complex load cycles.</p>
         <ul>
-          <li>Execute many TI processes concurrently with one connection</li>
-          <li>Reduce load cycle runtimes by running independent processes in parallel</li>
-          <li>Define execution order with simple task files — no code required</li>
-          <li>Works with any IBM Planning Analytics / TM1 instance</li>
+          <li data-i18n="open-source-rushti.parallel-li-1">Execute many TI processes concurrently with one connection</li>
+          <li data-i18n="open-source-rushti.parallel-li-2">Reduce load cycle runtimes by running independent processes in parallel</li>
+          <li data-i18n="open-source-rushti.parallel-li-3">Define execution order with simple task files — no code required</li>
+          <li data-i18n="open-source-rushti.parallel-li-4">Works with any IBM Planning Analytics / TM1 instance</li>
         </ul>
       </div>
     </div>
 
     <div class="feature-row">
       <div class="feature-row-text">
-        <h2>Dependency-aware scheduling</h2>
-        <p>Not all processes can run at the same time. RushTI uses a directed acyclic graph (DAG) to model dependencies between tasks, ensuring processes only run once their prerequisites are complete — in the correct order, every time.</p>
+        <h2 data-i18n="open-source-rushti.scheduling-heading">Dependency-aware scheduling</h2>
+        <p data-i18n="open-source-rushti.scheduling-body">Not all processes can run at the same time. RushTI uses a directed acyclic graph (DAG) to model dependencies between tasks, ensuring processes only run once their prerequisites are complete — in the correct order, every time.</p>
         <ul>
-          <li>Define dependencies between processes declaratively</li>
-          <li>DAG-based scheduling guarantees correct execution order</li>
-          <li>Maximises parallelism while respecting data dependencies</li>
-          <li>Visual dependency graphs for debugging and documentation</li>
+          <li data-i18n="open-source-rushti.scheduling-li-1">Define dependencies between processes declaratively</li>
+          <li data-i18n="open-source-rushti.scheduling-li-2">DAG-based scheduling guarantees correct execution order</li>
+          <li data-i18n="open-source-rushti.scheduling-li-3">Maximises parallelism while respecting data dependencies</li>
+          <li data-i18n="open-source-rushti.scheduling-li-4">Visual dependency graphs for debugging and documentation</li>
         </ul>
       </div>
     </div>
 
     <div class="feature-row">
       <div class="feature-row-text">
-        <h2>Fault tolerant and self-optimising</h2>
-        <p>Long-running load cycles shouldn’t fail silently. RushTI includes checkpoint and resume capabilities so that a failed process doesn’t force a full restart, and self-optimisation continually improves scheduling based on past run times.</p>
+        <h2 data-i18n="open-source-rushti.fault-tolerant-heading">Fault tolerant and self-optimising</h2>
+        <p data-i18n="open-source-rushti.fault-tolerant-body">Long-running load cycles shouldn’t fail silently. RushTI includes checkpoint and resume capabilities so that a failed process doesn’t force a full restart, and self-optimisation continually improves scheduling based on past run times.</p>
         <ul>
-          <li>Resume from the last successful checkpoint after a failure</li>
-          <li>Detailed logging for every process execution</li>
-          <li>Self-optimises scheduling order based on historical runtimes</li>
-          <li>Configurable retry logic for transient failures</li>
+          <li data-i18n="open-source-rushti.fault-tolerant-li-1">Resume from the last successful checkpoint after a failure</li>
+          <li data-i18n="open-source-rushti.fault-tolerant-li-2">Detailed logging for every process execution</li>
+          <li data-i18n="open-source-rushti.fault-tolerant-li-3">Self-optimises scheduling order based on historical runtimes</li>
+          <li data-i18n="open-source-rushti.fault-tolerant-li-4">Configurable retry logic for transient failures</li>
         </ul>
       </div>
     </div>
 
     <div class="feature-row">
       <div class="feature-row-text">
-        <h2>Free and open source</h2>
-        <p>RushTI is built on TM1py and is free to use. The source is hosted on GitHub — contributions and bug reports from the community are welcome.</p>
+        <h2 data-i18n="open-source-rushti.oss-heading">Free and open source</h2>
+        <p data-i18n="open-source-rushti.oss-body">RushTI is built on TM1py and is free to use. The source is hosted on GitHub — contributions and bug reports from the community are welcome.</p>
         <ul>
-          <li>Free to use with no licensing restrictions</li>
-          <li>Built on TM1py — the Python framework for IBM Planning Analytics</li>
-          <li>Actively maintained by Cubewise</li>
-          <li>All code provided without warranty — use and modify freely</li>
+          <li data-i18n="open-source-rushti.oss-li-1">Free to use with no licensing restrictions</li>
+          <li data-i18n="open-source-rushti.oss-li-2">Built on TM1py — the Python framework for IBM Planning Analytics</li>
+          <li data-i18n="open-source-rushti.oss-li-3">Actively maintained by Cubewise</li>
+          <li data-i18n="open-source-rushti.oss-li-4">All code provided without warranty — use and modify freely</li>
         </ul>
       </div>
     </div>
