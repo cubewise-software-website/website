@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { injectTemplate, generatePostList, generateDocsSidebar, generateSearchIndex } from '../scripts/build.js'
+import { applyLocale } from '../scripts/build.js'
 
 describe('injectTemplate', () => {
   it('replaces {{key}} with context values', () => {
@@ -100,5 +101,23 @@ describe('generateSearchIndex', () => {
     ]
     const index = generateSearchIndex(pages)
     expect(index[0].excerpt.length).toBeLessThanOrEqual(150)
+  })
+})
+
+describe('applyLocale', () => {
+  it('replaces data-i18n text and sets lang attribute', () => {
+    const html = '<html lang="en"><head></head><body><h1 data-i18n="home.heading">Welcome</h1></body></html>'
+    const translations = { 'home.heading': 'Bienvenue' }
+    const result = applyLocale(html, '/about/', 'fr', translations, 'https://cubewise.com', ['fr', 'de', 'zh-hans'])
+    expect(result).toContain('lang="fr"')
+    expect(result).toContain('Bienvenue')
+    expect(result).toContain('hreflang="fr"')
+  })
+
+  it('injects hreflang tags', () => {
+    const html = '<html lang="en"><head></head><body></body></html>'
+    const result = applyLocale(html, '/', 'de', {}, 'https://cubewise.com', ['fr', 'de', 'zh-hans'])
+    expect(result).toContain('hreflang="de"')
+    expect(result).toContain('hreflang="x-default"')
   })
 })

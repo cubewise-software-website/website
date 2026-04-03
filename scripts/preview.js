@@ -1,14 +1,57 @@
 // Builds the site without fetching from Confluence — for local preview only.
-import { mkdir, cp, rm, writeFile } from 'fs/promises'
-import { join } from 'path'
+import { mkdir, cp, rm, writeFile, readFile, readdir, stat } from 'fs/promises'
+import { join, dirname } from 'path'
 import { DIST_DIR, ASSETS_DIR, PAGES_DIR } from '../config.js'
+import { applyTranslations, injectHreflang, getPagePath } from './i18n.js'
+import { LOCALES, SITE_URL, I18N_DIR } from '../config.js'
 
 // Wipe dist/ first so stale files don't linger
 await rm(DIST_DIR, { recursive: true, force: true })
 await mkdir(DIST_DIR, { recursive: true })
 
 try { await cp(ASSETS_DIR, join(DIST_DIR, 'assets'), { recursive: true }) } catch {}
-try { await cp(PAGES_DIR, DIST_DIR, { recursive: true }) } catch {}
+
+async function walkAndWrite(srcDir, distDir, translations, relDir = '') {
+  const entries = await readdir(join(srcDir, relDir))
+  for (const entry of entries) {
+    const rel = relDir ? `${relDir}/${entry}` : entry
+    const srcPath = join(srcDir, rel)
+    const s = await stat(srcPath)
+    if (s.isDirectory()) {
+      await walkAndWrite(srcDir, distDir, translations, rel)
+    } else if (entry.endsWith('.html')) {
+      const html = await readFile(srcPath, 'utf8')
+      const pagePath = getPagePath(`src/pages/${rel}`)
+      const enHtml = injectHreflang(html, pagePath, SITE_URL, LOCALES)
+      const enOut = join(distDir, rel)
+      await mkdir(dirname(enOut), { recursive: true })
+      await writeFile(enOut, enHtml)
+      for (const locale of LOCALES) {
+        const localeHtml = injectHreflang(
+          applyTranslations(html, pageTranslations[locale] ?? {}, locale),
+          pagePath, SITE_URL, LOCALES
+        )
+        const localeOut = join(distDir, locale, rel)
+        await mkdir(dirname(localeOut), { recursive: true })
+        await writeFile(localeOut, localeHtml)
+      }
+    } else {
+      const out = join(distDir, rel)
+      await mkdir(dirname(out), { recursive: true })
+      await cp(srcPath, out)
+    }
+  }
+}
+
+const pageTranslations = {}
+for (const locale of LOCALES) {
+  try {
+    pageTranslations[locale] = JSON.parse(await readFile(join(I18N_DIR, `${locale}.json`), 'utf8'))
+  } catch {
+    pageTranslations[locale] = {}
+  }
+}
+await walkAndWrite(PAGES_DIR, DIST_DIR, pageTranslations)
 
 // Write mock indexes for local preview (real build fetches these from Confluence)
 await mkdir(join(DIST_DIR, 'assets'), { recursive: true })

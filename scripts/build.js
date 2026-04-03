@@ -1,9 +1,11 @@
 import 'dotenv/config'
-import { readFile, writeFile, mkdir, cp } from 'fs/promises'
+import { readFile, writeFile, mkdir, cp, readdir, stat } from 'fs/promises'
 import { join, dirname } from 'path'
 import { fetchSpace } from './fetch.js'
 import { renderPage } from './render.js'
 import { spaces, DIST_DIR, TEMPLATES_DIR, ASSETS_DIR, PAGES_DIR } from '../config.js'
+import { applyTranslations, injectHreflang, getPagePath } from './i18n.js'
+import { LOCALES, SITE_URL, I18N_DIR } from '../config.js'
 
 export function injectTemplate(template, context) {
   return template.replace(/\{\{(\w+)\}\}/g, (_, key) => context[key] ?? '')
@@ -100,6 +102,64 @@ export function generateBlogIndex(blogPosts) {
   })
 }
 
+/**
+ * Apply a locale transformation to an HTML string:
+ * sets lang, translates data-i18n text, and injects hreflang tags.
+ */
+export function applyLocale(html, pagePath, locale, translations, siteUrl, locales) {
+  let result = applyTranslations(html, translations, locale)
+  result = injectHreflang(result, pagePath, siteUrl, locales)
+  return result
+}
+
+async function copyPagesWithLocales() {
+  // Load locale translation files (missing locale file → empty translations = English fallback)
+  const translations = {}
+  for (const locale of LOCALES) {
+    try {
+      translations[locale] = JSON.parse(await readFile(join(I18N_DIR, `${locale}.json`), 'utf8'))
+    } catch {
+      translations[locale] = {}
+    }
+  }
+
+  await walkAndWrite(PAGES_DIR, DIST_DIR, translations)
+}
+
+async function walkAndWrite(srcDir, distDir, translations, relDir = '') {
+  const entries = await readdir(join(srcDir, relDir))
+  for (const entry of entries) {
+    const rel = relDir ? `${relDir}/${entry}` : entry
+    const srcPath = join(srcDir, rel)
+    const s = await stat(srcPath)
+    if (s.isDirectory()) {
+      await walkAndWrite(srcDir, distDir, translations, rel)
+    } else if (entry.endsWith('.html')) {
+      const html = await readFile(srcPath, 'utf8')
+      const pagePath = getPagePath(`src/pages/${rel}`)
+
+      // English — write verbatim (with hreflang added)
+      const enHtml = injectHreflang(html, pagePath, SITE_URL, LOCALES)
+      const enOut = join(distDir, rel)
+      await mkdir(dirname(enOut), { recursive: true })
+      await writeFile(enOut, enHtml)
+
+      // Locales
+      for (const locale of LOCALES) {
+        const localeHtml = applyLocale(html, pagePath, locale, translations[locale], SITE_URL, LOCALES)
+        const localeOut = join(distDir, locale, rel)
+        await mkdir(dirname(localeOut), { recursive: true })
+        await writeFile(localeOut, localeHtml)
+      }
+    } else {
+      // Non-HTML files (images, etc.) — copy as-is to English dist only
+      const out = join(distDir, rel)
+      await mkdir(dirname(out), { recursive: true })
+      await cp(srcPath, out)
+    }
+  }
+}
+
 async function build() {
   await mkdir(DIST_DIR, { recursive: true })
 
@@ -148,10 +208,8 @@ async function build() {
     await cp(ASSETS_DIR, join(DIST_DIR, 'assets'), { recursive: true })
   } catch { /* no assets yet */ }
 
-  // Copy hand-coded pages → dist/
-  try {
-    await cp(PAGES_DIR, DIST_DIR, { recursive: true })
-  } catch { /* no pages yet */ }
+  // Copy hand-coded pages → dist/ (English) and dist/{locale}/ (translated)
+  await copyPagesWithLocales()
 
   // Write docs search index
   if (docPages.length) {
