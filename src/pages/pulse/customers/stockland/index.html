@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stockland Customer Story — Pulse</title>
+  <title data-i18n="pulse-customer-stockland.page-title">Stockland Customer Story — Pulse</title>
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
@@ -104,16 +104,16 @@
 
   <section class="case-study-hero">
     <div class="case-study-hero-inner">
-      <a href="/pulse/customers/" class="case-study-back">← All customer stories</a>
+      <a href="/pulse/customers/" class="case-study-back" data-i18n="pulse-customer-stockland.back-link">← All customer stories</a>
       <img src="/assets/images/pulse/customers/logos/stockland-logo.png" alt="Stockland" class="case-study-logo">
-      <p class="case-study-industry">Property &amp; Real Estate</p>
-      <h1>How Stockland tracks changes and resolves performance issues across a large TM1 implementation</h1>
+      <p class="case-study-industry" data-i18n="pulse-customer-stockland.industry">Property &amp; Real Estate</p>
+      <h1 data-i18n="pulse-customer-stockland.hero-heading">How Stockland tracks changes and resolves performance issues across a large TM1 implementation</h1>
     </div>
   </section>
 
   <section class="case-study-quote">
     <div class="case-study-quote-inner">
-      <blockquote>"With Pulse, we are able to track all changes in the various environments and verify the correct changes have been made in production."</blockquote>
+      <blockquote data-i18n="pulse-customer-stockland.hero-quote">"With Pulse, we are able to track all changes in the various environments and verify the correct changes have been made in production."</blockquote>
     </div>
   </section>
 
@@ -121,50 +121,50 @@
     <div class="case-study-body-inner">
 
       <div class="case-study-section">
-        <h2>About Stockland</h2>
-        <p>Stockland is the largest diversified property group in Australia. With a large TM1 implementation and multiple internal and external developers working in parallel across different release cycles, managing change control and performance in production is a significant operational challenge.</p>
+        <h2 data-i18n="pulse-customer-stockland.about-heading">About Stockland</h2>
+        <p data-i18n="pulse-customer-stockland.about-body">Stockland is the largest diversified property group in Australia. With a large TM1 implementation and multiple internal and external developers working in parallel across different release cycles, managing change control and performance in production is a significant operational challenge.</p>
         <img src="/assets/images/pulse/customers/stockland/image-asset-2.png" alt="Stockland" class="case-study-img">
       </div>
 
       <div class="case-study-section">
-        <h2>Challenge 1: Change Tracking in Production</h2>
-        <p>Any changes to production systems must be tested, signed off, and approved before deployment. With multiple developers working in parallel and different release cycles, tracking what had changed in production — and by whom — was extremely difficult. When production issues arose after deployment, identifying the root cause was a time-consuming manual process.</p>
+        <h2 data-i18n="pulse-customer-stockland.challenge1-heading">Challenge 1: Change Tracking in Production</h2>
+        <p data-i18n="pulse-customer-stockland.challenge1-body">Any changes to production systems must be tested, signed off, and approved before deployment. With multiple developers working in parallel and different release cycles, tracking what had changed in production — and by whom — was extremely difficult. When production issues arose after deployment, identifying the root cause was a time-consuming manual process.</p>
         <img src="/assets/images/pulse/customers/stockland/image-asset-3.png" alt="Change Tracking Challenge" class="case-study-img">
       </div>
 
       <div class="case-study-section">
-        <h2>Challenge 2: Performance Issues</h2>
-        <p>When TM1 users reported system slowness, identifying the root cause was complex — issues could stem from model design, user behaviour, recent deployments, or concurrency locks. Native TM1 administration tools lacked the granularity needed to diagnose recurring performance issues efficiently.</p>
+        <h2 data-i18n="pulse-customer-stockland.challenge2-heading">Challenge 2: Performance Issues</h2>
+        <p data-i18n="pulse-customer-stockland.challenge2-body">When TM1 users reported system slowness, identifying the root cause was complex — issues could stem from model design, user behaviour, recent deployments, or concurrency locks. Native TM1 administration tools lacked the granularity needed to diagnose recurring performance issues efficiently.</p>
         <img src="/assets/images/pulse/customers/stockland/image-asset-4.png" alt="Performance Challenge" class="case-study-img">
       </div>
 
       <div class="case-study-section">
-        <h2>The Solution</h2>
-        <p>Pulse's change tracking logs every change made to TM1 objects — by administrators, users, or automated processes — recording who made the change, when, and which specific lines of rules or TurboIntegrator scripts were modified. Combined with rollback functionality, this gives the Stockland team the ability to restore any previous version quickly.</p>
-        <p>Pulse's user analytics feature allows the team to analyse system behaviour from a performance perspective, identifying long-running operations, concurrent activities, and the users involved — enabling targeted resolution rather than guesswork.</p>
+        <h2 data-i18n="pulse-customer-stockland.solution-heading">The Solution</h2>
+        <p data-i18n="pulse-customer-stockland.solution-body-1">Pulse's change tracking logs every change made to TM1 objects — by administrators, users, or automated processes — recording who made the change, when, and which specific lines of rules or TurboIntegrator scripts were modified. Combined with rollback functionality, this gives the Stockland team the ability to restore any previous version quickly.</p>
+        <p data-i18n="pulse-customer-stockland.solution-body-2">Pulse's user analytics feature allows the team to analyse system behaviour from a performance perspective, identifying long-running operations, concurrent activities, and the users involved — enabling targeted resolution rather than guesswork.</p>
         <img src="/assets/images/pulse/customers/stockland/Alert-Alltypes-1-1.png" alt="Pulse Solution" class="case-study-img">
       </div>
 
       <div class="case-study-section">
-        <h2>Real-World Examples</h2>
+        <h2 data-i18n="pulse-customer-stockland.examples-heading">Real-World Examples</h2>
 
-        <h3>Production Deployment Error</h3>
-        <p>After a series of releases, Pulse alerts indicated users couldn't log into a TM1 instance. Using change tracking, the admin team discovered that an external contractor had incorrectly updated a process in production — the wrong version of a TurboIntegrator script had been deployed due to human error. The team could see exactly which lines were changed, rolled back to the correct version, and resolved the issue quickly with minimal user impact.</p>
+        <h3 data-i18n="pulse-customer-stockland.example1-heading">Production Deployment Error</h3>
+        <p data-i18n="pulse-customer-stockland.example1-body">After a series of releases, Pulse alerts indicated users couldn't log into a TM1 instance. Using change tracking, the admin team discovered that an external contractor had incorrectly updated a process in production — the wrong version of a TurboIntegrator script had been deployed due to human error. The team could see exactly which lines were changed, rolled back to the correct version, and resolved the issue quickly with minimal user impact.</p>
 
-        <h3>Recurring Performance Issue</h3>
-        <p>Using Pulse's user analytics, the admin team identified a recurring long-running thread that was causing wait times for users. They identified concurrent activities occurring simultaneously and worked with users to resolve the contention — eliminating a performance bottleneck that had been difficult to pinpoint with standard TM1 tools.</p>
+        <h3 data-i18n="pulse-customer-stockland.example2-heading">Recurring Performance Issue</h3>
+        <p data-i18n="pulse-customer-stockland.example2-body">Using Pulse's user analytics, the admin team identified a recurring long-running thread that was causing wait times for users. They identified concurrent activities occurring simultaneously and worked with users to resolve the contention — eliminating a performance bottleneck that had been difficult to pinpoint with standard TM1 tools.</p>
 
         <img src="/assets/images/pulse/customers/stockland/image-asset-5.png" alt="Results" class="case-study-img">
       </div>
 
       <div class="case-study-section">
-        <h2>The Results</h2>
+        <h2 data-i18n="pulse-customer-stockland.results-heading">The Results</h2>
         <ul>
-          <li>Full audit trail of all changes across development and production environments</li>
-          <li>Rapid identification and rollback of incorrect production deployments with minimal user impact</li>
-          <li>Recurring performance bottlenecks identified and resolved using user analytics</li>
-          <li>Confidence that correct versions have been deployed to production at all times</li>
-          <li>Ability to manage multiple parallel development streams without losing track of production state</li>
+          <li data-i18n="pulse-customer-stockland.results-li-1">Full audit trail of all changes across development and production environments</li>
+          <li data-i18n="pulse-customer-stockland.results-li-2">Rapid identification and rollback of incorrect production deployments with minimal user impact</li>
+          <li data-i18n="pulse-customer-stockland.results-li-3">Recurring performance bottlenecks identified and resolved using user analytics</li>
+          <li data-i18n="pulse-customer-stockland.results-li-4">Confidence that correct versions have been deployed to production at all times</li>
+          <li data-i18n="pulse-customer-stockland.results-li-5">Ability to manage multiple parallel development streams without losing track of production state</li>
         </ul>
         <img src="/assets/images/pulse/customers/stockland/image-asset-6.png" alt="Final Results" class="case-study-img">
       </div>
@@ -174,15 +174,15 @@
 
   <section class="case-study-nav">
     <div class="case-study-nav-inner">
-      <a href="/pulse/customers/norgine/" class="btn btn-secondary">← Norgine</a>
-      <a href="/pulse/customers/" class="btn btn-primary">All customer stories →</a>
+      <a href="/pulse/customers/norgine/" class="btn btn-secondary" data-i18n="pulse-customer-stockland.nav-prev">← Norgine</a>
+      <a href="/pulse/customers/" class="btn btn-primary" data-i18n="pulse-customer-stockland.nav-next">All customer stories →</a>
     </div>
   </section>
 
   <section class="page-cta">
-    <h2>Take control of your production environment</h2>
-    <p>Change tracking, rollback, and performance analytics — all in Pulse.</p>
-    <a href="/contact/" class="btn btn-primary">Request a demo</a>
+    <h2 data-i18n="pulse-customer-stockland.cta-heading">Take control of your production environment</h2>
+    <p data-i18n="pulse-customer-stockland.cta-body">Change tracking, rollback, and performance analytics — all in Pulse.</p>
+    <a href="/contact/" class="btn btn-primary" data-i18n="pulse-customer-stockland.cta-btn">Request a demo</a>
   </section>
 
 </main>
