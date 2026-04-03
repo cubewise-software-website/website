@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Cubewise</title>
@@ -13,14 +11,27 @@
     <span class="announcement-bar__message">
       <span class="announcement-bar__badge">New</span>
       Cubewise achieves IBM Platinum Partner status for 2025 —
-      <a href="/about/">Read the announcement &rarr;</a>
+      <a href="/about/">Read the announcement →</a>
     </span>
-    <nav class="announcement-bar__links">
-      <a href="/about/">About</a>
-      <a href="/partners/">Partners</a>
-      <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a>
-      <a href="https://forum.cubewise.com/" target="_blank" rel="noopener noreferrer">Forum</a>
-    </nav>
+    
+      <nav class="announcement-bar__links">
+        <a href="/about/" data-i18n="announce.about">About</a>
+        <a href="/partners/" data-i18n="announce.partners">Partners</a>
+        <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13" data-i18n="announce.support">Support</a>
+        <a href="https://forum.cubewise.com/" target="_blank" rel="noopener noreferrer" data-i18n="announce.forum">Forum</a>
+        <span class="lang-switcher__divider"></span>
+        <div class="lang-switcher" data-current-locale="en" data-current-path="/contact/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:var(--orange-gold)"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span class="lang-switcher__label"><span class="lang-switcher__current">EN</span></span>
+          <span class="lang-switcher__chevron">▾</span>
+          <div class="lang-switcher__dropdown">
+            <a href="" class="lang-switcher__option lang-switcher__option--en" data-locale="en">English</a>
+            <a href="" class="lang-switcher__option lang-switcher__option--fr" data-locale="fr">Français</a>
+            <a href="" class="lang-switcher__option lang-switcher__option--de" data-locale="de">Deutsch</a>
+            <a href="" class="lang-switcher__option lang-switcher__option--zh-hans" data-locale="zh-hans">中文 (简体)</a>
+          </div>
+        </div>
+      </nav>
     </div>
 </div>
 <header class="site-header">
@@ -34,7 +45,7 @@
         <div class="nav-mega-menu">
           <div class="mega-menu-inner">
             <div class="mega-col">
-              <h4 class="mega-heading">Cubewise For&hellip;</h4>
+              <h4 class="mega-heading">Cubewise For…</h4>
               <a href="/platform/developers/" class="mega-link"><strong>Developers</strong><span>Build faster with Arc &amp; Arc+</span></a>
               <a href="/platform/administrators/" class="mega-link"><strong>Administrators</strong><span>Monitor &amp; manage with Pulse</span></a>
               <a href="/platform/power-users/" class="mega-link"><strong>Power Users</strong><span>Excel, Power BI &amp; data integration</span></a>
@@ -73,9 +84,9 @@
           </div>
         </div>
       </li>
-      <li><a href="/docs/">Help</a></li>
-      <li><a href="https://cubewise.com/">Services</a></li>
-      <li class="nav-cta-item"><a href="/contact/" class="nav-cta">Contact</a></li>
+      <li><a href="/docs/" data-i18n="nav.help">Help</a></li>
+      <li><a href="https://cubewise.com/" data-i18n="nav.services">Services</a></li>
+      <li class="nav-cta-item"><a href="/contact/" class="nav-cta" data-i18n="nav.contact">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -92,23 +103,23 @@
     <div class="name-row">
       <div>
         <label for="first-name">First name <span aria-hidden="true" style="color:var(--orange-gold)">*</span></label>
-        <input type="text" id="first-name" name="first-name" required autocomplete="given-name">
+        <input type="text" id="first-name" name="first-name" required="" autocomplete="given-name">
       </div>
       <div>
         <label for="last-name">Last name <span aria-hidden="true" style="color:var(--orange-gold)">*</span></label>
-        <input type="text" id="last-name" name="last-name" required autocomplete="family-name">
+        <input type="text" id="last-name" name="last-name" required="" autocomplete="family-name">
       </div>
     </div>
 
     <div>
       <label for="email">Email <span aria-hidden="true" style="color:var(--orange-gold)">*</span></label>
-      <input type="email" id="email" name="email" required autocomplete="email">
+      <input type="email" id="email" name="email" required="" autocomplete="email">
     </div>
 
     <div>
       <label for="region">Region <span aria-hidden="true" style="color:var(--orange-gold)">*</span></label>
-      <select id="region" name="region" required>
-        <option value="" disabled selected>Select your region…</option>
+      <select id="region" name="region" required="">
+        <option value="" disabled="" selected="">Select your region…</option>
         <option>Africa</option>
         <option>Australia (NSW &amp; Queensland)</option>
         <option>Australia (Victoria, SA, WA)</option>
@@ -153,7 +164,7 @@
     </div>
 
     <div class="consent-block">
-      <input type="checkbox" id="consent" name="consent" value="yes" required>
+      <input type="checkbox" id="consent" name="consent" value="yes" required="">
       <label for="consent" style="font-weight:400;margin-bottom:0">We would like to reach you via email with the latest news and best practices in FP&amp;A and TM1 development — no more than once a month. <span aria-hidden="true" style="color:var(--orange-gold)">*</span></label>
     </div>
 
@@ -170,21 +181,50 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <img src="/assets/logos/Cubewise_Code_RGB.svg" alt="Cubewise" height="24">
-      <p>IBM Planning Analytics / TM1 specialists.</p>
+      <p data-i18n="footer.tagline">IBM Planning Analytics / TM1 specialists.</p>
     </div>
     <nav class="footer-nav">
-      <a href="/platform/">Platform</a>
-      <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a>
-      <a href="/docs/">Docs</a>
-      <a href="/blog/">Blog</a>
-      <a href="/partners/">Partners</a>
-      <a href="/about/">About</a>
-      <a href="/contact/">Contact</a>
+      <a href="/platform/" data-i18n="footer.platform">Platform</a>
+      <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13" data-i18n="footer.support">Support</a>
+      <a href="/docs/" data-i18n="footer.docs">Docs</a>
+      <a href="/blog/" data-i18n="footer.blog">Blog</a>
+      <a href="/partners/" data-i18n="footer.partners">Partners</a>
+      <a href="/about/" data-i18n="footer.about">About</a>
+      <a href="/contact/" data-i18n="footer.contact">Contact</a>
     </nav>
-    <p class="footer-copy">&copy; Cubewise</p>
+    <p class="footer-copy">© Cubewise</p>
   </div>
 </footer>
 
   <script src="/assets/js/nav.js"></script>
-</body>
-</html>
+
+
+
+  <script>
+    (function () {
+      const switchers = document.querySelectorAll('.lang-switcher')
+      const LABELS = { en: 'EN', fr: 'FR', de: 'DE', 'zh-hans': '中文' }
+      const LOCALE_PATHS = { en: '', fr: '/fr', de: '/de', 'zh-hans': '/zh-hans' }
+      switchers.forEach(function (sw) {
+        const currentLocale = sw.dataset.currentLocale || 'en'
+        const pagePath = sw.dataset.currentPath || '/'
+        const labelEl = sw.querySelector('.lang-switcher__current')
+        const dropdown = sw.querySelector('.lang-switcher__dropdown')
+        if (labelEl) labelEl.textContent = LABELS[currentLocale] || 'EN'
+        sw.querySelectorAll('[data-locale]').forEach(function (opt) {
+          const locale = opt.dataset.locale
+          opt.href = LOCALE_PATHS[locale] + pagePath
+          if (locale === currentLocale) opt.classList.add('lang-switcher__option--active')
+        })
+        sw.addEventListener('click', function (e) {
+          e.stopPropagation()
+          dropdown.classList.toggle('lang-switcher__dropdown--open')
+        })
+      })
+      document.addEventListener('click', function () {
+        document.querySelectorAll('.lang-switcher__dropdown--open').forEach(function (d) {
+          d.classList.remove('lang-switcher__dropdown--open')
+        })
+      })
+    })()
+  </script></body></html>

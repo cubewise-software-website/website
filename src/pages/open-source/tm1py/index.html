@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TM1py — Cubewise Open Source</title>
@@ -13,14 +11,27 @@
     <span class="announcement-bar__message">
       <span class="announcement-bar__badge">New</span>
       Cubewise achieves IBM Platinum Partner status for 2025 —
-      <a href="/about/">Read the announcement &rarr;</a>
+      <a href="/about/">Read the announcement →</a>
     </span>
-    <nav class="announcement-bar__links">
-      <a href="/about/">About</a>
-      <a href="/partners/">Partners</a>
-      <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a>
-      <a href="https://forum.cubewise.com/" target="_blank" rel="noopener noreferrer">Forum</a>
-    </nav>
+    
+      <nav class="announcement-bar__links">
+        <a href="/about/" data-i18n="announce.about">About</a>
+        <a href="/partners/" data-i18n="announce.partners">Partners</a>
+        <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13" data-i18n="announce.support">Support</a>
+        <a href="https://forum.cubewise.com/" target="_blank" rel="noopener noreferrer" data-i18n="announce.forum">Forum</a>
+        <span class="lang-switcher__divider"></span>
+        <div class="lang-switcher" data-current-locale="en" data-current-path="/open-source/tm1py/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:var(--orange-gold)"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span class="lang-switcher__label"><span class="lang-switcher__current">EN</span></span>
+          <span class="lang-switcher__chevron">▾</span>
+          <div class="lang-switcher__dropdown">
+            <a href="" class="lang-switcher__option lang-switcher__option--en" data-locale="en">English</a>
+            <a href="" class="lang-switcher__option lang-switcher__option--fr" data-locale="fr">Français</a>
+            <a href="" class="lang-switcher__option lang-switcher__option--de" data-locale="de">Deutsch</a>
+            <a href="" class="lang-switcher__option lang-switcher__option--zh-hans" data-locale="zh-hans">中文 (简体)</a>
+          </div>
+        </div>
+      </nav>
     </div>
 </div>
 <header class="site-header">
@@ -34,7 +45,7 @@
         <div class="nav-mega-menu">
           <div class="mega-menu-inner">
             <div class="mega-col">
-              <h4 class="mega-heading">Cubewise For&hellip;</h4>
+              <h4 class="mega-heading">Cubewise For…</h4>
               <a href="/platform/developers/" class="mega-link"><strong>Developers</strong><span>Build faster with Arc &amp; Arc+</span></a>
               <a href="/platform/administrators/" class="mega-link"><strong>Administrators</strong><span>Monitor &amp; manage with Pulse</span></a>
               <a href="/platform/power-users/" class="mega-link"><strong>Power Users</strong><span>Excel, Power BI &amp; data integration</span></a>
@@ -73,9 +84,9 @@
           </div>
         </div>
       </li>
-      <li><a href="/docs/">Help</a></li>
-      <li><a href="https://cubewise.com/">Services</a></li>
-      <li class="nav-cta-item"><a href="/contact/" class="nav-cta">Contact</a></li>
+      <li><a href="/docs/" data-i18n="nav.help">Help</a></li>
+      <li><a href="https://cubewise.com/" data-i18n="nav.services">Services</a></li>
+      <li class="nav-cta-item"><a href="/contact/" class="nav-cta" data-i18n="nav.contact">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -94,7 +105,7 @@
     <div class="feature-row">
       <div class="feature-row-text">
         <h2>Connect TM1 to anything</h2>
-        <p>TM1py bridges IBM Planning Analytics and Python, giving you complete programmatic control over every object and setting in TM1. Combined with Python&rsquo;s vast library ecosystem, the integration possibilities are unlimited.</p>
+        <p>TM1py bridges IBM Planning Analytics and Python, giving you complete programmatic control over every object and setting in TM1. Combined with Python’s vast library ecosystem, the integration possibilities are unlimited.</p>
         <ul>
           <li>Create seamless integrations between TM1 and cloud systems</li>
           <li>Infuse AI and forecasting algorithms into your planning cycle</li>
@@ -106,8 +117,8 @@
 
     <div class="feature-row">
       <div class="feature-row-text">
-        <h2>Automate what TM1 can&rsquo;t reach natively</h2>
-        <p>Turbo Integrator has limits. TM1py doesn&rsquo;t. Automate tasks that would otherwise require manual intervention, and update objects that TI cannot touch.</p>
+        <h2>Automate what TM1 can’t reach natively</h2>
+        <p>Turbo Integrator has limits. TM1py doesn’t. Automate tasks that would otherwise require manual intervention, and update objects that TI cannot touch.</p>
         <ul>
           <li>Automate manual and error-prone TM1 tasks</li>
           <li>Update chores, private objects, and Excel applications programmatically</li>
@@ -150,22 +161,51 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <img src="/assets/logos/Cubewise_Code_RGB.svg" alt="Cubewise" height="24">
-      <p>IBM Planning Analytics / TM1 specialists.</p>
+      <p data-i18n="footer.tagline">IBM Planning Analytics / TM1 specialists.</p>
     </div>
     <nav class="footer-nav">
-      <a href="/platform/">Platform</a>
+      <a href="/platform/" data-i18n="footer.platform">Platform</a>
       <a href="/open-source/">Open Source</a>
-      <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13">Support</a>
-      <a href="/docs/">Docs</a>
-      <a href="/blog/">Blog</a>
-      <a href="/partners/">Partners</a>
-      <a href="/about/">About</a>
-      <a href="/contact/">Contact</a>
+      <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13" data-i18n="footer.support">Support</a>
+      <a href="/docs/" data-i18n="footer.docs">Docs</a>
+      <a href="/blog/" data-i18n="footer.blog">Blog</a>
+      <a href="/partners/" data-i18n="footer.partners">Partners</a>
+      <a href="/about/" data-i18n="footer.about">About</a>
+      <a href="/contact/" data-i18n="footer.contact">Contact</a>
     </nav>
-    <p class="footer-copy">&copy; Cubewise</p>
+    <p class="footer-copy">© Cubewise</p>
   </div>
 </footer>
 
   <script src="/assets/js/nav.js"></script>
-</body>
-</html>
+
+
+
+  <script>
+    (function () {
+      const switchers = document.querySelectorAll('.lang-switcher')
+      const LABELS = { en: 'EN', fr: 'FR', de: 'DE', 'zh-hans': '中文' }
+      const LOCALE_PATHS = { en: '', fr: '/fr', de: '/de', 'zh-hans': '/zh-hans' }
+      switchers.forEach(function (sw) {
+        const currentLocale = sw.dataset.currentLocale || 'en'
+        const pagePath = sw.dataset.currentPath || '/'
+        const labelEl = sw.querySelector('.lang-switcher__current')
+        const dropdown = sw.querySelector('.lang-switcher__dropdown')
+        if (labelEl) labelEl.textContent = LABELS[currentLocale] || 'EN'
+        sw.querySelectorAll('[data-locale]').forEach(function (opt) {
+          const locale = opt.dataset.locale
+          opt.href = LOCALE_PATHS[locale] + pagePath
+          if (locale === currentLocale) opt.classList.add('lang-switcher__option--active')
+        })
+        sw.addEventListener('click', function (e) {
+          e.stopPropagation()
+          dropdown.classList.toggle('lang-switcher__dropdown--open')
+        })
+      })
+      document.addEventListener('click', function () {
+        document.querySelectorAll('.lang-switcher__dropdown--open').forEach(function (d) {
+          d.classList.remove('lang-switcher__dropdown--open')
+        })
+      })
+    })()
+  </script></body></html>
