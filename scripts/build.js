@@ -193,7 +193,7 @@ async function build() {
       content = injectTemplate(contentTemplate, rendered)
     }
 
-    const html = injectTemplate(baseTemplate, { title: rendered.title, content })
+    const html = injectTemplate(baseTemplate, { title: rendered.title, content, pagePath: `/${rendered.path}/` })
     await writePage(rendered.path, html)
   }
 

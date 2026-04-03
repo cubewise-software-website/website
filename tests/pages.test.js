@@ -191,3 +191,18 @@ describe('lang-switcher CSS', () => {
     expect(css).toContain('.lang-switcher__dropdown--open')
   })
 })
+
+describe('base.html language switcher', () => {
+  it('has lang-switcher in announcement bar links', () => {
+    expect(baseHtml).toContain('class="lang-switcher"')
+  })
+  it('has data-current-path template variable', () => {
+    expect(baseHtml).toContain('data-current-path="{{pagePath}}"')
+  })
+  it('has data-i18n on nav Contact link', () => {
+    expect(baseHtml).toContain('data-i18n="nav.contact"')
+  })
+  it('has data-i18n on footer tagline', () => {
+    expect(baseHtml).toContain('data-i18n="footer.tagline"')
+  })
+})
