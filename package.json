@@ -10,7 +10,12 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:mobile": "playwright test",
-    "translate": "node scripts/translate.js"
+    "translate": "node scripts/translate.js",
+    "extract-strings": "node scripts/extract-strings.js",
+    "translate:fr": "node scripts/translate.js --locale fr",
+    "translate:de": "node scripts/translate.js --locale de",
+    "translate:zh-hans": "node scripts/translate.js --locale zh-hans",
+    "translate:all": "npm run translate:fr && npm run translate:de && npm run translate:zh-hans"
   },
   "dependencies": {
     "cheerio": "1.0.0"
