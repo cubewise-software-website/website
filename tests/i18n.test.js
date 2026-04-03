@@ -13,6 +13,10 @@ describe('getPagePath', () => {
   it('converts src/pages/arc/features/index.html to /arc/features/', () => {
     expect(getPagePath('src/pages/arc/features/index.html')).toBe('/arc/features/')
   })
+
+  it('handles Windows backslashes', () => {
+    expect(getPagePath('src\\pages\\about\\index.html')).toBe('/about/')
+  })
 })
 
 describe('applyTranslations', () => {
