@@ -179,3 +179,15 @@ describe('announcement bar HTML (base template)', () => {
     expect(navLinksSection).not.toContain('<li><a href="https://forum.cubewise.com/')
   })
 })
+
+describe('lang-switcher CSS', () => {
+  it('defines .lang-switcher', () => {
+    expect(css).toContain('.lang-switcher')
+  })
+  it('defines .lang-switcher__dropdown', () => {
+    expect(css).toContain('.lang-switcher__dropdown')
+  })
+  it('defines .lang-switcher__dropdown--open', () => {
+    expect(css).toContain('.lang-switcher__dropdown--open')
+  })
+})
