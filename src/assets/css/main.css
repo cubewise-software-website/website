@@ -110,14 +110,10 @@ a:hover { color: var(--charcoal); }
 }
 
 .announcement-bar__badge {
-  background: var(--orange-gold);
-  color: var(--pearl-white);
+  color: var(--orange-gold);
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 3px 6px;
-  border-radius: 3px;
-  margin-right: 8px;
+  margin-right: 4px;
 }
 
 .announcement-bar__message a {
