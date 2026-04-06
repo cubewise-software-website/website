@@ -2,7 +2,7 @@
 import { mkdir, cp, rm, writeFile, readFile, readdir, stat } from 'fs/promises'
 import { join, dirname } from 'path'
 import { DIST_DIR, ASSETS_DIR, PAGES_DIR } from '../config.js'
-import { applyTranslations, injectHreflang, getPagePath } from './i18n.js'
+import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath } from './i18n.js'
 import { LOCALES, SITE_URL, I18N_DIR } from '../config.js'
 
 // Wipe dist/ first so stale files don't linger
@@ -28,7 +28,10 @@ async function walkAndWrite(srcDir, distDir, translations, relDir = '') {
       await writeFile(enOut, enHtml)
       for (const locale of LOCALES) {
         const localeHtml = injectHreflang(
-          applyTranslations(html, translations[locale] ?? {}, locale),
+          applyLocaleLinks(
+            applyTranslations(html, translations[locale] ?? {}, locale),
+            locale, LOCALES
+          ),
           pagePath, SITE_URL, LOCALES
         )
         const localeOut = join(distDir, locale, rel)

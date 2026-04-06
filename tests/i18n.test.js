@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { applyTranslations, injectHreflang, getPagePath } from '../scripts/i18n.js'
+import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath } from '../scripts/i18n.js'
 
 describe('getPagePath', () => {
   it('converts src/pages/about/index.html to /about/', () => {
@@ -58,6 +58,39 @@ describe('applyTranslations', () => {
     const html = '<div class="lang-switcher" data-current-locale="en" data-current-path="/about/"></div>'
     const result = applyTranslations(html, {}, 'fr')
     expect(result).toContain('data-current-locale="fr"')
+  })
+})
+
+describe('applyLocaleLinks', () => {
+  it('prefixes internal absolute hrefs with the locale', () => {
+    const html = '<a href="/about/">About</a>'
+    const result = applyLocaleLinks(html, 'fr', ['fr', 'de', 'zh-hans'])
+    expect(result).toContain('href="/fr/about/"')
+  })
+
+  it('does not double-prefix already locale-prefixed hrefs', () => {
+    const html = '<a href="/fr/about/">About</a>'
+    const result = applyLocaleLinks(html, 'fr', ['fr', 'de', 'zh-hans'])
+    expect(result).toContain('href="/fr/about/"')
+    expect(result).not.toContain('href="/fr/fr/')
+  })
+
+  it('does not modify external hrefs', () => {
+    const html = '<a href="https://example.com">External</a>'
+    const result = applyLocaleLinks(html, 'fr', ['fr', 'de', 'zh-hans'])
+    expect(result).toContain('href="https://example.com"')
+  })
+
+  it('does not modify empty hrefs', () => {
+    const html = '<a href="">Empty</a>'
+    const result = applyLocaleLinks(html, 'fr', ['fr', 'de', 'zh-hans'])
+    expect(result).toContain('href=""')
+  })
+
+  it('prefixes root href correctly', () => {
+    const html = '<a href="/">Home</a>'
+    const result = applyLocaleLinks(html, 'de', ['fr', 'de', 'zh-hans'])
+    expect(result).toContain('href="/de/"')
   })
 })
 

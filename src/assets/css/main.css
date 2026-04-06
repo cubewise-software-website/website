@@ -143,6 +143,10 @@ a:hover { color: var(--charcoal); }
 
 .announcement-bar__links a:hover { color: var(--dark-night); }
 
+/* Override for dropdown options inside announcement bar (dark background) */
+.announcement-bar__links .lang-switcher__option { color: rgba(255,255,255,0.75); }
+.announcement-bar__links .lang-switcher__option:hover { color: var(--pearl-white); }
+
 /* ── Language switcher ── */
 .lang-switcher {
   position: relative;

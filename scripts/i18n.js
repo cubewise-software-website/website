@@ -49,6 +49,22 @@ export function applyTranslations(html, translations, locale) {
 }
 
 /**
+ * Rewrite all internal absolute hrefs on a locale page to include the locale prefix.
+ * e.g. "/about/" → "/fr/about/" when locale is "fr".
+ * Skips hrefs that are already locale-prefixed or are not root-relative.
+ */
+export function applyLocaleLinks(html, locale, locales) {
+  const $ = load(html, { decodeEntities: false })
+  $('a[href]').each((_, el) => {
+    const href = $(el).attr('href')
+    if (!href || !href.startsWith('/')) return
+    if (locales.some(l => href.startsWith(`/${l}/`) || href === `/${l}`)) return
+    $(el).attr('href', `/${locale}${href}`)
+  })
+  return $.html()
+}
+
+/**
  * Inject hreflang <link> tags into <head>.
  * pagePath is the locale-agnostic path, e.g. "/about/".
  */

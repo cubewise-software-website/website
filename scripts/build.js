@@ -4,7 +4,7 @@ import { join, dirname } from 'path'
 import { fetchSpace } from './fetch.js'
 import { renderPage } from './render.js'
 import { spaces, DIST_DIR, TEMPLATES_DIR, ASSETS_DIR, PAGES_DIR } from '../config.js'
-import { applyTranslations, injectHreflang, getPagePath } from './i18n.js'
+import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath } from './i18n.js'
 import { LOCALES, SITE_URL, I18N_DIR } from '../config.js'
 
 export function injectTemplate(template, context) {
@@ -108,6 +108,7 @@ export function generateBlogIndex(blogPosts) {
  */
 export function applyLocale(html, pagePath, locale, translations, siteUrl, locales) {
   let result = applyTranslations(html, translations, locale)
+  result = applyLocaleLinks(result, locale, locales)
   result = injectHreflang(result, pagePath, siteUrl, locales)
   return result
 }
