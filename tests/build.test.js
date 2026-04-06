@@ -105,10 +105,13 @@ describe('generateSearchIndex', () => {
 })
 
 describe('applyLocale', () => {
+  const LOCALES = ['fr', 'de', 'zh-hans']
+  const SITE = 'https://cubewise.com'
+
   it('replaces data-i18n text and sets lang attribute', () => {
     const html = '<html lang="en"><head></head><body><h1 data-i18n="home.heading">Welcome</h1></body></html>'
     const translations = { 'home.heading': 'Bienvenue' }
-    const result = applyLocale(html, '/about/', 'fr', translations, 'https://cubewise.com', ['fr', 'de', 'zh-hans'])
+    const result = applyLocale(html, '/about/', 'fr', translations, SITE, LOCALES)
     expect(result).toContain('lang="fr"')
     expect(result).toContain('Bienvenue')
     expect(result).toContain('hreflang="fr"')
@@ -116,8 +119,39 @@ describe('applyLocale', () => {
 
   it('injects hreflang tags', () => {
     const html = '<html lang="en"><head></head><body></body></html>'
-    const result = applyLocale(html, '/', 'de', {}, 'https://cubewise.com', ['fr', 'de', 'zh-hans'])
+    const result = applyLocale(html, '/', 'de', {}, SITE, LOCALES)
     expect(result).toContain('hreflang="de"')
     expect(result).toContain('hreflang="x-default"')
+  })
+
+  it('rewrites internal links for fr locale', () => {
+    const html = '<html lang="en"><head></head><body><a href="/about/">About</a><a href="/arc/">Arc</a></body></html>'
+    const result = applyLocale(html, '/', 'fr', {}, SITE, LOCALES)
+    expect(result).toContain('href="/fr/about/"')
+    expect(result).toContain('href="/fr/arc/"')
+  })
+
+  it('rewrites internal links for de locale', () => {
+    const html = '<html lang="en"><head></head><body><a href="/about/">About</a></body></html>'
+    const result = applyLocale(html, '/', 'de', {}, SITE, LOCALES)
+    expect(result).toContain('href="/de/about/"')
+  })
+
+  it('rewrites internal links for zh-hans locale', () => {
+    const html = '<html lang="en"><head></head><body><a href="/about/">About</a></body></html>'
+    const result = applyLocale(html, '/', 'zh-hans', {}, SITE, LOCALES)
+    expect(result).toContain('href="/zh-hans/about/"')
+  })
+
+  it('does not rewrite external links', () => {
+    const html = '<html lang="en"><head></head><body><a href="https://ibm.com">IBM</a></body></html>'
+    const result = applyLocale(html, '/', 'fr', {}, SITE, LOCALES)
+    expect(result).toContain('href="https://ibm.com"')
+  })
+
+  it('does not double-prefix links already in another locale', () => {
+    const html = '<html lang="en"><head></head><body><a href="/de/about/">About DE</a></body></html>'
+    const result = applyLocale(html, '/', 'fr', {}, SITE, LOCALES)
+    expect(result).not.toContain('/fr/de/')
   })
 })

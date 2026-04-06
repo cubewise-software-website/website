@@ -62,35 +62,65 @@ describe('applyTranslations', () => {
 })
 
 describe('applyLocaleLinks', () => {
-  it('prefixes internal absolute hrefs with the locale', () => {
+  const LOCALES = ['fr', 'de', 'zh-hans']
+
+  it('prefixes internal absolute hrefs with /fr/', () => {
     const html = '<a href="/about/">About</a>'
-    const result = applyLocaleLinks(html, 'fr', ['fr', 'de', 'zh-hans'])
-    expect(result).toContain('href="/fr/about/"')
+    expect(applyLocaleLinks(html, 'fr', LOCALES)).toContain('href="/fr/about/"')
   })
 
-  it('does not double-prefix already locale-prefixed hrefs', () => {
+  it('prefixes internal absolute hrefs with /de/', () => {
+    const html = '<a href="/about/">About</a>'
+    expect(applyLocaleLinks(html, 'de', LOCALES)).toContain('href="/de/about/"')
+  })
+
+  it('prefixes internal absolute hrefs with /zh-hans/', () => {
+    const html = '<a href="/about/">About</a>'
+    expect(applyLocaleLinks(html, 'zh-hans', LOCALES)).toContain('href="/zh-hans/about/"')
+  })
+
+  it('rewrites multiple links in one pass', () => {
+    const html = '<a href="/arc/">Arc</a><a href="/pulse/">Pulse</a><a href="/contact/">Contact</a>'
+    const result = applyLocaleLinks(html, 'fr', LOCALES)
+    expect(result).toContain('href="/fr/arc/"')
+    expect(result).toContain('href="/fr/pulse/"')
+    expect(result).toContain('href="/fr/contact/"')
+  })
+
+  it('does not double-prefix already locale-prefixed hrefs (fr)', () => {
     const html = '<a href="/fr/about/">About</a>'
-    const result = applyLocaleLinks(html, 'fr', ['fr', 'de', 'zh-hans'])
+    const result = applyLocaleLinks(html, 'fr', LOCALES)
     expect(result).toContain('href="/fr/about/"')
-    expect(result).not.toContain('href="/fr/fr/')
+    expect(result).not.toContain('/fr/fr/')
+  })
+
+  it('does not double-prefix already locale-prefixed hrefs (de)', () => {
+    const html = '<a href="/de/about/">About</a>'
+    const result = applyLocaleLinks(html, 'de', LOCALES)
+    expect(result).not.toContain('/de/de/')
+  })
+
+  it('does not double-prefix already locale-prefixed hrefs (zh-hans)', () => {
+    const html = '<a href="/zh-hans/about/">About</a>'
+    const result = applyLocaleLinks(html, 'zh-hans', LOCALES)
+    expect(result).not.toContain('/zh-hans/zh-hans/')
   })
 
   it('does not modify external hrefs', () => {
     const html = '<a href="https://example.com">External</a>'
-    const result = applyLocaleLinks(html, 'fr', ['fr', 'de', 'zh-hans'])
-    expect(result).toContain('href="https://example.com"')
+    expect(applyLocaleLinks(html, 'fr', LOCALES)).toContain('href="https://example.com"')
   })
 
-  it('does not modify empty hrefs', () => {
+  it('does not modify empty hrefs (used by lang-switcher options)', () => {
     const html = '<a href="">Empty</a>'
-    const result = applyLocaleLinks(html, 'fr', ['fr', 'de', 'zh-hans'])
-    expect(result).toContain('href=""')
+    expect(applyLocaleLinks(html, 'fr', LOCALES)).toContain('href=""')
   })
 
-  it('prefixes root href correctly', () => {
+  it('prefixes root href correctly for all locales', () => {
     const html = '<a href="/">Home</a>'
-    const result = applyLocaleLinks(html, 'de', ['fr', 'de', 'zh-hans'])
-    expect(result).toContain('href="/de/"')
+    expect(applyLocaleLinks(html, 'fr', LOCALES)).toContain('href="/fr/"')
+    expect(applyLocaleLinks(html, 'de', LOCALES)).toContain('href="/de/"')
+    expect(applyLocaleLinks(html, 'zh-hans', LOCALES)).toContain('href="/zh-hans/"')
   })
 })
 
