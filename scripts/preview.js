@@ -22,21 +22,16 @@ async function walkAndWrite(srcDir, distDir, translations, relDir = '') {
     } else if (entry.endsWith('.html')) {
       const html = await readFile(srcPath, 'utf8')
       const pagePath = getPagePath(`src/pages/${rel}`)
-      const enHtml = injectOgMeta(injectHreflang(html, pagePath, SITE_URL, LOCALES), pagePath, 'en', SITE_URL, LOCALES)
+      let enHtml = injectHreflang(html, pagePath, SITE_URL, LOCALES)
+      enHtml = injectOgMeta(enHtml, pagePath, 'en', SITE_URL, LOCALES)
       const enOut = join(distDir, rel)
       await mkdir(dirname(enOut), { recursive: true })
       await writeFile(enOut, enHtml)
       for (const locale of LOCALES) {
-        const localeHtml = injectOgMeta(
-          injectHreflang(
-            applyLocaleLinks(
-              applyTranslations(html, translations[locale] ?? {}, locale),
-              locale, LOCALES
-            ),
-            pagePath, SITE_URL, LOCALES
-          ),
-          pagePath, locale, SITE_URL, LOCALES
-        )
+        let localeHtml = applyTranslations(html, translations[locale] ?? {}, locale)
+        localeHtml = applyLocaleLinks(localeHtml, locale, LOCALES)
+        localeHtml = injectHreflang(localeHtml, pagePath, SITE_URL, LOCALES)
+        localeHtml = injectOgMeta(localeHtml, pagePath, locale, SITE_URL, LOCALES)
         const localeOut = join(distDir, locale, rel)
         await mkdir(dirname(localeOut), { recursive: true })
         await writeFile(localeOut, localeHtml)

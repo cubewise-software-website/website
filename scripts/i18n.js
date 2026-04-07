@@ -87,6 +87,10 @@ export function injectHreflang(html, pagePath, siteUrl, locales) {
   return $.html()
 }
 
+/**
+ * Maps locale codes to Open Graph locale format (language_TERRITORY).
+ * Must be updated when new locales are added to config.js LOCALES.
+ */
 const OG_LOCALE_MAP = {
   en: 'en_US',
   fr: 'fr_FR',
