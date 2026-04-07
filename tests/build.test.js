@@ -22,13 +22,74 @@ describe('injectTemplate', () => {
 describe('generatePostList', () => {
   it('renders posts sorted newest first', () => {
     const posts = [
-      { title: 'Old Post', path: 'blog/posts/old-post', date: '2024-01-01', slug: 'old-post' },
-      { title: 'New Post', path: 'blog/posts/new-post', date: '2025-06-01', slug: 'new-post' },
+      { title: 'Old Post', path: 'blog/posts/old-post', date: '2024-01-01', slug: 'old-post', labels: [], body: '' },
+      { title: 'New Post', path: 'blog/posts/new-post', date: '2025-06-01', slug: 'new-post', labels: [], body: '' },
     ]
     const html = generatePostList(posts)
     expect(html.indexOf('New Post')).toBeLessThan(html.indexOf('Old Post'))
     expect(html).toContain('/blog/posts/new-post/')
     expect(html).toContain('2025-06-01')
+  })
+
+  it('adds data-labels attribute with space-separated slugs', () => {
+    const posts = [
+      { title: 'Post', path: 'blog/posts/post', date: '2025-01-01', slug: 'post', labels: ['arc', 'arc-plus'], body: '' },
+    ]
+    const html = generatePostList(posts)
+    expect(html).toContain('data-labels="arc arc-plus"')
+  })
+
+  it('sets data-labels to empty string when post has no labels', () => {
+    const posts = [
+      { title: 'Post', path: 'blog/posts/post', date: '2025-01-01', slug: 'post', labels: [], body: '' },
+    ]
+    const html = generatePostList(posts)
+    expect(html).toContain('data-labels=""')
+  })
+
+  it('renders known label slugs as display-name chips', () => {
+    const posts = [
+      { title: 'Post', path: 'blog/posts/post', date: '2025-01-01', slug: 'post', labels: ['arc', 'pulse'], body: '' },
+    ]
+    const html = generatePostList(posts)
+    expect(html).toContain('<span class="post-label">Arc</span>')
+    expect(html).toContain('<span class="post-label">Pulse</span>')
+  })
+
+  it('falls back to capitalised slug for unknown labels', () => {
+    const posts = [
+      { title: 'Post', path: 'blog/posts/post', date: '2025-01-01', slug: 'post', labels: ['mytag'], body: '' },
+    ]
+    const html = generatePostList(posts)
+    expect(html).toContain('<span class="post-label">Mytag</span>')
+  })
+
+  it('renders a 50-word excerpt stripped of HTML tags', () => {
+    const words = Array.from({ length: 60 }, (_, i) => `word${i}`)
+    const body = `<p>${words.join(' ')}</p>`
+    const posts = [
+      { title: 'Post', path: 'blog/posts/post', date: '2025-01-01', slug: 'post', labels: [], body },
+    ]
+    const html = generatePostList(posts)
+    expect(html).toContain('class="post-excerpt"')
+    expect(html).toContain('word49')
+    expect(html).not.toContain('word50')
+    expect(html).toContain('…')
+  })
+
+  it('omits ellipsis when body is 50 words or fewer', () => {
+    const posts = [
+      { title: 'Post', path: 'blog/posts/post', date: '2025-01-01', slug: 'post', labels: [], body: '<p>one two three</p>' },
+    ]
+    const html = generatePostList(posts)
+    expect(html).not.toContain('…')
+  })
+
+  it('handles missing labels and body gracefully', () => {
+    const posts = [
+      { title: 'Post', path: 'blog/posts/post', date: '2025-01-01', slug: 'post' },
+    ]
+    expect(() => generatePostList(posts)).not.toThrow()
   })
 })
 

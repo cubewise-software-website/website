@@ -21,13 +21,32 @@ async function writePage(path, html) {
   await writeFile(outPath, html)
 }
 
+const LABEL_DISPLAY = {
+  'arc': 'Arc',
+  'arc-plus': 'Arc+',
+  'pulse': 'Pulse',
+  'slice': 'Slice',
+  'atmosphere': 'Atmosphere',
+  'powerconnect': 'PowerConnect',
+}
+
 export function generatePostList(posts) {
   return [...posts]
     .sort((a, b) => b.date.localeCompare(a.date))
-    .map(p => `<article class="post-card">
+    .map(p => {
+      const labels = p.labels ?? []
+      const dataLabels = labels.join(' ')
+      const words = (p.body ?? '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().split(' ').filter(Boolean)
+      const excerpt = words.length === 0 ? '' : words.slice(0, 50).join(' ') + (words.length > 50 ? '…' : '')
+      const chips = labels.map(slug => {
+        const name = LABEL_DISPLAY[slug] ?? (slug.charAt(0).toUpperCase() + slug.slice(1))
+        return `<span class="post-label">${name}</span>`
+      }).join('')
+      return `<article class="post-card" data-labels="${dataLabels}">
   <h2><a href="/${p.path}/">${p.title}</a></h2>
-  <time datetime="${p.date}">${p.date}</time>
-</article>`)
+  <time datetime="${p.date}">${p.date}</time>${excerpt ? `\n  <p class="post-excerpt">${excerpt}</p>` : ''}${chips ? `\n  <div class="post-labels">${chips}</div>` : ''}
+</article>`
+    })
     .join('\n')
 }
 
