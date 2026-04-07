@@ -19,7 +19,7 @@
 
   function loadIndex() {
     if (index !== null) return Promise.resolve()
-    return fetch('/assets/search-index.json')
+    return fetch('../assets/search-index.json')
       .then(r => r.json())
       .then(data => { index = data })
       .catch(() => { index = [] })
@@ -35,7 +35,7 @@
   function renderRecentList(entries) {
     if (!recentList) return
     recentList.innerHTML = entries.slice(0, 6).map(e => `
-      <a class="docs-recent-card" href="/docs/${e.slug}/" data-title="${e.title.toLowerCase()}" data-excerpt="${e.excerpt.toLowerCase()}">
+      <a class="docs-recent-card" href="${e.slug}/" data-title="${e.title.toLowerCase()}" data-excerpt="${e.excerpt.toLowerCase()}">
         ${e.image ? `<div class="docs-recent-card-image"><img src="${e.image}" alt="${e.title}"></div>` : ''}
         <div class="docs-recent-card-body">
           <span class="docs-recent-title">${e.title}</span>
@@ -73,7 +73,7 @@
       return
     }
     resultsEl.innerHTML = results.map((r, i) => `
-      <a class="docs-search-result" href="/docs/${r.slug}/" data-idx="${i}">
+      <a class="docs-search-result" href="${r.slug}/" data-idx="${i}">
         <span class="docs-search-result-title">${r.title}</span>
         ${badgesHtml(r)}
       </a>`).join('')

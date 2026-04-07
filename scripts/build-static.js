@@ -25,6 +25,8 @@ async function buildStatic() {
   await cp('src/pages', DIST_DIR, { recursive: true })
   await cp('src/assets', join(DIST_DIR, 'assets'), { recursive: true })
   await rewritePaths(DIST_DIR)
+  // Write empty search index so docs-search.js doesn't 404
+  await writeFile(join(DIST_DIR, 'assets', 'search-index.json'), '[]', 'utf8')
   console.log('Static build complete.')
 }
 
