@@ -40,7 +40,7 @@ const PAGES = [
   ['/powerconnect/', 'PowerConnect — Cubewise Platform'],
   ['/powerconnect/features/', 'PowerConnect Features — Cubewise Platform'],
   ['/powerconnect/download/', 'Download PowerConnect — Cubewise Platform'],
-  ['/downloads/', 'Downloads — Cubewise Platform'],
+  ['/downloads/', 'Downloads — Cubewise'],
   ['/deployment/self-hosted/', 'Self-Hosted Deployment — Cubewise'],
   ['/deployment/cubewise-cloud/', 'Cubewise Cloud — Cubewise'],
 ]
