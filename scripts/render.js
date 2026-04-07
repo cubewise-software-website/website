@@ -79,7 +79,7 @@ export function renderPage(page, spaceConfig) {
   if (spaceConfig.product) labels.push(spaceConfig.product)
   if (spaceConfig.docType) labels.push(spaceConfig.docType)
 
-  const isRoot = page.ancestors.length === 0
+  const isRoot = page.ancestors.length === 0 && spaceConfig.contentType !== 'blogpost'
   const path = buildPath(page, spaceConfig, isRoot)
   const body = renderStorageFormat(page.body.storage.value)
   const date = page.version?.when
