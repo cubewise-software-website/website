@@ -91,6 +91,36 @@ describe('generatePostList', () => {
     ]
     expect(() => generatePostList(posts)).not.toThrow()
   })
+
+  it('omits excerpt paragraph when body is empty', () => {
+    const posts = [
+      { title: 'Post', path: 'blog/posts/post', date: '2025-01-01', slug: 'post', labels: [], body: '' },
+    ]
+    const html = generatePostList(posts)
+    expect(html).not.toContain('post-excerpt')
+  })
+
+  it('omits post-labels div when labels are empty', () => {
+    const posts = [
+      { title: 'Post', path: 'blog/posts/post', date: '2025-01-01', slug: 'post', labels: [], body: '' },
+    ]
+    const html = generatePostList(posts)
+    expect(html).not.toContain('post-labels')
+  })
+
+  it('maps all known label slugs to display names', () => {
+    const posts = [
+      { title: 'Post', path: 'blog/posts/post', date: '2025-01-01', slug: 'post',
+        labels: ['arc', 'arc-plus', 'pulse', 'slice', 'atmosphere', 'powerconnect'], body: '' },
+    ]
+    const html = generatePostList(posts)
+    expect(html).toContain('<span class="post-label">Arc</span>')
+    expect(html).toContain('<span class="post-label">Arc+</span>')
+    expect(html).toContain('<span class="post-label">Pulse</span>')
+    expect(html).toContain('<span class="post-label">Slice</span>')
+    expect(html).toContain('<span class="post-label">Atmosphere</span>')
+    expect(html).toContain('<span class="post-label">PowerConnect</span>')
+  })
 })
 
 describe('generateDocsSidebar', () => {
