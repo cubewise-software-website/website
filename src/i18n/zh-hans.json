@@ -1325,10 +1325,10 @@
   "slice.hero-cta-docs": "阅读文档",
   "slice.hero-label": "IBM Planning Analytics 的 Excel 插件",
   "slice.page-title": "Slice — Cubewise 平台",
-  "\"open-source-bedrock.everyone-body\"": "Bedrock 专为参与创建、实施、管理或支持 IBM TM1 系统的任何人而设计——从初次接触的开发者到资深管理员。",
-  "\"open-source-bedrock.everyone-heading\"": "为您团队中的每个人而构建",
-  "\"open-source-bedrock.everyone-li-1-body\"": "缩短构建时间，简化原型设计，以实现更好的目标适配结果",
-  "\"open-source-bedrock.everyone-li-2-body\"": "更一致的审计、标准化代码，降低人员更替风险",
-  "\"open-source-bedrock.everyone-li-3-body\"": "更平缓的学习曲线使 TM1 更易于开发和管理",
-  "\"open-source-bedrock.everyone-li-4-body\"": "更低的管理成本和更少的\"黑盒\"风险"
+  "open-source-bedrock.everyone-body": "Bedrock 专为参与创建、实施、管理或支持 IBM TM1 系统的任何人而设计——从初次接触的开发者到资深管理员。",
+  "open-source-bedrock.everyone-heading": "为您团队中的每个人而构建",
+  "open-source-bedrock.everyone-li-1-body": "缩短构建时间，简化原型设计，以实现更好的目标适配结果",
+  "open-source-bedrock.everyone-li-2-body": "更一致的审计、标准化代码，降低人员更替风险",
+  "open-source-bedrock.everyone-li-3-body": "更平缓的学习曲线使 TM1 更易于开发和管理",
+  "open-source-bedrock.everyone-li-4-body": "更低的管理成本和更少的\"黑盒\"风险"
 }
