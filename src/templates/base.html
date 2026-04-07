@@ -3,17 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>
-    (function () {
-      if (location.pathname !== '/') return
-      if (sessionStorage.getItem('lang-checked')) return
-      sessionStorage.setItem('lang-checked', '1')
-      var lang = (navigator.language || '').toLowerCase()
-      if (lang.startsWith('fr')) { location.replace('/fr/'); return }
-      if (lang.startsWith('de')) { location.replace('/de/'); return }
-      if (lang.startsWith('zh')) { location.replace('/zh-hans/'); return }
-    })()
-  </script>
   <title>{{title}} — Cubewise</title>
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
