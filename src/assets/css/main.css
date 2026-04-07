@@ -775,6 +775,11 @@ main { min-height: 60vh; }
 .post-card h2 a { text-decoration: none; color: var(--dark-night); }
 .post-card h2 a:hover { color: var(--orange-gold); }
 .post-card time { color: var(--charcoal); font-size: 0.85rem; }
+.post-card .post-excerpt { color: var(--charcoal); font-size: 0.9rem; margin-top: 0.5rem; line-height: 1.5; }
+.post-labels { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.6rem; }
+.post-label { font-size: 0.72rem; font-weight: 500; padding: 0.2rem 0.55rem; border-radius: 999px; border: 1px solid var(--border); color: var(--charcoal); }
+
+#blog-filter-pills { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.5rem; }
 
 /* ============================================================
    Docs
