@@ -179,6 +179,8 @@ Set these in **Settings → Secrets and variables → Actions**:
 | `CONFLUENCE_EMAIL` | Atlassian account email |
 | `CONFLUENCE_API_TOKEN` | Confluence Cloud API token |
 
+> **Required for GitHub Pages deployment.** The `deploy.yml` workflow fetches Blog and Docs content from Confluence on every push to `master`. If any of these secrets are missing, the build step will fail and the site will not deploy.
+
 ### Cloudflare Worker environment variables
 
 Set these in the Cloudflare dashboard under the Worker's settings:
