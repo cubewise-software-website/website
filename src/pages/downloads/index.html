@@ -49,6 +49,11 @@
   font-size: 1rem;
   margin: 0;
 }
+.downloads-card-platforms {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
 .downloads-card-platform {
   font-size: 0.75rem;
   font-weight: 600;
@@ -176,7 +181,10 @@
           <img src="/assets/logos/Products/Arc/Logo-arc.svg" alt="Arc" height="40">
         </div>
         <p class="downloads-card-desc" data-i18n="downloads.arc-description">The professional TM1 IDE</p>
-        <span class="downloads-card-platform" data-i18n="downloads.platform-windows">Windows</span>
+        <div class="downloads-card-platforms">
+          <span class="downloads-card-platform" data-i18n="downloads.platform-windows">Windows</span>
+          <span class="downloads-card-platform" data-i18n="downloads.platform-linux">Linux</span>
+        </div>
         <a href="/arc/download/" class="btn btn-primary" data-i18n="downloads.download-btn">Download</a>
       </div>
 
@@ -186,7 +194,10 @@
           <img src="/assets/logos/Products/Pulse/Pulse.svg" alt="Pulse" height="40">
         </div>
         <p class="downloads-card-desc" data-i18n="downloads.pulse-description">Monitor, understand &amp; manage your TM1 environment</p>
-        <span class="downloads-card-platform" data-i18n="downloads.platform-windows">Windows</span>
+        <div class="downloads-card-platforms">
+          <span class="downloads-card-platform" data-i18n="downloads.platform-windows">Windows</span>
+          <span class="downloads-card-platform" data-i18n="downloads.platform-linux">Linux</span>
+        </div>
         <a href="/pulse/download/" class="btn btn-primary" data-i18n="downloads.download-btn">Download</a>
       </div>
 
@@ -196,7 +207,9 @@
           <img src="/assets/logos/Products/Slice/Slice.svg" alt="Slice" height="40">
         </div>
         <p class="downloads-card-desc" data-i18n="downloads.slice-description">The modern Excel add-in for IBM Planning Analytics</p>
-        <span class="downloads-card-platform" data-i18n="downloads.platform-windows">Windows</span>
+        <div class="downloads-card-platforms">
+          <span class="downloads-card-platform" data-i18n="downloads.platform-windows">Windows</span>
+        </div>
         <a href="/slice/download/" class="btn btn-primary" data-i18n="downloads.download-btn">Download</a>
       </div>
 
@@ -206,7 +219,10 @@
           <img src="/assets/logos/Products/PowerConnect/logo-powerconnect.svg" alt="PowerConnect" height="40">
         </div>
         <p class="downloads-card-desc" data-i18n="downloads.powerconnect-description">IBM Planning Analytics data in Power BI</p>
-        <span class="downloads-card-platform" data-i18n="downloads.platform-windows">Windows</span>
+        <div class="downloads-card-platforms">
+          <span class="downloads-card-platform" data-i18n="downloads.platform-windows">Windows</span>
+          <span class="downloads-card-platform" data-i18n="downloads.platform-linux">Linux</span>
+        </div>
         <a href="/powerconnect/download/" class="btn btn-primary" data-i18n="downloads.download-btn">Download</a>
       </div>
 
