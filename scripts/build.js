@@ -4,7 +4,7 @@ import { join, dirname } from 'path'
 import { fetchSpace } from './fetch.js'
 import { renderPage } from './render.js'
 import { spaces, DIST_DIR, TEMPLATES_DIR, ASSETS_DIR, PAGES_DIR } from '../config.js'
-import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath } from './i18n.js'
+import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath, injectOgMeta } from './i18n.js'
 import { LOCALES, SITE_URL, I18N_DIR } from '../config.js'
 
 export function injectTemplate(template, context) {
@@ -110,6 +110,7 @@ export function applyLocale(html, pagePath, locale, translations, siteUrl, local
   let result = applyTranslations(html, translations, locale)
   result = applyLocaleLinks(result, locale, locales)
   result = injectHreflang(result, pagePath, siteUrl, locales)
+  result = injectOgMeta(result, pagePath, locale, siteUrl, locales)
   return result
 }
 
@@ -139,8 +140,9 @@ async function walkAndWrite(srcDir, distDir, translations, relDir = '') {
       const html = await readFile(srcPath, 'utf8')
       const pagePath = getPagePath(`src/pages/${rel}`)
 
-      // English — write verbatim (with hreflang added)
-      const enHtml = injectHreflang(html, pagePath, SITE_URL, LOCALES)
+      // English — write verbatim (with hreflang and og:meta added)
+      let enHtml = injectHreflang(html, pagePath, SITE_URL, LOCALES)
+      enHtml = injectOgMeta(enHtml, pagePath, 'en', SITE_URL, LOCALES)
       const enOut = join(distDir, rel)
       await mkdir(dirname(enOut), { recursive: true })
       await writeFile(enOut, enHtml)

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath } from '../scripts/i18n.js'
+import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath, injectOgMeta } from '../scripts/i18n.js'
 
 describe('getPagePath', () => {
   it('converts src/pages/about/index.html to /about/', () => {
@@ -147,5 +147,48 @@ describe('injectHreflang', () => {
     const result = injectHreflang(html, '/', 'https://cubewise.com', ['fr'])
     expect(result).toContain('href="https://cubewise.com/"')
     expect(result).toContain('href="https://cubewise.com/fr/"')
+  })
+})
+
+describe('injectOgMeta', () => {
+  const LOCALES = ['fr', 'de', 'zh-hans']
+
+  it('injects og:locale for the current locale (English)', () => {
+    const html = '<html><head><title>Test</title></head><body></body></html>'
+    const result = injectOgMeta(html, '/about/', 'en', 'https://cubewise.com', LOCALES)
+    expect(result).toContain('<meta property="og:locale" content="en_US"')
+  })
+
+  it('injects og:locale for a non-English locale', () => {
+    const html = '<html><head></head><body></body></html>'
+    const result = injectOgMeta(html, '/about/', 'fr', 'https://cubewise.com', LOCALES)
+    expect(result).toContain('<meta property="og:locale" content="fr_FR"')
+  })
+
+  it('injects og:locale:alternate for all other locales', () => {
+    const html = '<html><head></head><body></body></html>'
+    const result = injectOgMeta(html, '/about/', 'en', 'https://cubewise.com', LOCALES)
+    expect(result).toContain('<meta property="og:locale:alternate" content="fr_FR"')
+    expect(result).toContain('<meta property="og:locale:alternate" content="de_DE"')
+    expect(result).toContain('<meta property="og:locale:alternate" content="zh_CN"')
+    expect(result).not.toContain('<meta property="og:locale:alternate" content="en_US"')
+  })
+
+  it('injects og:url for English page', () => {
+    const html = '<html><head></head><body></body></html>'
+    const result = injectOgMeta(html, '/about/', 'en', 'https://cubewise.com', LOCALES)
+    expect(result).toContain('<meta property="og:url" content="https://cubewise.com/about/"')
+  })
+
+  it('injects locale-prefixed og:url for locale page', () => {
+    const html = '<html><head></head><body></body></html>'
+    const result = injectOgMeta(html, '/about/', 'fr', 'https://cubewise.com', LOCALES)
+    expect(result).toContain('<meta property="og:url" content="https://cubewise.com/fr/about/"')
+  })
+
+  it('injects correct og:url for zh-hans page', () => {
+    const html = '<html><head></head><body></body></html>'
+    const result = injectOgMeta(html, '/', 'zh-hans', 'https://cubewise.com', LOCALES)
+    expect(result).toContain('<meta property="og:url" content="https://cubewise.com/zh-hans/"')
   })
 })

@@ -86,3 +86,33 @@ export function injectHreflang(html, pagePath, siteUrl, locales) {
 
   return $.html()
 }
+
+const OG_LOCALE_MAP = {
+  en: 'en_US',
+  fr: 'fr_FR',
+  de: 'de_DE',
+  'zh-hans': 'zh_CN',
+}
+
+/**
+ * Inject og:locale, og:locale:alternate, and og:url meta tags into <head>.
+ * locale is the current page locale ('en' for English pages).
+ * locales is the array of non-English locales from config.
+ */
+export function injectOgMeta(html, pagePath, locale, siteUrl, locales) {
+  const $ = load(html, { decodeEntities: false })
+  const base = siteUrl.replace(/\/$/, '')
+  const allLocales = ['en', ...locales]
+  const localePath = locale === 'en' ? '' : `/${locale}`
+
+  const tags = [
+    `<meta property="og:locale" content="${OG_LOCALE_MAP[locale] ?? locale}" />`,
+    ...allLocales
+      .filter(l => l !== locale)
+      .map(l => `<meta property="og:locale:alternate" content="${OG_LOCALE_MAP[l] ?? l}" />`),
+    `<meta property="og:url" content="${base}${localePath}${pagePath}" />`,
+  ]
+
+  $('head').append('\n  ' + tags.join('\n  '))
+  return $.html()
+}

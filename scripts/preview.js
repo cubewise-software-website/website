@@ -2,7 +2,7 @@
 import { mkdir, cp, rm, writeFile, readFile, readdir, stat } from 'fs/promises'
 import { join, dirname } from 'path'
 import { DIST_DIR, ASSETS_DIR, PAGES_DIR } from '../config.js'
-import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath } from './i18n.js'
+import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath, injectOgMeta } from './i18n.js'
 import { LOCALES, SITE_URL, I18N_DIR } from '../config.js'
 
 // Wipe dist/ first so stale files don't linger
@@ -22,17 +22,20 @@ async function walkAndWrite(srcDir, distDir, translations, relDir = '') {
     } else if (entry.endsWith('.html')) {
       const html = await readFile(srcPath, 'utf8')
       const pagePath = getPagePath(`src/pages/${rel}`)
-      const enHtml = injectHreflang(html, pagePath, SITE_URL, LOCALES)
+      const enHtml = injectOgMeta(injectHreflang(html, pagePath, SITE_URL, LOCALES), pagePath, 'en', SITE_URL, LOCALES)
       const enOut = join(distDir, rel)
       await mkdir(dirname(enOut), { recursive: true })
       await writeFile(enOut, enHtml)
       for (const locale of LOCALES) {
-        const localeHtml = injectHreflang(
-          applyLocaleLinks(
-            applyTranslations(html, translations[locale] ?? {}, locale),
-            locale, LOCALES
+        const localeHtml = injectOgMeta(
+          injectHreflang(
+            applyLocaleLinks(
+              applyTranslations(html, translations[locale] ?? {}, locale),
+              locale, LOCALES
+            ),
+            pagePath, SITE_URL, LOCALES
           ),
-          pagePath, SITE_URL, LOCALES
+          pagePath, locale, SITE_URL, LOCALES
         )
         const localeOut = join(distDir, locale, rel)
         await mkdir(dirname(localeOut), { recursive: true })
