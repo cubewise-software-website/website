@@ -1,8 +1,70 @@
 <!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="slice-customers.page-title">Slice Customers — Cubewise Platform</title>
+  <title data-i18n="downloads.page-title">Downloads — Cubewise</title>
   <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+.downloads-hero {
+  background: var(--light-gray);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.downloads-hero-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.downloads-hero h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--dark-night);
+  margin: 0.5rem 0 1rem;
+}
+.downloads-hero p {
+  font-size: 1.125rem;
+  color: var(--charcoal);
+  margin: 0;
+}
+.downloads-section {
+  padding: 4rem 2rem;
+}
+.downloads-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.downloads-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 2rem;
+}
+.downloads-card-icon {
+  color: var(--sand-gold);
+}
+.downloads-card-desc {
+  flex: 1;
+  color: var(--charcoal);
+  font-size: 1rem;
+  margin: 0;
+}
+.downloads-card-platform {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--charcoal);
+  background: var(--light-gray);
+  padding: 0.2rem 0.65rem;
+  border-radius: 4px;
+}
+@media (max-width: 600px) {
+  .downloads-grid {
+    grid-template-columns: 1fr;
+  }
+}
+  </style>
 </head>
 <body>
 
@@ -13,14 +75,14 @@
       Cubewise achieves IBM Platinum Partner status for 2025 —
       <a href="/about/">Read the announcement →</a>
     </span>
-    
+
       <nav class="announcement-bar__links">
         <a href="/about/" data-i18n="announce.about">About</a>
         <a href="/partners/" data-i18n="announce.partners">Partners</a>
         <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13" data-i18n="announce.support">Support</a>
         <a href="https://forum.cubewise.com/" target="_blank" rel="noopener noreferrer" data-i18n="announce.forum">Forum</a>
         <span class="lang-switcher__divider"></span>
-        <div class="lang-switcher" data-current-locale="en" data-current-path="/slice/customers/">
+        <div class="lang-switcher" data-current-locale="en" data-current-path="/downloads/">
           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:var(--orange-gold)"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
           <span class="lang-switcher__label"><span class="lang-switcher__current">EN</span></span>
           <span class="lang-switcher__chevron">▾</span>
@@ -85,7 +147,6 @@
         </div>
       </li>
       <li><a href="/downloads/" data-i18n="nav.downloads">Downloads</a></li>
-
       <li><a href="/docs/" data-i18n="nav.help">Help</a></li>
       <li><a href="https://cubewise.com/" data-i18n="nav.services">Services</a></li>
       <li class="nav-cta-item"><a href="/contact/" class="nav-cta" data-i18n="nav.contact">Contact</a></li>
@@ -93,50 +154,62 @@
   </nav>
 </header>
 
-<nav class="component-subnav">
-  <div class="component-subnav-inner">
-    <span class="component-subnav-title">Slice</span>
-    <a href="/slice/">Overview</a>
-    <a href="/slice/features/">Features</a>
-    <a href="/slice/customers/" class="active">Customers</a>
-    <a href="/slice/download/">Download</a>
-  </div>
-</nav>
-
 <main>
 
-  <section class="component-hero">
-    <div class="component-label">Slice</div>
-    <h1 data-i18n="slice-customers.hero-heading">What teams say about Slice</h1>
-    <p data-i18n="slice-customers.hero-body">Hear from the finance teams and TM1 developers who use Slice to work with IBM Planning Analytics in Excel.</p>
-  </section>
-
-  <section class="testimonials-section">
-    <div class="testimonials-inner">
-
-      <div class="testimonial-card">
-        <blockquote data-i18n="slice-customers.testimonial-1-quote">"Cubewise Slice has provided our business users with a modern, easy to use interface to interrogate their data. We now have cross drill and dynamic columns at our fingertips. It has increased engagement of our business users with IBM PA data."</blockquote>
-        <div class="testimonial-author">
-          <strong data-i18n="slice-customers.testimonial-1-name">Anne-Marie Rodd</strong>
-          <span data-i18n="slice-customers.testimonial-1-role">GHD Associate Finance Systems Leader, GHD</span>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <blockquote data-i18n="slice-customers.testimonial-2-quote">"Slice is the modern successor to Perspectives when it comes to TM1 integration with Excel. For those hardened through building Excel templates in Perspectives, there is virtually no learning curve and a bunch of enhancements — notably DBRW support for hierarchies and adhoc subtotaling of title elements — that we all wish had existed earlier. Even for finance users unfamiliar with TM1, Slice has been a quick ramp up. Thanks to the Cubewise team for equipping finance folks with an effective way to work with TM1 cube data directly in Excel!"</blockquote>
-        <div class="testimonial-author">
-          <strong data-i18n="slice-customers.testimonial-2-name">Wei Wang</strong>
-          <span data-i18n="slice-customers.testimonial-2-role">TM1 Developer</span>
-        </div>
-      </div>
-
+  <!-- Hero -->
+  <section class="downloads-hero">
+    <div class="downloads-hero-inner">
+      <div class="component-label" data-i18n="downloads.hero-label">Software</div>
+      <h1 data-i18n="downloads.hero-heading">Downloads</h1>
+      <p data-i18n="downloads.hero-body">Download and try Cubewise software free. No credit card required.</p>
     </div>
   </section>
 
-  <section class="page-cta">
-    <h2 data-i18n="slice-customers.cta-heading">Bring your TM1 data to Excel</h2>
-    <p data-i18n="slice-customers.cta-body">See how Slice gives your finance team a modern, powerful Excel experience for IBM Planning Analytics.</p>
-    <a href="/contact/" class="btn btn-primary" data-i18n="slice-customers.cta-btn">Request a demo</a>
+  <!-- Product cards -->
+  <section class="downloads-section">
+    <div class="downloads-grid">
+
+      <!-- Arc -->
+      <div class="component-card downloads-card">
+        <div class="downloads-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        </div>
+        <p class="downloads-card-desc" data-i18n="downloads.arc-description">The professional TM1 IDE</p>
+        <span class="downloads-card-platform" data-i18n="downloads.platform-windows">Windows</span>
+        <a href="/arc/download/" class="btn btn-primary" data-i18n="downloads.download-btn">Download</a>
+      </div>
+
+      <!-- Pulse -->
+      <div class="component-card downloads-card">
+        <div class="downloads-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        </div>
+        <p class="downloads-card-desc" data-i18n="downloads.pulse-description">Monitor, understand &amp; manage your TM1 environment</p>
+        <span class="downloads-card-platform" data-i18n="downloads.platform-windows">Windows</span>
+        <a href="/pulse/download/" class="btn btn-primary" data-i18n="downloads.download-btn">Download</a>
+      </div>
+
+      <!-- Slice -->
+      <div class="component-card downloads-card">
+        <div class="downloads-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        </div>
+        <p class="downloads-card-desc" data-i18n="downloads.slice-description">The modern Excel add-in for IBM Planning Analytics</p>
+        <span class="downloads-card-platform" data-i18n="downloads.platform-windows">Windows</span>
+        <a href="/slice/download/" class="btn btn-primary" data-i18n="downloads.download-btn">Download</a>
+      </div>
+
+      <!-- PowerConnect -->
+      <div class="component-card downloads-card">
+        <div class="downloads-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+        </div>
+        <p class="downloads-card-desc" data-i18n="downloads.powerconnect-description">IBM Planning Analytics data in Power BI</p>
+        <span class="downloads-card-platform" data-i18n="downloads.platform-windows">Windows</span>
+        <a href="/powerconnect/download/" class="btn btn-primary" data-i18n="downloads.download-btn">Download</a>
+      </div>
+
+    </div>
   </section>
 
 </main>
@@ -149,7 +222,7 @@
     </div>
     <nav class="footer-nav">
       <a href="/platform/" data-i18n="footer.platform">Platform</a>
-      <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13" data-i18n="footer.support">Support</a>
+      <a href="/pricing/" data-i18n="footer.pricing">Pricing</a>
       <a href="/docs/" data-i18n="footer.docs">Docs</a>
       <a href="/blog/" data-i18n="footer.blog">Blog</a>
       <a href="/partners/" data-i18n="footer.partners">Partners</a>
@@ -160,10 +233,10 @@
   </div>
 </footer>
 
-  <script src="/assets/js/nav.js"></script>
 
 
 
+<script src="/assets/js/nav.js"></script>
   <script>
     (function () {
       const switchers = document.querySelectorAll('.lang-switcher')

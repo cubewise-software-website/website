@@ -39,6 +39,8 @@ const PAGES = [
   ['/atmosphere/integrations/', 'Atmosphere Integrations — Cubewise Platform'],
   ['/powerconnect/', 'PowerConnect — Cubewise Platform'],
   ['/powerconnect/features/', 'PowerConnect Features — Cubewise Platform'],
+  ['/powerconnect/download/', 'Download PowerConnect — Cubewise Platform'],
+  ['/downloads/', 'Downloads — Cubewise Platform'],
   ['/deployment/self-hosted/', 'Self-Hosted Deployment — Cubewise'],
   ['/deployment/cubewise-cloud/', 'Cubewise Cloud — Cubewise'],
 ]
@@ -72,7 +74,8 @@ describe.each(PAGES)('%s', (path, expectedTitle) => {
   })
 
   it('has correct page title', () => {
-    expect(cache[path].html).toContain(`<title>${expectedTitle}</title>`)
+    const escaped = expectedTitle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    expect(cache[path].html).toMatch(new RegExp(`<title[^>]*>${escaped}</title>`))
   })
 
   it('has nav logo link', () => {
