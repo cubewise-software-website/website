@@ -2,7 +2,7 @@
 import { mkdir, cp, rm, writeFile, readFile, readdir, stat } from 'fs/promises'
 import { join, dirname } from 'path'
 import { DIST_DIR, ASSETS_DIR, PAGES_DIR } from '../config.js'
-import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath, injectOgMeta } from './i18n.js'
+import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath, injectOgMeta, generateSitemap } from './i18n.js'
 import { LOCALES, SITE_URL, I18N_DIR } from '../config.js'
 
 // Wipe dist/ first so stale files don't linger
@@ -11,17 +11,18 @@ await mkdir(DIST_DIR, { recursive: true })
 
 try { await cp(ASSETS_DIR, join(DIST_DIR, 'assets'), { recursive: true }) } catch {}
 
-async function walkAndWrite(srcDir, distDir, translations, relDir = '') {
+async function walkAndWrite(srcDir, distDir, translations, relDir = '', pagePaths = []) {
   const entries = await readdir(join(srcDir, relDir))
   for (const entry of entries) {
     const rel = relDir ? `${relDir}/${entry}` : entry
     const srcPath = join(srcDir, rel)
     const s = await stat(srcPath)
     if (s.isDirectory()) {
-      await walkAndWrite(srcDir, distDir, translations, rel)
+      await walkAndWrite(srcDir, distDir, translations, rel, pagePaths)
     } else if (entry.endsWith('.html')) {
       const html = await readFile(srcPath, 'utf8')
       const pagePath = getPagePath(`src/pages/${rel}`)
+      pagePaths.push(pagePath)
       let enHtml = injectHreflang(html, pagePath, SITE_URL, LOCALES)
       enHtml = injectOgMeta(enHtml, pagePath, 'en', SITE_URL, LOCALES)
       const enOut = join(distDir, rel)
@@ -52,7 +53,10 @@ for (const locale of LOCALES) {
     pageTranslations[locale] = {}
   }
 }
-await walkAndWrite(PAGES_DIR, DIST_DIR, pageTranslations)
+const pagePaths = []
+await walkAndWrite(PAGES_DIR, DIST_DIR, pageTranslations, '', pagePaths)
+const sitemapXml = generateSitemap(pagePaths, SITE_URL, LOCALES)
+await writeFile(join(DIST_DIR, 'sitemap.xml'), sitemapXml)
 
 // Write mock indexes for local preview (real build fetches these from Confluence)
 await mkdir(join(DIST_DIR, 'assets'), { recursive: true })

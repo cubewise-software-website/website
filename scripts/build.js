@@ -4,7 +4,7 @@ import { join, dirname } from 'path'
 import { fetchSpace } from './fetch.js'
 import { renderPage } from './render.js'
 import { spaces, DIST_DIR, TEMPLATES_DIR, ASSETS_DIR, PAGES_DIR } from '../config.js'
-import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath, injectOgMeta } from './i18n.js'
+import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath, injectOgMeta, generateSitemap } from './i18n.js'
 import { LOCALES, SITE_URL, I18N_DIR } from '../config.js'
 
 export function injectTemplate(template, context) {
@@ -225,6 +225,23 @@ async function build() {
     const blogIndex = generateBlogIndex(blogPosts)
     await writeFile(join(DIST_DIR, 'assets', 'blog-index.json'), JSON.stringify(blogIndex, null, 2))
   }
+
+  // Generate multilingual sitemap
+  const staticPaths = []
+  await (async function collectPaths(relDir = '') {
+    const entries = await readdir(join(PAGES_DIR, relDir))
+    for (const entry of entries) {
+      const rel = relDir ? `${relDir}/${entry}` : entry
+      const s = await stat(join(PAGES_DIR, rel))
+      if (s.isDirectory()) await collectPaths(rel)
+      else if (entry.endsWith('.html')) staticPaths.push(getPagePath(`src/pages/${rel}`))
+    }
+  })()
+  const renderedPaths = allRendered.map(p => `/${p.path}/`)
+  const allPaths = [...new Set([...staticPaths, ...renderedPaths])]
+  const sitemapXml = generateSitemap(allPaths, SITE_URL, LOCALES)
+  await writeFile(join(DIST_DIR, 'sitemap.xml'), sitemapXml)
+  console.log(`Sitemap: ${allPaths.length} URLs`)
 
   console.log('Build complete.')
 }

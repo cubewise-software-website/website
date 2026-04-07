@@ -120,3 +120,32 @@ export function injectOgMeta(html, pagePath, locale, siteUrl, locales) {
   $('head').append('\n  ' + tags.join('\n  '))
   return $.html()
 }
+
+const HREFLANG_MAP = { 'zh-hans': 'zh-Hans' }
+
+/**
+ * Generate a multilingual XML sitemap string.
+ * pagePaths: array of locale-agnostic paths like ['/about/', '/contact/', '/']
+ * locales: non-English locales from config (e.g. ['fr', 'de', 'zh-hans'])
+ */
+export function generateSitemap(pagePaths, siteUrl, locales) {
+  const base = siteUrl.replace(/\/$/, '')
+
+  const urls = pagePaths.map(pagePath => {
+    const links = [
+      `<xhtml:link rel="alternate" hreflang="en" href="${base}${pagePath}"/>`,
+      ...locales.map(l => {
+        const hreflang = HREFLANG_MAP[l] ?? l
+        return `<xhtml:link rel="alternate" hreflang="${hreflang}" href="${base}/${l}${pagePath}"/>`
+      }),
+      `<xhtml:link rel="alternate" hreflang="x-default" href="${base}${pagePath}"/>`,
+    ]
+    return `  <url>\n    <loc>${base}${pagePath}</loc>\n    ${links.join('\n    ')}\n  </url>`
+  })
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urls.join('\n')}
+</urlset>`
+}

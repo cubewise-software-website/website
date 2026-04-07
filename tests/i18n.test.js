@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath, injectOgMeta } from '../scripts/i18n.js'
+import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath, injectOgMeta, generateSitemap } from '../scripts/i18n.js'
 
 describe('getPagePath', () => {
   it('converts src/pages/about/index.html to /about/', () => {
@@ -190,5 +190,38 @@ describe('injectOgMeta', () => {
     const html = '<html><head></head><body></body></html>'
     const result = injectOgMeta(html, '/', 'zh-hans', 'https://cubewise.com', LOCALES)
     expect(result).toContain('<meta property="og:url" content="https://cubewise.com/zh-hans/"')
+  })
+})
+
+describe('generateSitemap', () => {
+  const LOCALES = ['fr', 'de', 'zh-hans']
+  const SITE_URL = 'https://cubewise.com'
+
+  it('generates valid XML declaration and urlset', () => {
+    const xml = generateSitemap(['/about/'], SITE_URL, LOCALES)
+    expect(xml).toContain('<?xml version="1.0" encoding="UTF-8"?>')
+    expect(xml).toContain('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"')
+    expect(xml).toContain('xmlns:xhtml="http://www.w3.org/1999/xhtml"')
+  })
+
+  it('includes <loc> for each page', () => {
+    const xml = generateSitemap(['/about/', '/contact/'], SITE_URL, LOCALES)
+    expect(xml).toContain('<loc>https://cubewise.com/about/</loc>')
+    expect(xml).toContain('<loc>https://cubewise.com/contact/</loc>')
+  })
+
+  it('includes xhtml:link alternates for all locales', () => {
+    const xml = generateSitemap(['/about/'], SITE_URL, LOCALES)
+    expect(xml).toContain('hreflang="en" href="https://cubewise.com/about/"')
+    expect(xml).toContain('hreflang="fr" href="https://cubewise.com/fr/about/"')
+    expect(xml).toContain('hreflang="de" href="https://cubewise.com/de/about/"')
+    expect(xml).toContain('hreflang="zh-Hans" href="https://cubewise.com/zh-hans/about/"')
+    expect(xml).toContain('hreflang="x-default" href="https://cubewise.com/about/"')
+  })
+
+  it('handles root path', () => {
+    const xml = generateSitemap(['/'], SITE_URL, LOCALES)
+    expect(xml).toContain('<loc>https://cubewise.com/</loc>')
+    expect(xml).toContain('href="https://cubewise.com/fr/"')
   })
 })
