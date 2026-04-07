@@ -59,6 +59,13 @@ describe('applyTranslations', () => {
     const result = applyTranslations(html, {}, 'fr')
     expect(result).toContain('data-current-locale="fr"')
   })
+
+  it('sets zh-Hans (BCP 47) lang attribute for zh-hans locale', () => {
+    const html = '<html lang="en"><body></body></html>'
+    const result = applyTranslations(html, {}, 'zh-hans')
+    expect(result).toContain('lang="zh-Hans"')
+    expect(result).not.toContain('lang="zh-hans"')
+  })
 })
 
 describe('applyLocaleLinks', () => {

@@ -41,7 +41,8 @@ export function applyTranslations(html, translations, locale) {
   })
 
   if (locale) {
-    $('html').attr('lang', locale)
+    const langAttr = locale === 'zh-hans' ? 'zh-Hans' : locale
+    $('html').attr('lang', langAttr)
     $('.lang-switcher').attr('data-current-locale', locale)
   }
 
