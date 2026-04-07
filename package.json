@@ -5,6 +5,7 @@
   "scripts": {
     "build": "node scripts/build.js",
     "build:static": "node scripts/build-static.js",
+    "build:github": "node scripts/build.js && node scripts/rewrite-paths.js",
     "preview": "node scripts/preview.js && npx serve dist",
     "serve": "npx serve dist",
     "test": "vitest run",

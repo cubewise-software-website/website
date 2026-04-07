@@ -31,8 +31,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static files
-        run: npm run build:static
+      - name: Build site with Confluence content
+        run: npm run build:github
+        env:
+          CONFLUENCE_BASE_URL: ${{ secrets.CONFLUENCE_BASE_URL }}
+          CONFLUENCE_EMAIL: ${{ secrets.CONFLUENCE_EMAIL }}
+          CONFLUENCE_API_TOKEN: ${{ secrets.CONFLUENCE_API_TOKEN }}
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
