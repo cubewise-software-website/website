@@ -46,11 +46,11 @@
     container.querySelectorAll('.filter-pill').forEach(function (p) { p.classList.remove('active') })
     pill.classList.add('active')
     document.querySelectorAll('.post-card').forEach(function (card) {
-      if (active === 'all') {
+      const raw = (card.dataset.labels || '').trim()
+      if (active === 'all' || !raw) {
         card.style.display = ''
       } else {
-        const cardLabels = card.dataset.labels ? card.dataset.labels.split(' ') : []
-        card.style.display = cardLabels.includes(active) ? '' : 'none'
+        card.style.display = raw.split(' ').includes(active) ? '' : 'none'
       }
     })
   })
