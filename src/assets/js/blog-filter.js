@@ -47,6 +47,7 @@
     pill.classList.add('active')
     document.querySelectorAll('.post-card').forEach(function (card) {
       const raw = (card.dataset.labels || '').trim()
+      // Posts with no labels are always visible regardless of active filter
       if (active === 'all' || !raw) {
         card.style.display = ''
       } else {
