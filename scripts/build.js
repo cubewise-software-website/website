@@ -125,20 +125,23 @@ async function copyPagesWithLocales() {
     }
   }
 
-  await walkAndWrite(PAGES_DIR, DIST_DIR, translations)
+  const pagePaths = []
+  await walkAndWrite(PAGES_DIR, DIST_DIR, translations, '', pagePaths)
+  return pagePaths
 }
 
-async function walkAndWrite(srcDir, distDir, translations, relDir = '') {
+async function walkAndWrite(srcDir, distDir, translations, relDir = '', pagePaths = []) {
   const entries = await readdir(join(srcDir, relDir))
   for (const entry of entries) {
     const rel = relDir ? `${relDir}/${entry}` : entry
     const srcPath = join(srcDir, rel)
     const s = await stat(srcPath)
     if (s.isDirectory()) {
-      await walkAndWrite(srcDir, distDir, translations, rel)
+      await walkAndWrite(srcDir, distDir, translations, rel, pagePaths)
     } else if (entry.endsWith('.html')) {
       const html = await readFile(srcPath, 'utf8')
       const pagePath = getPagePath(`src/pages/${rel}`)
+      pagePaths.push(pagePath)
 
       // English — write verbatim (with hreflang and og:meta added)
       let enHtml = injectHreflang(html, pagePath, SITE_URL, LOCALES)
@@ -212,7 +215,7 @@ async function build() {
   } catch { /* no assets yet */ }
 
   // Copy hand-coded pages → dist/ (English) and dist/{locale}/ (translated)
-  await copyPagesWithLocales()
+  const staticPaths = await copyPagesWithLocales()
 
   // Write docs search index
   if (docPages.length) {
@@ -227,16 +230,6 @@ async function build() {
   }
 
   // Generate multilingual sitemap
-  const staticPaths = []
-  await (async function collectPaths(relDir = '') {
-    const entries = await readdir(join(PAGES_DIR, relDir))
-    for (const entry of entries) {
-      const rel = relDir ? `${relDir}/${entry}` : entry
-      const s = await stat(join(PAGES_DIR, rel))
-      if (s.isDirectory()) await collectPaths(rel)
-      else if (entry.endsWith('.html')) staticPaths.push(getPagePath(`src/pages/${rel}`))
-    }
-  })()
   const renderedPaths = allRendered.map(p => `/${p.path}/`)
   const allPaths = [...new Set([...staticPaths, ...renderedPaths])]
   const sitemapXml = generateSitemap(allPaths, SITE_URL, LOCALES)

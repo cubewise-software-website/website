@@ -1,6 +1,12 @@
 import { load } from 'cheerio'
 
 /**
+ * Maps locale codes that require BCP 47 script subtag casing for hreflang and lang attributes.
+ * Used by applyTranslations, injectHreflang, and generateSitemap.
+ */
+const HREFLANG_MAP = { 'zh-hans': 'zh-Hans' }
+
+/**
  * Given a source file path like "src/pages/about/index.html",
  * returns the page's URL path like "/about/".
  */
@@ -41,7 +47,7 @@ export function applyTranslations(html, translations, locale) {
   })
 
   if (locale) {
-    const langAttr = locale === 'zh-hans' ? 'zh-Hans' : locale
+    const langAttr = HREFLANG_MAP[locale] ?? locale
     $('html').attr('lang', langAttr)
     $('.lang-switcher').attr('data-current-locale', locale)
   }
@@ -76,7 +82,7 @@ export function injectHreflang(html, pagePath, siteUrl, locales) {
   const tags = [
     `<link rel="alternate" hreflang="en" href="${base}${pagePath}" />`,
     ...locales.map(locale => {
-      const hreflang = locale === 'zh-hans' ? 'zh-Hans' : locale
+      const hreflang = HREFLANG_MAP[locale] ?? locale
       return `<link rel="alternate" hreflang="${hreflang}" href="${base}/${locale}${pagePath}" />`
     }),
     `<link rel="alternate" hreflang="x-default" href="${base}${pagePath}" />`,
@@ -120,8 +126,6 @@ export function injectOgMeta(html, pagePath, locale, siteUrl, locales) {
   $('head').append('\n  ' + tags.join('\n  '))
   return $.html()
 }
-
-const HREFLANG_MAP = { 'zh-hans': 'zh-Hans' }
 
 /**
  * Generate a multilingual XML sitemap string.
