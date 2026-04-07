@@ -72,7 +72,8 @@ describe.each(PAGES)('%s', (path, expectedTitle) => {
   })
 
   it('has correct page title', () => {
-    expect(cache[path].html).toContain(`<title>${expectedTitle}</title>`)
+    const escaped = expectedTitle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    expect(cache[path].html).toMatch(new RegExp(`<title[^>]*>${escaped}</title>`))
   })
 
   it('has nav logo link', () => {
