@@ -246,3 +246,15 @@ describe('applyLocale', () => {
     expect(result).not.toContain('/fr/de/')
   })
 })
+
+describe('announcement bar template vars', () => {
+  it('substitutes announcementTitle into a template', () => {
+    const result = injectTemplate('<span>{{announcementTitle}} —</span>', { announcementTitle: 'My Blog Post' })
+    expect(result).toBe('<span>My Blog Post —</span>')
+  })
+
+  it('substitutes announcementPath into a template', () => {
+    const result = injectTemplate('<a href="{{announcementPath}}">Read</a>', { announcementPath: '/blog/posts/my-blog-post/' })
+    expect(result).toBe('<a href="/blog/posts/my-blog-post/">Read</a>')
+  })
+})
