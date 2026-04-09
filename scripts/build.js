@@ -202,6 +202,7 @@ async function build() {
   }
 
   const blogPosts = allRendered.filter(p => p.section === 'blog' && !p.isRoot)
+  if (!blogPosts.length) throw new Error('No blog posts found — announcement bar requires at least one post')
   const latestPost = [...blogPosts].sort((a, b) => b.date.localeCompare(a.date))[0]
   const announcementTitle = latestPost.title
   const announcementPath = `/${latestPost.path}/`
