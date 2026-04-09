@@ -133,7 +133,7 @@ export function applyLocale(html, pagePath, locale, translations, siteUrl, local
   return result
 }
 
-async function copyPagesWithLocales() {
+async function copyPagesWithLocales(templateVars = {}) {
   // Load locale translation files (missing locale file → empty translations = English fallback)
   const translations = {}
   for (const locale of LOCALES) {
@@ -145,20 +145,21 @@ async function copyPagesWithLocales() {
   }
 
   const pagePaths = []
-  await walkAndWrite(PAGES_DIR, DIST_DIR, translations, '', pagePaths)
+  await walkAndWrite(PAGES_DIR, DIST_DIR, translations, '', pagePaths, templateVars)
   return pagePaths
 }
 
-async function walkAndWrite(srcDir, distDir, translations, relDir = '', pagePaths = []) {
+async function walkAndWrite(srcDir, distDir, translations, relDir = '', pagePaths = [], templateVars = {}) {
   const entries = await readdir(join(srcDir, relDir))
   for (const entry of entries) {
     const rel = relDir ? `${relDir}/${entry}` : entry
     const srcPath = join(srcDir, rel)
     const s = await stat(srcPath)
     if (s.isDirectory()) {
-      await walkAndWrite(srcDir, distDir, translations, rel, pagePaths)
+      await walkAndWrite(srcDir, distDir, translations, rel, pagePaths, templateVars)
     } else if (entry.endsWith('.html')) {
-      const html = await readFile(srcPath, 'utf8')
+      const raw = await readFile(srcPath, 'utf8')
+      const html = injectTemplate(raw, templateVars)
       const pagePath = getPagePath(`src/pages/${rel}`)
       pagePaths.push(pagePath)
 
@@ -234,7 +235,8 @@ async function build() {
   } catch { /* no assets yet */ }
 
   // Copy hand-coded pages → dist/ (English) and dist/{locale}/ (translated)
-  const staticPaths = await copyPagesWithLocales()
+  const postList = blogPosts.length ? generatePostList(blogPosts) : ''
+  const staticPaths = await copyPagesWithLocales({ postList })
 
   // Write docs search index
   if (docPages.length) {
