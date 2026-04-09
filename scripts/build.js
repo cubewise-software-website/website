@@ -202,6 +202,9 @@ async function build() {
   }
 
   const blogPosts = allRendered.filter(p => p.section === 'blog' && !p.isRoot)
+  const latestPost = [...blogPosts].sort((a, b) => b.date.localeCompare(a.date))[0]
+  const announcementTitle = latestPost.title
+  const announcementPath = `/${latestPost.path}/`
   const docPages = allRendered.filter(p => p.section === 'docs')
   const baseTemplate = await loadTemplate('base')
 
@@ -219,7 +222,7 @@ async function build() {
       content = injectTemplate(contentTemplate, rendered)
     }
 
-    const html = injectTemplate(baseTemplate, { title: rendered.title, content, pagePath: `/${rendered.path}/` })
+    const html = injectTemplate(baseTemplate, { title: rendered.title, content, pagePath: `/${rendered.path}/`, announcementTitle, announcementPath })
     await writePage(rendered.path, html)
   }
 
@@ -236,7 +239,7 @@ async function build() {
 
   // Copy hand-coded pages → dist/ (English) and dist/{locale}/ (translated)
   const postList = blogPosts.length ? generatePostList(blogPosts) : ''
-  const staticPaths = await copyPagesWithLocales({ postList })
+  const staticPaths = await copyPagesWithLocales({ postList, announcementTitle, announcementPath })
 
   // Write docs search index
   if (docPages.length) {
