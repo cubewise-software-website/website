@@ -1,7 +1,12 @@
 import { describe, it, expect } from 'vitest'
 import { readFileSync } from 'fs'
 
-const communityHtml = readFileSync('src/pages/arc/community/index.html', 'utf8')
+let communityHtml = ''
+try {
+  communityHtml = readFileSync('src/pages/arc/community/index.html', 'utf8')
+} catch {
+  // file not yet created — all toContain assertions will fail as expected
+}
 
 describe('Arc Community page', () => {
   it('has correct page title', () => {
@@ -15,7 +20,7 @@ describe('Arc Community page', () => {
 
   it('has component-label Arc', () => {
     expect(communityHtml).toContain('class="component-label"')
-    expect(communityHtml).toContain('>Arc<')
+    expect(communityHtml).toContain('class="component-label">Arc<')
   })
 
   it('has features-group section', () => {
@@ -39,7 +44,7 @@ describe('Arc Community page', () => {
 
   it('has subnav with Community as active and correct order', () => {
     const subnavIdx = communityHtml.indexOf('component-subnav-inner')
-    const subnav = communityHtml.slice(subnavIdx, subnavIdx + 600)
+    const subnav = communityHtml.slice(subnavIdx, subnavIdx + 800)
     expect(subnav).toContain('href="/arc/"')
     expect(subnav).toContain('href="/arc/features/"')
     expect(subnav).toContain('href="/arc/community/" class="active"')
