@@ -57,3 +57,62 @@ describe('Arc Community page', () => {
     expect(communityHtml).toContain('data-current-path="/arc/community/"')
   })
 })
+
+let developersHtml = ''
+try {
+  developersHtml = readFileSync('src/pages/arc/developers/index.html', 'utf8')
+} catch {
+  // file not yet created — all toContain assertions will fail as expected
+}
+
+describe('Arc Developers page', () => {
+  it('has correct page title', () => {
+    expect(developersHtml).toContain('Arc for Developers — Cubewise Platform')
+  })
+
+  it('has component-hero with Arc for Developers h1', () => {
+    expect(developersHtml).toContain('class="component-hero"')
+    expect(developersHtml).toContain('Arc for Developers')
+  })
+
+  it('has component-label Arc', () => {
+    expect(developersHtml).toContain('class="component-label">Arc<')
+  })
+
+  it('has features-group section', () => {
+    expect(developersHtml).toContain('class="features-group"')
+    expect(developersHtml).toContain('class="features-group-inner"')
+  })
+
+  it('has all nine feature rows', () => {
+    expect(developersHtml).toContain('id="development-interface"')
+    expect(developersHtml).toContain('id="process-debugger"')
+    expect(developersHtml).toContain('id="rules-editor"')
+    expect(developersHtml).toContain('id="security-editor"')
+    expect(developersHtml).toContain('id="server-parameters"')
+    expect(developersHtml).toContain('id="mdx-studio"')
+    expect(developersHtml).toContain('id="rest-api-tool"')
+    expect(developersHtml).toContain('id="plugins-extensions"')
+    expect(developersHtml).toContain('id="python-integration"')
+  })
+
+  it('has page-cta with contact link', () => {
+    expect(developersHtml).toContain('class="page-cta"')
+    expect(developersHtml).toContain('href="/contact/"')
+  })
+
+  it('has subnav with Developers as active and correct order', () => {
+    const subnavIdx = developersHtml.indexOf('component-subnav-inner')
+    const subnav = developersHtml.slice(subnavIdx, subnavIdx + 800)
+    expect(subnav).toContain('href="/arc/"')
+    expect(subnav).toContain('href="/arc/features/"')
+    expect(subnav).toContain('href="/arc/community/"')
+    expect(subnav).toContain('href="/arc/developers/" class="active"')
+    expect(subnav).toContain('href="/arc/customers/"')
+    expect(subnav).toContain('href="/arc/download/"')
+  })
+
+  it('has lang-switcher with correct data-current-path', () => {
+    expect(developersHtml).toContain('data-current-path="/arc/developers/"')
+  })
+})
