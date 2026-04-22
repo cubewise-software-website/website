@@ -34,7 +34,30 @@
       "Bash(/tmp/extract_features.py:*)",
       "Bash(__NEW_LINE_3399aa9596e2825a__ cat:*)",
       "Bash(__NEW_LINE_f87d39f87f8f1766__ grep:*)",
-      "Bash(__NEW_LINE_1250cf771ce92e0d__ wc:*)"
+      "Bash(__NEW_LINE_1250cf771ce92e0d__ wc:*)",
+      "Bash(gh run:*)",
+      "Bash(where gh:*)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run list --limit 5)",
+      "Bash(\"/c/Program Files \\(x86\\)/GitHub CLI/gh.exe\" run list --limit 5)",
+      "Bash(cmd.exe /c \"gh run list --limit 5\")",
+      "Bash(powershell.exe -Command \"gh run list --limit 5\")",
+      "WebFetch(domain:github.com)",
+      "Bash(awk 'NR==87 {print substr\\($0, 1, 200\\)}' D:/Projects/src/cubewise/website/current_site/arc-download.html)",
+      "Bash(awk 'NR==87' D:/Projects/src/cubewise/website/current_site/arc-download.html)",
+      "Bash(grep -oE 'productDownloadTitle[^>]*>[^<]*<[^>]*>[^<]{2,120}')",
+      "Bash(grep -oE 'productDownloadTitle--5841b\"><div class=\"col-12\">.{0,400}')",
+      "Bash(grep -oiE '\\(slice|\\\\.zip|download\\)[a-zA-Z0-9._/-]{0,80}' \"D:/Projects/src/cubewise/website/current_site/Slice download.html\")",
+      "Bash(curl -sI http://localhost:3000/arc/download/ -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(curl -sI http://localhost:3000/slice/download/ -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(grep -oiE '\\(community|business|license|free|required|included|feature-name|product-feature|comparison|checkmark|available\\)[a-zA-Z0-9 -]{0,60}' \"D:/Projects/src/cubewise/website/current_site/Slice Features.html\")",
+      "Bash(grep -oiE 'ComparisonSection-module--[a-zA-Z]+--[a-z0-9]+\"[^>]*>[^<]{1,200}' \"D:/Projects/src/cubewise/website/current_site/Slice Features.html\")",
+      "Bash(awk '/ComparisonSection/{found=1} found{print NR\": \"substr\\($0,1,300\\); if\\(NR>=found+5\\) exit}' \"D:/Projects/src/cubewise/website/current_site/Slice Features.html\")",
+      "Bash(awk '{n=split\\($0,a,\"ComparisonSection-module--wrapper\"\\); if\\(n>1\\){for\\(i=2;i<=n;i++\\){print substr\\(a[i],1,6000\\)}}}' \"D:/Projects/src/cubewise/website/current_site/Slice Features.html\")",
+      "Bash(awk '{n=split\\($0,parts,\"columnTitle--77e9d\\\\\"[^>]*>\"\\); for\\(i=2;i<=n;i++\\){p=parts[i]; gsub\\(/<[^>]+>/,\" \",p\\); gsub\\(/ +/,\" \",p\\); print substr\\(p,1,400\\); print \"---\"}}' \"D:/Projects/src/cubewise/website/current_site/Slice Features.html\")",
+      "Bash(node -e ' *)",
+      "Bash(curl -sI http://localhost:3000/arc/features/ -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(node scripts/fix-taglines.js)",
+      "Bash(node scripts/fix-taglines.cjs)"
     ]
   }
 }

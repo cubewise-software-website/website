@@ -50,13 +50,14 @@ export function generatePostList(posts) {
     .join('\n')
 }
 
-const PRODUCT_ORDER = ['arc', 'arc-plus', 'powerconnect', 'pulse', 'slice']
+const PRODUCT_ORDER = ['arc', 'arc-plus', 'powerconnect', 'pulse', 'slice', 'atmosphere']
 const PRODUCT_DISPLAY = {
   'arc': 'Arc',
   'arc-plus': 'Arc+',
   'powerconnect': 'PowerConnect',
   'pulse': 'Pulse',
   'slice': 'Slice',
+  'atmosphere': 'Atmosphere',
 }
 const DOC_TYPE_DISPLAY = {
   'installation': 'Installation &amp; Config',

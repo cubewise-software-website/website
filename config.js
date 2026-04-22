@@ -21,6 +21,8 @@ export const spaces = [
   { key: 'PUM',   section: 'docs', template: 'docs', isDocsSpace: false, product: 'pulse',        docType: 'manual' },
   { key: 'SIAC',  section: 'docs', template: 'docs', isDocsSpace: false, product: 'slice',        docType: 'installation' },
   { key: 'SUM',   section: 'docs', template: 'docs', isDocsSpace: false, product: 'slice',        docType: 'manual' },
+  { key: 'AIAC2', section: 'docs', template: 'docs', isDocsSpace: false, product: 'atmosphere',   docType: 'installation' },
+  { key: 'AUM2',  section: 'docs', template: 'docs', isDocsSpace: false, product: 'atmosphere',   docType: 'manual' },
 ]
 
 export const DIST_DIR = 'dist'
