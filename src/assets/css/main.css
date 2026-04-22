@@ -1829,6 +1829,14 @@ main { min-height: 60vh; }
   margin-bottom: 0.75rem;
 }
 
+.features-index-col-subtitle {
+  font-size: 0.95rem;
+  color: var(--pearl-white);
+  opacity: 0.75;
+  line-height: 1.55;
+  margin: -0.4rem 0 0.85rem;
+}
+
 .features-index--editions .features-index-inner {
   grid-template-columns: 1fr 1fr;
 }

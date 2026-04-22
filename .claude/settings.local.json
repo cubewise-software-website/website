@@ -57,7 +57,8 @@
       "Bash(node -e ' *)",
       "Bash(curl -sI http://localhost:3000/arc/features/ -o /dev/null -w \"%{http_code}\\\\n\")",
       "Bash(node scripts/fix-taglines.js)",
-      "Bash(node scripts/fix-taglines.cjs)"
+      "Bash(node scripts/fix-taglines.cjs)",
+      "Bash(git push *)"
     ]
   }
 }
