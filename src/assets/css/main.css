@@ -376,7 +376,7 @@ main { min-height: 60vh; }
 
 .mega-link {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   text-decoration: none;
   padding: 7px 8px;
@@ -390,6 +390,7 @@ main { min-height: 60vh; }
   flex-shrink: 0;
   display: flex;
   align-items: center;
+  height: 1.52rem;
   transition: color 0.15s ease;
 }
 
