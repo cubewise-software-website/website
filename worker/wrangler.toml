@@ -1,0 +1,8 @@
+name = "cubewise-confluence-webhook"
+main = "index.js"
+compatibility_date = "2024-09-23"
+
+# Secrets (set via `wrangler secret put`):
+#   CF_WORKER_SECRET  - shared secret with Confluence webhook
+#   GITHUB_PAT        - GitHub PAT with repo scope
+#   GITHUB_REPO       - e.g. cubewise-code/website

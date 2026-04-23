@@ -331,6 +331,23 @@ main { min-height: 60vh; }
   grid-template-columns: 1fr 1fr;
 }
 
+.nav-mega-menu--single {
+  width: 320px;
+}
+
+.nav-mega-menu--single .mega-menu-inner {
+  grid-template-columns: 1fr;
+}
+
+.nav-mega-menu--wide {
+  width: 1040px;
+}
+
+.nav-mega-menu--wide .mega-menu-inner {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
 .mega-heading {
   text-transform: uppercase;
   font-size: 0.72rem;
