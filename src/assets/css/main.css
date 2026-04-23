@@ -54,12 +54,13 @@ body.lightbox-open { overflow: hidden; }
    Cubewise — Brand tokens
    ============================================================ */
 :root {
-  --orange-gold:  #F78E20;
-  --sand-gold:    #FADEC1;
-  --charcoal:     #434B53;
-  --pearl-white:  #FFFFFB;
-  --light-gray:   #F1F2F2;
-  --dark-night:   #202E3A;
+  --orange-gold:    #F78E20;
+  --sand-gold:      #FADEC1;
+  --sand-gold-tint: #FFF8F2;
+  --charcoal:       #434B53;
+  --pearl-white:    #FFFFFB;
+  --light-gray:     #F1F2F2;
+  --dark-night:     #202E3A;
 
   --text:         var(--dark-night);
   --text-muted:   var(--charcoal);
@@ -282,9 +283,9 @@ main { min-height: 60vh; }
   width: 960px;
   max-width: calc(100vw - 2rem);
   background: var(--pearl-white);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.22), 0 4px 16px rgba(0,0,0,0.10);
+  border: 1px solid #E8E9EA;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
   z-index: 200;
   opacity: 0;
   transform: translateY(-4px);
