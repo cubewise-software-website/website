@@ -90,8 +90,7 @@ npm install
 **Preview the site locally** (no Confluence credentials needed — uses hand-coded pages only):
 
 ```bash
-node scripts/preview.js
-npx serve dist
+npm run preview
 ```
 
 Then open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -105,6 +104,19 @@ cp .env.example .env
 npx dotenv -e .env -- npm run build
 npx serve dist
 ```
+
+### Build commands — which one when
+
+The site is hosted at `cubewise-code.github.io/website/`, so the deploy build rewrites every internal path to start with `/website/`. That output is correct for GitHub Pages but **breaks when served at `/` locally** — CSS, JS, and images all 404. Use the right command for the job:
+
+| Command | What it does | When to use | Internal paths |
+|---------|--------------|-------------|----------------|
+| `npm run preview` | Runs `preview.js` (no Confluence fetch, no path rewrite) + serves `dist/` | **Local preview — default** | `/assets/...` |
+| `npm run build` | Full build: fetches Confluence, renders Blog and Docs, copies static pages | Local full build (needs `.env`) | `/assets/...` |
+| `npm run build:static` | Copies `src/pages/` into `dist/` and rewrites every internal path to `/website/...` | **GitHub Pages deploy only** — do not serve at root | `/website/assets/...` |
+| `npm run build:github` | `npm run build` + `scripts/rewrite-paths.js` (same path rewrite as above) | GitHub Pages deploy with Confluence content | `/website/assets/...` |
+
+**Rule of thumb:** if a local preview ever looks like unstyled HTML (no CSS, broken images), you almost certainly ran a `build:*` command. Run `npm run preview` to regenerate `dist/` with correct paths.
 
 **Run tests:**
 
@@ -128,9 +140,10 @@ npm run test:mobile     # browser integration tests (Playwright) — requires a 
 3. **Preview locally** to check your changes look correct:
 
    ```bash
-   node scripts/preview.js
-   npx serve dist
+   npm run preview
    ```
+
+   Do not use `npm run build:static` or `npm run build:github` for local preview — those builds rewrite every asset path to `/website/...` for the GitHub Pages deploy, and the page will render unstyled when served at `/`.
 
 4. **Run tests** to make sure nothing is broken:
 
