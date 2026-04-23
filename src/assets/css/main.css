@@ -245,6 +245,13 @@ a:hover { color: var(--charcoal); }
   color: var(--charcoal);
   font-size: 0.95rem;
   font-weight: 500;
+  padding-bottom: 2px;
+}
+
+.nav-item-dropdown.is-open > a {
+  color: var(--dark-night);
+  border-bottom: 2px solid var(--orange-gold);
+  padding-bottom: 0;
 }
 
 .nav-links a:hover { color: var(--dark-night); }
@@ -360,11 +367,11 @@ main { min-height: 60vh; }
 
 .mega-heading {
   text-transform: uppercase;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  color: var(--charcoal);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: #9AA0A6;
   font-weight: 600;
-  margin-bottom: 1.25rem;
+  margin-bottom: 4px;
 }
 
 .mega-link {
