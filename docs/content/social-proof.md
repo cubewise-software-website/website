@@ -108,8 +108,8 @@ attribution: Anne-Marie Rodd, Finance Systems Leader, GHD
 stage: consideration
 resolves: "Will our Finance users actually use this, or will it sit unused?"
 module: slice
-use on: homepage, /slice/, /slice/customers/, /platform/power-users/
-source: homepage testimonials, /platform/power-users/
+use on: homepage, /slice/, /slice/customers/, /platform/analysts/
+source: homepage testimonials, /platform/analysts/
 ```
 
 ```yaml
@@ -118,8 +118,8 @@ attribution: Wei Wang, TM1 Developer
 stage: consideration
 resolves: "Will our Perspectives users struggle to switch?"
 module: slice
-use on: /slice/, /slice/features/, /platform/power-users/
-source: /platform/power-users/
+use on: /slice/, /slice/features/, /platform/analysts/
+source: /platform/analysts/
 ```
 
 ---

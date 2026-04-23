@@ -209,7 +209,7 @@ src/
 │   │   ├── index.html
 │   │   ├── administrators/
 │   │   ├── developers/
-│   │   └── power-users/
+│   │   └── analysts/
 │   ├── powerconnect/
 │   │   ├── index.html
 │   │   ├── features/

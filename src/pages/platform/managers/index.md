@@ -1,7 +1,7 @@
 # Cubewise for Managers — Page Spec
 
 **URL:** `/platform/managers/`  
-**Audience:** Managers and team leads responsible for a TM1/IBM Planning Analytics environment — they oversee developers, administrators, and power users but are not hands-on with the tools day-to-day.  
+**Audience:** Managers and team leads responsible for a TM1/IBM Planning Analytics environment — they oversee developers, administrators, and analysts but are not hands-on with the tools day-to-day.  
 **Buyer stage:** Consideration → Decision  
 **Primary products:** Pulse, Arc+, Atmosphere  
 **i18n key prefix:** `platform-managers`
@@ -112,7 +112,7 @@ Use manager or team-lead level quotes. Suggested sources (to be confirmed):
 
 ## Nav & mega-menu entry
 
-Add to the "Solutions For" mega-menu alongside Developers, Administrators, Power Users:
+Add to the "Solutions For" mega-menu alongside Developers, Administrators, Analysts:
 
 **Label:** Managers  
 **Description:** Full visibility, controlled change, and self-service data integration — Pulse, Arc+, and Atmosphere give managers everything they need to run a reliable IBM Planning Analytics platform.  

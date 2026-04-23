@@ -23,17 +23,17 @@ Slice is the natural successor to TM1 Perspectives. All the familiarity of Persp
 - Homepage card tagline: *"The modern Excel add-in for IBM Planning Analytics."*
 - Hero (Slice page): *"The Excel add-in for IBM Planning Analytics."*
 - Sub-hero body: *"Fast, modern Excel reporting with full hierarchy support and backwards compatibility with Perspectives."*
-- Persona (Power Users): *"A modern Excel experience for IBM Planning Analytics."*
+- Persona (Analysts): *"A modern Excel experience for IBM Planning Analytics."*
 
 ---
 
-## Primary persona — Power User
+## Primary persona — Analyst
 
 Finance analysts, FP&A team members, Finance Systems leads. People who live in Excel, know TM1 Perspectives, and want it to work the way 2026 Excel works.
 
-See `strategy/personas.md` → Power User.
+See `strategy/personas.md` → Analyst.
 
-**Secondary persona — Developer** (as a Slice power user and template author — Wei Wang's testimonial voice).
+**Secondary persona — Developer** (as a heavy Slice user and template author — Wei Wang's testimonial voice).
 
 ---
 
@@ -118,4 +118,4 @@ Slice has a free download — surface it at Decision stage.
 - `/slice/features/` — all features
 - `/slice/customers/` — customer stories (GHD and others)
 - `/slice/download/` — download
-- `/platform/power-users/` — persona landing page
+- `/platform/analysts/` — persona landing page

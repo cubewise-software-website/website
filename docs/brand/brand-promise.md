@@ -41,7 +41,7 @@ Not *impressed* by features. Not *amazed* by technology. **Relieved.** The quiet
 | Homepage | "These are the TM1 people. The real ones." |
 | Platform | "One coherent system — not a grab-bag of products." |
 | Product (Arc, Pulse, etc.) | "This is the thing I've been waiting for." |
-| Persona (Developers / Admins / Power Users) | "They built this for me, specifically." |
+| Persona (Developers / Admins / Analysts) | "They built this for me, specifically." |
 | Customer story | "Someone with my exact problem fixed it with this." |
 | Downloads | "No gate. They mean it when they say free." |
 | Contact | "These are humans. A real TM1 specialist will reply." |

@@ -23,17 +23,17 @@ PowerConnect is the live, secure connection between TM1 cubes and Power BI — o
 - Homepage card tagline: *"IBM Planning Analytics data in Microsoft Power BI."*
 - Hero (PowerConnect page): *"Effortlessly integrate IBM Planning Analytics with Microsoft Power BI."*
 - Sub-hero body: *"Unprecedented connectivity between IBM Planning Analytics and Power BI — on-premises, cloud, or hybrid."*
-- Persona (Power Users): *"IBM Planning Analytics data in Microsoft Power BI."*
+- Persona (Analysts): *"IBM Planning Analytics data in Microsoft Power BI."*
 
 ---
 
-## Primary persona — Power User
+## Primary persona — Analyst
 
 Finance analysts, FP&A, and Finance Systems leads who build Power BI dashboards and currently have to work from manually-exported TM1 data.
 
 Secondary personas: **BI developers and data analysts** who sit inside business teams and need a TM1 data source for their Power BI workspaces; **Administrators** who care about the security story.
 
-See `strategy/personas.md` → Power User.
+See `strategy/personas.md` → Analyst.
 
 ---
 
@@ -105,4 +105,4 @@ Two traps.
 - `/powerconnect/` — overview
 - `/powerconnect/features/` — all features
 - `/powerconnect/download/` — download
-- `/platform/power-users/` — persona landing page
+- `/platform/analysts/` — persona landing page

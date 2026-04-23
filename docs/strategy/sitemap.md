@@ -22,7 +22,7 @@ LOGO  |  Solutions For ▾  |  Platform ▾  |  Downloads  |  Resources ▾  |  
 Solutions For
 ├ /platform/developers/
 ├ /platform/administrators/
-├ /platform/power-users/
+├ /platform/analysts/
 └ /platform/managers/
 
 Platform
@@ -79,7 +79,7 @@ Contact (nav CTA)
 | `/platform/` | The Cubewise Platform overview (hub-and-spoke) | Awareness → Consideration | All | (none yet) |
 | `/platform/developers/` | Cubewise for Developers (Arc + Arc+) | Consideration | Developer | (none yet) |
 | `/platform/administrators/` | Cubewise for Administrators (Pulse + Arc+) | Consideration | Administrator | (none yet) |
-| `/platform/power-users/` | Cubewise for Power Users (Slice, Atmosphere, PowerConnect) | Consideration | Power User | (none yet) |
+| `/platform/analysts/` | Cubewise for Analysts (Slice, Atmosphere, PowerConnect) | Consideration | Analyst | (none yet) |
 | `/platform/managers/` | Cubewise for Managers (Pulse, Arc+, Atmosphere) | Consideration | Manager | (none yet) |
 | `/arc/` | Arc product overview | Awareness → Consideration | Developer | (none yet) |
 | `/arc/features/` | All Arc features in depth | Consideration | Developer | (none yet) |
@@ -101,16 +101,16 @@ Contact (nav CTA)
 | `/pulse/customers/scc/` | SCC story | Decision | Administrator | (none yet) |
 | `/pulse/customers/stockland/` | Stockland story | Decision | Administrator | (none yet) |
 | `/pulse/download/` | Download Pulse | Decision | Administrator | (none yet) |
-| `/slice/` | Slice product overview | Awareness → Consideration | Power User | (none yet) |
-| `/slice/features/` | All Slice features | Consideration | Power User | (none yet) |
-| `/slice/customers/` | Slice customer stories | Decision | Power User | (none yet) |
-| `/slice/download/` | Download Slice | Decision | Power User | (none yet) |
-| `/atmosphere/` | Atmosphere product overview | Awareness → Consideration | Power User | (none yet) |
-| `/atmosphere/features/` | All Atmosphere integrations / features | Consideration | Power User | (none yet) |
-| `/atmosphere/integrations/` | Specific integration deep-dives | Consideration | Power User | (none yet) |
-| `/powerconnect/` | PowerConnect product overview | Awareness → Consideration | Power User | (none yet) |
-| `/powerconnect/features/` | All PowerConnect features | Consideration | Power User | (none yet) |
-| `/powerconnect/download/` | Download PowerConnect | Decision | Power User | (none yet) |
+| `/slice/` | Slice product overview | Awareness → Consideration | Analyst | (none yet) |
+| `/slice/features/` | All Slice features | Consideration | Analyst | (none yet) |
+| `/slice/customers/` | Slice customer stories | Decision | Analyst | (none yet) |
+| `/slice/download/` | Download Slice | Decision | Analyst | (none yet) |
+| `/atmosphere/` | Atmosphere product overview | Awareness → Consideration | Analyst | (none yet) |
+| `/atmosphere/features/` | All Atmosphere integrations / features | Consideration | Analyst | (none yet) |
+| `/atmosphere/integrations/` | Specific integration deep-dives | Consideration | Analyst | (none yet) |
+| `/powerconnect/` | PowerConnect product overview | Awareness → Consideration | Analyst | (none yet) |
+| `/powerconnect/features/` | All PowerConnect features | Consideration | Analyst | (none yet) |
+| `/powerconnect/download/` | Download PowerConnect | Decision | Analyst | (none yet) |
 | `/deployment/self-hosted/` | Self-hosted deployment option | Decision | All | (none yet) |
 | `/deployment/cubewise-cloud/` | Managed Cubewise Cloud deployment | Decision | All | (none yet) |
 | `/downloads/` | All downloads hub | Decision | All | (none yet) |
@@ -130,7 +130,7 @@ Contact (nav CTA)
 
 ## Slug conventions
 
-- **Kebab-case, lower-case.** `/power-users/`, `/arc-plus/`, `/cubewise-cloud/`.
+- **Kebab-case, lower-case.** `/analysts/`, `/arc-plus/`, `/cubewise-cloud/`.
 - **Trailing slash on directories.** `/arc/` not `/arc`.
 - **No deep nesting.** Max 3 levels: `/pulse/customers/norgine/`. No `/platform/products/develop/arc/features/list/`.
 - **One canonical URL per page.** No www/non-www split. No trailing-slash variants. Canonical tags set from day one.

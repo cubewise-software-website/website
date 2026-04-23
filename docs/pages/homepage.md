@@ -22,7 +22,7 @@ Convert first-time visitors (Awareness stage) into a deeper session on a product
 
 - Developer → `/arc/` via product card + "Developers" role card.
 - Administrator → `/pulse/` via product card + "Administrators" role card.
-- Power User / Finance → `/slice/`, `/atmosphere/`, `/powerconnect/` via product cards + "Power Users & Finance Teams" role card.
+- Analyst / Finance → `/slice/`, `/atmosphere/`, `/powerconnect/` via product cards + "Analysts & Finance Teams" role card.
 
 Brand persona (FP&A Manager / Finance Lead) is the implicit owner of the hero and tagline tone — see `brand/brand-promise.md`.
 
@@ -104,7 +104,7 @@ Pattern: icon · role heading · body paragraph · product links.
 |------|----|-----------------|
 | Developers | "Developers" | Arc · Arc+ |
 | Administrators | "Administrators" | Pulse · Arc+ |
-| Power Users & Finance Teams | "Power Users & Finance Teams" | Slice · Atmosphere · PowerConnect |
+| Analysts & Finance Teams | "Analysts & Finance Teams" | Slice · Atmosphere · PowerConnect |
 
 **Heading:** *"Built for every role on your TM1 team"*
 **Sub-heading:** *"Whether you build, administer, or consume IBM Planning Analytics, the Cubewise Platform has a product for you."*

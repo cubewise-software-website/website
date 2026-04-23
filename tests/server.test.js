@@ -14,7 +14,7 @@ const PAGES = [
   ['/platform/', 'The Cubewise Platform — IBM Planning Analytics / TM1'],
   ['/platform/developers/', 'Cubewise for Developers — IBM Planning Analytics / TM1'],
   ['/platform/administrators/', 'Cubewise for Administrators — IBM Planning Analytics / TM1'],
-  ['/platform/power-users/', 'Cubewise for Power Users — IBM Planning Analytics / TM1'],
+  ['/platform/analysts/', 'Cubewise for Analysts — IBM Planning Analytics / TM1'],
   ['/arc/', 'Arc — Cubewise Platform'],
   ['/arc/features/', 'Arc Features — Cubewise Platform'],
   ['/arc/download/', 'Download Arc — Cubewise Platform'],

@@ -37,11 +37,12 @@ For every move or retirement, add a row to the table below:
 
 ## Current redirects
 
-*As of 2026-04-23, no redirects are yet registered. Add rows below as pages move or are retired.*
-
 | Old URL | New URL | Type | Reason | Date |
 |---------|---------|------|--------|------|
-| *(none yet)* | | | | |
+| /platform/power-users/          | /platform/analysts/          | 301 | Persona renamed — "Power Users" → "Analysts" | 2026-04-23 |
+| /fr/platform/power-users/       | /fr/platform/analysts/       | 301 | Locale mirror of above                        | 2026-04-23 |
+| /de/platform/power-users/       | /de/platform/analysts/       | 301 | Locale mirror of above                        | 2026-04-23 |
+| /zh-hans/platform/power-users/  | /zh-hans/platform/analysts/  | 301 | Locale mirror of above                        | 2026-04-23 |
 
 ---
 
@@ -50,10 +51,10 @@ For every move or retirement, add a row to the table below:
 These show the expected format. Delete before populating with real entries.
 
 ```
-| /platform/finance/                         | /platform/power-users/                   | 301 | Renamed persona hub — "finance" too narrow               | 2026-04-23 |
-| /fr/platform/finance/                      | /fr/platform/power-users/                | 301 | Locale mirror of above                                    | 2026-04-23 |
-| /de/platform/finance/                      | /de/platform/power-users/                | 301 | Locale mirror of above                                    | 2026-04-23 |
-| /zh-hans/platform/finance/                 | /zh-hans/platform/power-users/           | 301 | Locale mirror of above                                    | 2026-04-23 |
+| /platform/finance/                         | /platform/analysts/                   | 301 | Renamed persona hub — "finance" too narrow               | 2026-04-23 |
+| /fr/platform/finance/                      | /fr/platform/analysts/                | 301 | Locale mirror of above                                    | 2026-04-23 |
+| /de/platform/finance/                      | /de/platform/analysts/                | 301 | Locale mirror of above                                    | 2026-04-23 |
+| /zh-hans/platform/finance/                 | /zh-hans/platform/analysts/           | 301 | Locale mirror of above                                    | 2026-04-23 |
 | /products/rest-api-tool/                   | /products/rest-api-studio/               | 301 | Product renamed — see commit 60e02e3                      | 2026-04-22 |
 | /old-blog/case-studies/                    | /blog/                                   | 301 | Case studies merged into main blog                        | 2026-03-15 |
 | /arc-plus-beta/                            | /arc-plus/                               | 301 | Beta ended — redirected to production page                | 2026-02-01 |

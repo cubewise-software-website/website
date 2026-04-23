@@ -23,16 +23,16 @@ Atmosphere connects TM1 to the systems Finance teams actually work with — Dyna
 - Homepage card tagline: *"Self-service data integration for Finance teams."*
 - Hero (Atmosphere page): *"Get all your cloud data for IBM Planning Analytics."*
 - Sub-hero body: *"Secure, two-way pipelines that automate data movement from any source to keep your forecasts always current."*
-- Persona (Power Users): *"Get your data into IBM Planning Analytics without IT."*
+- Persona (Analysts): *"Get your data into IBM Planning Analytics without IT."*
 - Trust banner: *"Owned by Finance. Trusted by IT."*
 
 ---
 
-## Primary persona — Power User / Finance team
+## Primary persona — Analyst / Finance team
 
 FP&A leads, Finance Systems managers, planning analysts. People who need data from an ERP / CRM / cloud system to land in a TM1 cube — quickly, repeatedly, and without an IT project.
 
-See `strategy/personas.md` → Power User.
+See `strategy/personas.md` → Analyst.
 
 **Secondary persona — Administrator / IT.** Atmosphere's security and no-data-stored posture is specifically designed to make IT comfortable without slowing Finance. Any Atmosphere page must reassure both audiences.
 
@@ -156,4 +156,4 @@ Specifically: headlines that say "Finance can finally own the pipeline" beat hea
 - `/atmosphere/` — overview
 - `/atmosphere/features/` — all integrations / features
 - `/atmosphere/integrations/` — source-system deep-dives
-- `/platform/power-users/` — persona landing page
+- `/platform/analysts/` — persona landing page

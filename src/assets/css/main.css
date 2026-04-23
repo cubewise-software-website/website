@@ -339,14 +339,21 @@ main { min-height: 60vh; }
   grid-template-columns: 1fr;
 }
 
-.nav-mega-menu--personas,
 .nav-mega-menu--wide {
   width: 1040px;
 }
 
-.nav-mega-menu--personas .mega-menu-inner,
 .nav-mega-menu--wide .mega-menu-inner {
   grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.nav-mega-menu--personas {
+  width: 720px;
+}
+
+.nav-mega-menu--personas .mega-menu-inner {
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
 
@@ -2690,7 +2697,7 @@ main { min-height: 60vh; }
 }
 
 /* ============================================================
-   Audience pages (Developers / Administrators / Power Users)
+   Audience pages (Developers / Administrators / Analysts / Managers)
    ============================================================ */
 .audience-hero {
   background: var(--dark-night);

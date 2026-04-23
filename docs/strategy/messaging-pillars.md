@@ -86,12 +86,12 @@ A pillar is not a tagline. It's a claim we make, proof that backs it, and the em
 - Atmosphere: *"Finance-owned schedules that eliminate IT backlog."*
 - PowerConnect: *"Integrates with your existing IBM Planning Analytics security model — users only see the data they're entitled to."*
 - Slice: no separate security model — uses TM1's.
-- Power Users persona page: *"Connect any source. No IT ticket."*
+- Analysts persona page: *"Connect any source. No IT ticket."*
 
 **Emotional payoff.** *"Finance moves fast. IT stays in control. Everyone wins."*
 
 **How to use this pillar.**
-- Power Users persona page. Atmosphere, Slice, PowerConnect product pages.
+- Analysts persona page. Atmosphere, Slice, PowerConnect product pages.
 - Wherever Finance buyers value speed without compromising IT governance.
 - On decision-stage pages where confidence and control are the close.
 

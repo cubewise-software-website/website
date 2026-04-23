@@ -2,7 +2,7 @@
 
 Layer 2 — Strategy. Source of truth for who we're talking to on every page.
 
-Derived from the four audience pages on the site: `/platform/developers/`, `/platform/administrators/`, `/platform/power-users/`, `/platform/managers/`. These are **module personas** (they shape feature pages and hooks). The brand persona — the senior Finance buyer — lives separately and shapes the homepage.
+Derived from the four audience pages on the site: `/platform/developers/`, `/platform/administrators/`, `/platform/analysts/`, `/platform/managers/`. These are **module personas** (they shape feature pages and hooks). The brand persona — the senior Finance buyer — lives separately and shapes the homepage.
 
 ---
 
@@ -12,7 +12,7 @@ Derived from the four audience pages on the site: `/platform/developers/`, `/pla
 |---------|------|--------------|---------------|--------------|
 | Developer | TM1 Developer / Consultant | Build and ship IBM PA applications faster, with less risk | Arc, Arc+ | `/arc/`, `/arc-plus/`, `/platform/developers/` |
 | Administrator | TM1 Administrator / PA Ops | Keep the TM1 environment healthy, governed and auditable | Pulse, Arc+ | `/pulse/`, `/arc-plus/`, `/platform/administrators/` |
-| Power User | Finance analyst / FP&A / Finance Systems lead | Work with IBM PA data their way — without waiting for IT | Slice, Atmosphere, PowerConnect | `/slice/`, `/atmosphere/`, `/powerconnect/`, `/platform/power-users/` |
+| Analyst | Finance analyst / FP&A / Finance Systems lead | Work with IBM PA data their way — without waiting for IT | Slice, Atmosphere, PowerConnect | `/slice/`, `/atmosphere/`, `/powerconnect/`, `/platform/analysts/` |
 | Manager | Team lead / Finance Systems Manager / IT Manager | Run the TM1 platform confidently — full visibility, controlled change, lower integration cost | Pulse, Arc+, Atmosphere | `/platform/managers/` |
 
 ---
@@ -98,7 +98,7 @@ Derived from the four audience pages on the site: `/platform/developers/`, `/pla
 
 ---
 
-## Power User
+## Analyst
 
 **Who they are.** Finance analysts, FP&A team members, and Finance Systems leads who consume and work with IBM Planning Analytics data. They live in Excel, build dashboards in Power BI, and often need data from source systems that IT hasn't wired up yet.
 
@@ -140,7 +140,7 @@ Derived from the four audience pages on the site: `/platform/developers/`, `/pla
 
 ## Manager
 
-**Who they are.** Team leads, Finance Systems Managers, and IT Managers who own the IBM Planning Analytics platform. They oversee developers, administrators, and power users but are not hands-on with the tools day-to-day. They care about reliability, risk, team productivity, and the cost of keeping everything running.
+**Who they are.** Team leads, Finance Systems Managers, and IT Managers who own the IBM Planning Analytics platform. They oversee developers, administrators, and analysts but are not hands-on with the tools day-to-day. They care about reliability, risk, team productivity, and the cost of keeping everything running.
 
 **Jobs to be Done.**
 - Keep planning cycles running reliably without becoming a technical bottleneck
