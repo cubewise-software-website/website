@@ -339,19 +339,12 @@ main { min-height: 60vh; }
   grid-template-columns: 1fr;
 }
 
-.nav-mega-menu--personas {
-  width: 900px;
-}
-
-.nav-mega-menu--personas .mega-menu-inner {
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-}
-
+.nav-mega-menu--personas,
 .nav-mega-menu--wide {
   width: 1040px;
 }
 
+.nav-mega-menu--personas .mega-menu-inner,
 .nav-mega-menu--wide .mega-menu-inner {
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
@@ -393,28 +386,6 @@ main { min-height: 60vh; }
 
 .mega-link:hover { background: var(--light-gray); }
 .mega-link:hover strong { color: var(--orange-gold); }
-
-/* Persona card variant — used in Solutions For menu */
-.mega-link--persona {
-  height: 100%;
-  padding: 1rem 1rem 1.1rem;
-  border: 1px solid var(--border);
-}
-
-.mega-link--persona strong {
-  font-size: 1.05rem;
-  margin-bottom: 0.5rem;
-}
-
-.mega-link--persona span {
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
-
-.mega-link--persona:hover {
-  border-color: var(--orange-gold);
-  background: var(--pearl-white);
-}
 
 /* ============================================================
    Component sub-navigation
@@ -2215,8 +2186,8 @@ main { min-height: 60vh; }
 
 .home-role-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
 }
 
 .home-role-card {

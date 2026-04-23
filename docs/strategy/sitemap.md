@@ -22,7 +22,8 @@ LOGO  |  Solutions For ▾  |  Platform ▾  |  Downloads  |  Resources ▾  |  
 Solutions For
 ├ /platform/developers/
 ├ /platform/administrators/
-└ /platform/power-users/
+├ /platform/power-users/
+└ /platform/managers/
 
 Platform
 ├ Develop & Operate
@@ -79,6 +80,7 @@ Contact (nav CTA)
 | `/platform/developers/` | Cubewise for Developers (Arc + Arc+) | Consideration | Developer | (none yet) |
 | `/platform/administrators/` | Cubewise for Administrators (Pulse + Arc+) | Consideration | Administrator | (none yet) |
 | `/platform/power-users/` | Cubewise for Power Users (Slice, Atmosphere, PowerConnect) | Consideration | Power User | (none yet) |
+| `/platform/managers/` | Cubewise for Managers (Pulse, Arc+, Atmosphere) | Consideration | Manager | (none yet) |
 | `/arc/` | Arc product overview | Awareness → Consideration | Developer | (none yet) |
 | `/arc/features/` | All Arc features in depth | Consideration | Developer | (none yet) |
 | `/arc/community/` | Arc community / forum | Consideration | Developer | (none yet) |
