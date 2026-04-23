@@ -16,7 +16,7 @@ A pillar is not a tagline. It's a claim we make, proof that backs it, and the em
 
 **Claim.** Cubewise is not a generic planning platform that added TM1 support. It is the only platform purpose-built for IBM Planning Analytics / TM1, by people who have spent their careers inside it.
 
-**Why the buyer cares.** TM1 is idiosyncratic. A generic tool will get 70% right and miss the 30% that matters — DBRW, hierarchies, rules, chores, TI — and the team will end up with workarounds. Specialists do not.
+**Why the buyer cares.** TM1 is idiosyncratic. Deep expertise in DBRW, hierarchies, rules, chores, and TI means Cubewise components work the way TM1 actually works — no workarounds, no compromises, no adapting the platform to fit a tool that was built for something else.
 
 **Proof points — use these on any page.**
 - "Six specialised software for IBM Planning Analytics — built by TM1 experts."
@@ -28,7 +28,7 @@ A pillar is not a tagline. It's a claim we make, proof that backs it, and the em
 
 **How to use this pillar.**
 - Lead the homepage hero. The platform page. The about page.
-- Bring back when a feature page risks sounding generic — ground it in a TM1-specific pain (e.g. "no more DBRW array-formula hell").
+- Bring back when a feature page risks sounding generic — ground it in a TM1-specific capability (e.g. "built for DBRW hierarchies, not retrofitted for them").
 
 ---
 
@@ -36,7 +36,7 @@ A pillar is not a tagline. It's a claim we make, proof that backs it, and the em
 
 **Claim.** Arc, Arc+, Pulse, Slice, Atmosphere and PowerConnect are not six standalone products bolted into a suite. They are a coherent platform, with Arc as the hub and every other component connecting through it.
 
-**Why the buyer cares.** Buyers have been burned by "suites" that are really acquisitions glued together. The Cubewise platform is engineered to integrate — Arc+ is literally Arc integrated with Pulse. Atmosphere feeds Arc. Slice surfaces TM1 from the Excel side. Each component makes the others more valuable.
+**Why the buyer cares.** The Cubewise platform is engineered to integrate from the ground up — Arc+ is literally Arc integrated with Pulse. Atmosphere feeds Arc. Slice surfaces TM1 from the Excel side. Each component makes the others more valuable, so the platform compounds as you adopt more of it.
 
 **Proof points.**
 - Platform page: *"Arc is the central hub. Every other component extends Arc's capabilities, integrates with it to surface data and insights, or connects your existing systems to it."*
@@ -47,7 +47,7 @@ A pillar is not a tagline. It's a claim we make, proof that backs it, and the em
 **Emotional payoff.** *"I'm buying a system, not a pile of parts."*
 
 **How to use this pillar.**
-- Anywhere a visitor might worry about product sprawl or overlap.
+- Wherever a visitor wants to understand how the products relate and reinforce each other.
 - The platform page, the hub-and-spoke diagram, cross-links between product pages.
 - When a persona page shows multiple products — explain why they belong together.
 
@@ -57,7 +57,7 @@ A pillar is not a tagline. It's a claim we make, proof that backs it, and the em
 
 **Claim.** Cubewise brings modern software-engineering discipline — version control, testing, impact analysis, deployment pipelines, rollback — to a platform that historically never had them.
 
-**Why the buyer cares.** TM1 teams in 2026 are expected to ship changes like any other software team: fast, safe, with a paper trail. The default TM1 tooling doesn't support any of that. Cubewise does. This is the single strongest argument for Arc+.
+**Why the buyer cares.** TM1 teams in 2026 ship changes like any other software team: fast, safe, with a full paper trail. Cubewise makes that possible — bringing version control, testing, impact analysis, deployment pipelines, and rollback to IBM Planning Analytics. Arc+ is the clearest expression of this.
 
 **Proof points.**
 - Arc+ tagline: *"DevOps for IBM Planning Analytics."*
@@ -66,7 +66,7 @@ A pillar is not a tagline. It's a claim we make, proof that backs it, and the em
 - Pulse: migrate to production live, no downtime. Change tracking. Separation of duties between TM1 team and IT.
 - "The DevOps Way" is the team motto (see `brand-guidelines.md`: *"This is the way"* — Mandalorian reference).
 
-**Emotional payoff.** *"We can finally ship TM1 changes like a proper team — not like it's 1998."*
+**Emotional payoff.** *"We ship TM1 changes like a proper engineering team."*
 
 **How to use this pillar.**
 - Arc+ page (obviously). Developer and Administrator persona pages. Pulse migration sections.
@@ -79,7 +79,7 @@ A pillar is not a tagline. It's a claim we make, proof that backs it, and the em
 
 **Claim.** Cubewise components that serve Finance — Slice, Atmosphere, PowerConnect — let Finance move at Finance's pace, without forcing IT to take on the risk. Finance owns the workflow; IT keeps the controls.
 
-**Why the buyer cares.** The oldest fight in enterprise software is Finance wanting speed, IT wanting control. Cubewise's Finance-side components resolve it structurally: self-service pipelines, Excel-native reporting, Power BI connectors — all respecting the existing IBM PA security model, all encrypted, with nothing stored where it shouldn't be.
+**Why the buyer cares.** Finance moves at its own pace and IT maintains its standards — Cubewise makes both possible at the same time. Self-service pipelines, Excel-native reporting, and Power BI connectors all respect the existing IBM PA security model, fully encrypted, with enterprise-grade access controls built in.
 
 **Proof points.**
 - Atmosphere banner: *"Owned by Finance. Trusted by IT. Encrypted in-transit. No data stored. Enterprise-grade access controls."*
@@ -88,12 +88,12 @@ A pillar is not a tagline. It's a claim we make, proof that backs it, and the em
 - Slice: no separate security model — uses TM1's.
 - Power Users persona page: *"Connect any source. No IT ticket."*
 
-**Emotional payoff.** *"I can get my job done. And no one is going to get fired."*
+**Emotional payoff.** *"Finance moves fast. IT stays in control. Everyone wins."*
 
 **How to use this pillar.**
 - Power Users persona page. Atmosphere, Slice, PowerConnect product pages.
-- Whenever Finance buyers may be worried about IT pushback.
-- In risk-reversal copy on decision-stage pages.
+- Wherever Finance buyers value speed without compromising IT governance.
+- On decision-stage pages where confidence and control are the close.
 
 ---
 

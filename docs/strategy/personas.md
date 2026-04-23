@@ -2,7 +2,7 @@
 
 Layer 2 — Strategy. Source of truth for who we're talking to on every page.
 
-Derived from the three audience pages on the site: `/platform/developers/`, `/platform/administrators/`, `/platform/power-users/`. These are **module personas** (they shape feature pages and hooks). The brand persona — the senior Finance buyer — lives separately and shapes the homepage.
+Derived from the four audience pages on the site: `/platform/developers/`, `/platform/administrators/`, `/platform/power-users/`, `/platform/managers/`. These are **module personas** (they shape feature pages and hooks). The brand persona — the senior Finance buyer — lives separately and shapes the homepage.
 
 ---
 
@@ -13,6 +13,7 @@ Derived from the three audience pages on the site: `/platform/developers/`, `/pl
 | Developer | TM1 Developer / Consultant | Build and ship IBM PA applications faster, with less risk | Arc, Arc+ | `/arc/`, `/arc-plus/`, `/platform/developers/` |
 | Administrator | TM1 Administrator / PA Ops | Keep the TM1 environment healthy, governed and auditable | Pulse, Arc+ | `/pulse/`, `/arc-plus/`, `/platform/administrators/` |
 | Power User | Finance analyst / FP&A / Finance Systems lead | Work with IBM PA data their way — without waiting for IT | Slice, Atmosphere, PowerConnect | `/slice/`, `/atmosphere/`, `/powerconnect/`, `/platform/power-users/` |
+| Manager | Team lead / Finance Systems Manager / IT Manager | Run the TM1 platform confidently — full visibility, controlled change, lower integration cost | Pulse, Arc+, Atmosphere | `/platform/managers/` |
 
 ---
 
@@ -25,12 +26,12 @@ Derived from the three audience pages on the site: `/platform/developers/`, `/pl
 - Ship changes faster with fewer production incidents
 - Apply modern software-engineering discipline (version control, testing, review) to a platform that was never built for it
 
-**Pains we remove.**
-- Writing TI in Notepad++ with no syntax highlighting, no debugger, no find-and-replace across the model
-- Logging to text files to debug — instead of stepping through code
-- Managing multiple TM1 instances in separate windows
-- Deploying changes and hoping nothing else breaks
-- No unit tests, no impact analysis, no rollback
+**What they gain.**
+- A professional IDE with syntax highlighting, autocomplete, code folding, and find-and-replace across the entire model
+- Real debugger with breakpoints and live variable inspection — step through code instead of reading log files
+- All TM1 instances connected and manageable in one window — switch, copy, and compare without context switching
+- Impact analysis that shows exactly what will be affected before a single change goes to production
+- Automated unit tests, enforced best practices, and instant rollback — every deployment backed by evidence
 
 **Top hooks (in priority order).**
 1. *"The IDE TM1 developers have wanted for decades."* — Arc as the professional environment.
@@ -66,12 +67,12 @@ Derived from the three audience pages on the site: `/platform/developers/`, `/pl
 - Control what goes into production — separation of duties between development and ops
 - Migrate changes without scheduling downtime
 
-**Pains we remove.**
-- User locks discovered only when someone complains
-- Chore failures no one notices until the morning report is wrong
-- No reliable audit trail of who changed what in production
-- Deployments that need a maintenance window
-- Rolling back a bad change means hours of manual cleanup
+**What they gain.**
+- Real-time lock and thread visibility — know about issues before any user does
+- Instant alerts when a chore fails or a process runs long — morning reports stay reliable
+- A complete, searchable audit trail of every change in every production environment
+- Live migration to production with zero downtime — no maintenance window required
+- Full deployment history with one-click rollback — bad changes reversed in minutes, not hours
 
 **Top hooks (in priority order).**
 1. *"Complete visibility and control."* — hero positioning for the persona page.
@@ -107,11 +108,11 @@ Derived from the three audience pages on the site: `/platform/developers/`, `/pl
 - Plan and scenario-model without fear of breaking the live model
 - Deliver reports that reflect current data, not yesterday's export
 
-**Pains we remove.**
-- Perspectives is legacy; no modern equivalent — until now
-- Manual Power BI exports that are stale the moment they're run
-- Waiting weeks for IT to wire up a new source system
-- Writeback anxiety — "what if I overwrite the wrong cell?"
+**What they gain.**
+- A modern Excel add-in built for IBM Planning Analytics — familiar interface, no retraining required
+- Live TM1 data in Power BI with automatic dimension sync — dashboards that are always current
+- Self-service data connections to any cloud platform in hours — no IT ticket, no waiting
+- Sandbox writeback — experiment freely with full confidence the live model stays intact
 
 **Top hooks (in priority order).**
 1. *"The modern successor to Perspectives."* — Slice positioning, zero learning curve.
@@ -134,6 +135,48 @@ Derived from the three audience pages on the site: `/platform/developers/`, `/pl
 **CTAs (buyer-stage matched).**
 - Awareness → *Explore Slice*
 - Decision → *Request a demo* / *Get in touch*
+
+---
+
+## Manager
+
+**Who they are.** Team leads, Finance Systems Managers, and IT Managers who own the IBM Planning Analytics platform. They oversee developers, administrators, and power users but are not hands-on with the tools day-to-day. They care about reliability, risk, team productivity, and the cost of keeping everything running.
+
+**Jobs to be Done.**
+- Keep planning cycles running reliably without becoming a technical bottleneck
+- Know what is happening across the environment without having to ask
+- Control what changes go to production — and prove it when asked
+- Reduce the cost and time of connecting new data sources
+- Make the case internally for platform investment
+
+**What they gain.**
+- Real-time visibility across every server — know the health of the environment at all times, not just when something breaks
+- A complete change audit trail — answer "what changed and who changed it?" in seconds, not hours
+- Planned, documented production deployments with full rollback capability — releases become controlled events
+- Pre-built, maintained connectors to every major cloud platform — no fragile custom scripts, no single points of failure
+- One integration platform that replaces point-to-point ETL licences and the developer time spent maintaining them
+
+**Top hooks (in priority order).**
+1. *"Know what is happening before your users do."* — Pulse real-time monitoring + alerting.
+2. *"Approve changes knowing exactly what will be affected."* — Arc+ impact analysis.
+3. *"Connect any cloud platform in hours, not weeks."* — Atmosphere pre-built connectors.
+4. *"Full audit trail — who changed what, when, and why."* — Pulse + Arc+ combined.
+
+**Products → Benefits.**
+
+| Product | Role | Top benefit for this persona |
+|---------|------|------------------------------|
+| Pulse | Platform monitor | 24/7 visibility, full change audit trail, performance insights, migration history |
+| Arc+ | Governance platform | Impact analysis before every change, best-practice enforcement, deployment packages, rollback |
+| Atmosphere | Integration layer | 50+ pre-built cloud connectors, self-service for the team, eliminate custom ETL cost |
+
+**Voice cues (from live testimonials).**
+> "Pulse has given us great confidence knowing that everything necessary will have been migrated." — Aveva
+> "Pulse has helped us to significantly reduce user locks." — Pattonair
+
+**CTAs (buyer-stage matched).**
+- Consideration → *See all Pulse features* / *See all Arc+ features*
+- Decision → *Get in Touch* / *Get a demo*
 
 ---
 
