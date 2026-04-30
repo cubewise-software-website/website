@@ -2927,6 +2927,23 @@ main { min-height: 60vh; }
   border-color: rgba(255,255,255,0.1);
 }
 
+.audience-feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--sand-gold-tint);
+  color: var(--orange-gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.audience-features--dark .audience-feature-icon {
+  background: rgba(247, 142, 32, 0.12);
+  color: var(--sand-gold);
+}
+
 .audience-feature-item h3 {
   font-size: 0.95rem;
   font-weight: 700;
