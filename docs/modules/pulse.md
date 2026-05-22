@@ -46,6 +46,42 @@ See `strategy/personas.md` → Administrator.
 
 ---
 
+## Top 5 features
+
+The five Pulse capabilities every sales rep must be able to explain in 60 seconds. Sourced from `/pulse/features/`. Anchored to the Monitor / Understand / Manage pillar structure.
+
+1. **24/7 Live Monitoring + Pro-active Alerts** *(Monitor)* — Catch user locks, chore failures and memory issues before users complain.
+   - Live system view in both web and Windows client — CPU, memory, sessions, message logs
+   - Configurable alerts on user locks, chore failures, memory thresholds
+   - Alerts restricted to days/times with multiple notification groups
+   - The Pattonair story: email alerts when a user is locked for more than 5 minutes
+
+2. **Live Migration with Automatic Dependency Detection** *(Manage)* — Deploy to production live, with every dependency bundled.
+   - Pulse finds every dependency for a migration package automatically
+   - Compare two instances and review changes before executing
+   - Live migration — no service downtime
+   - The SCC story: migrate packages live without bringing down services
+
+3. **Automated Change Tracking** *(Understand)* — Every change to every TM1 object, recorded automatically.
+   - All changes saved to source control with author and timestamp
+   - Full audit trail — who changed what, when
+   - Verify correct changes were made in production
+   - The Stockland story: compliance-grade audit trail
+
+4. **Relationship Diagrams + Interactive Model Navigation** *(Understand)* — Visual impact analysis across the entire model.
+   - Generate relationship diagrams from any object
+   - Interactive web navigation through cubes, dimensions and processes
+   - Output diagrams to PDF for printing and distribution
+   - Click-through navigation between rules, processes and their references
+
+5. **Rollback + Separation of Duties** *(Manage)* — One-click recovery and IT-grade governance.
+   - One-click rollback to any previous version of a process or rule
+   - Built-in, configurable Pulse security
+   - Non-TM1 developers can apply complex changes safely within their scope
+   - Separation of duties between TM1 team and IT — without the politics
+
+---
+
 ## Three capability pillars (the site structure uses these)
 
 Pulse's own sub-nav divides the product into three groups. Copy should follow this structure.

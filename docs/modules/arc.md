@@ -48,6 +48,41 @@ See `strategy/personas.md` → Developer for full profile.
 
 ---
 
+## Top 5 features
+
+The five Arc capabilities every sales rep must be able to explain in 60 seconds. Sourced from `/arc/features/`.
+
+1. **Build TM1 Applications Faster** — Modern editor with smart search, autocomplete, history & favourites, and automatic time-dimension creation.
+   - One platform for cubes, dimensions, processes, rules and views
+   - Smart search across the entire model — find any object in seconds
+   - History and favourites for the objects you work with most
+   - Auto-generate time dimensions to accelerate model setup
+
+2. **Troubleshoot with Debugging** — The TurboIntegrator debugger TM1 never had.
+   - Step through TI code line by line
+   - See the value of every variable in real time
+   - Pause execution at any line and add conditional breakpoints
+   - Overview of breakpoints with TM1 locking visibility
+
+3. **Best Practice Development** — Guided, validated workflows and hundreds of approved code templates.
+   - Avoid mistakes with validated development workflows
+   - Hundreds of reusable, shareable code templates
+   - Consistent coding standards across the team
+   - Share code with other developers easily
+
+4. **Manage Users and Instances** — All admin operations in a single screen, across many TM1 servers.
+   - Users, groups and object security in one place
+   - Live server-settings updates — no restart required
+   - Faster access to TM1 server logs for diagnosis
+   - Multi-instance: switch between TM1 servers in one window (the Deutsche Bahn 70-instance use case)
+
+5. **Three editions — Community, Professional, Enterprise** — The packaging story sales must always lead with.
+   - **Community (free)** — Cube Viewer, Subset Editor, Excel Add-in, History/Favourites, Search, To Do List, Sessions, and other analytics features for end-users
+   - **Professional (licensed)** — Process, Rules, Hierarchy and Security Editors; Arc Assistant; Debugger; Time Management; Logger; Console; Python Scripts; Plugins
+   - **Enterprise (requires Pulse — this is Arc+)** — Advanced Monitoring, Alerts, Change Tracking, Best Practice Validation, Test Hub, Flow Diagram, Migration, Compare Dimensions
+
+---
+
 ## Features → Advantages → Benefits (FAB)
 
 | Feature | Advantage | Benefit (copy-ready) |

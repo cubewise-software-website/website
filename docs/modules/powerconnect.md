@@ -46,6 +46,42 @@ See `strategy/personas.md` → Analyst.
 
 ---
 
+## Top 5 features
+
+The five PowerConnect capabilities every sales rep must be able to explain in 60 seconds. Sourced from `/powerconnect/` and `/powerconnect/features/`.
+
+1. **Live Data Connection to TM1 Cubes** — Always up-to-date Power BI reports, no manual exports.
+   - Dashboards reflect current data, not yesterday's export
+   - Ad-hoc and scheduled refresh — fit freshness to the audience
+   - Eliminates the manual export workflow entirely
+   - Works with Power BI Desktop, Service and mobile
+
+2. **Automatic Metadata & Dimension Sync** — Power BI follows the TM1 structure automatically.
+   - Dimensions and hierarchies sync without manual updates
+   - Reports never silently break when TM1 changes
+   - Power BI stays aligned with TM1's structure
+   - The differentiator vs. flat-CSV alternatives
+
+3. **Security Model Integration** — Users see only what TM1 permits.
+   - Same permissions in Power BI as in TM1
+   - No parallel permission system to maintain
+   - Data stays within established security protocols
+   - The IT sign-off feature — surface it high in any pitch
+
+4. **Hierarchical Visualization + Attribute Support** — Use TM1 hierarchies and attributes natively in Power BI.
+   - Include as many hierarchy levels as your TM1 model contains
+   - Intuitive Power BI navigation and filtering driven by TM1 hierarchies
+   - Attribute support unlocks richer filtering, grouping and display
+   - No flattening to a single-level table
+
+5. **On-prem, Cloud & Hybrid — One Connector** — Deployment flexibility for any IBM PA environment.
+   - Works with on-premises IBM Planning Analytics
+   - Works with Planning Analytics as a Service (cloud)
+   - Works with hybrid deployments
+   - MDX Support for advanced users who need precise control over queries
+
+---
+
 ## Features → Advantages → Benefits (FAB)
 
 | Feature | Advantage | Benefit (copy-ready) |

@@ -65,6 +65,42 @@ See `strategy/personas.md` for both.
 
 ---
 
+## Top 5 features
+
+The five Arc+ capabilities every sales rep must be able to explain in 60 seconds. Sourced from `/arc-plus/features/`. Always remember: Arc+ is Arc connected to Pulse — there is no separate Arc+ download.
+
+1. **Migrate TM1 Objects with Dependency Detection** — Live deploy from inside Arc with no missing objects.
+   - Select multiple TM1 objects and migrate them in one go from Arc
+   - Pulse automatically finds all dependencies (cubes, dimensions, attributes, picklists)
+   - Migrate live to production — no downtime
+   - Every migration is logged and rollback-ready
+
+2. **Test Hub** — Automated unit testing and test-driven development for TM1.
+   - Set up individual unit tests during development
+   - Group tests into collections to run in sequence
+   - Code coverage reporting
+   - Catch regressions before they reach production
+
+3. **Change Tracking + Blame Report** — Compliance-grade audit trail down to the line.
+   - Every object change recorded by user and timestamp
+   - Full audit trail directly inside Arc
+   - Blame Report shows who wrote each line of a process or rule
+   - Verify the right changes were made in production
+
+4. **Best Practice Validation** — Predefined rules enforce naming conventions and flag pitfalls.
+   - Validate naming conventions automatically
+   - Flag common pitfalls in cube rules and TurboIntegrator processes
+   - Pre-emptive visibility of issues before they become problems
+   - Define team-wide rules — Arc+ enforces them
+
+5. **Flow Diagram + Side-by-side Comparison** — Visual impact analysis before any change.
+   - One-click Flow Diagram from a cube view, process editor or rule editor
+   - See all object relationships without reading the code
+   - Side-by-side comparison of two versions of any TM1 object
+   - Compare Dimensions across server instances — including across prod and dev
+
+---
+
 ## Features → Advantages → Benefits (FAB)
 
 | Feature | Advantage | Benefit (copy-ready) |

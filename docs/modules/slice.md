@@ -46,6 +46,42 @@ See `strategy/personas.md` → Analyst.
 
 ---
 
+## Top 5 features
+
+The five Slice capabilities every sales rep must be able to explain in 60 seconds. Sourced from `/slice/features/`. Slice ships in two editions — Community (free) and Business (licensed).
+
+1. **Perspectives Compatibility** *(Community)* — Existing workbooks work without changes.
+   - All Excel TM1 functions supported — DBRW, DBSW, SUBNM and more
+   - Three report modes — Snapshot, Slice, Active Forms — the same options as Perspectives
+   - Familiar Excel ribbon with the traditional TM1 features
+   - The Wei Wang line: *"virtually no learning curve"*
+
+2. **Full Hierarchy Support** *(Community)* — DBHW where Perspectives never had it.
+   - DBHW function works like DBRW but with full hierarchy support
+   - Active Forms that follow your hierarchy correctly
+   - A capability that did not exist in Perspectives
+   - Removes the single biggest pain in legacy TM1 Excel reporting
+
+3. **Dynamic Columns + Cross Drill** *(Business)* — Active Forms that actually work the way analysts expect.
+   - Active Forms with dynamic columns — expand and collapse consolidations on columns just like rows
+   - Cross-drill from one dimension to another on rows (e.g. Account → Region)
+   - The GHD line: *"cross drill and dynamic columns at our fingertips"*
+   - Capabilities Excel reporting in TM1 has never had
+
+4. **Cell Audit + Trace Rules** *(Business / Community)* — Debug TM1 calculations directly in Excel.
+   - Cell Audit (Business): see exactly what is happening with a cell's value
+   - Trace Rules (Community): understand how a value is calculated based on cube rules
+   - Troubleshoot unexpected results without leaving Excel
+   - Closes the loop between report and rule
+
+5. **Sandboxes + Buttons + Drill-through** *(Community)* — Plan, scenario-model and execute — without leaving the workbook.
+   - Create, merge and reset sandboxes from the Excel ribbon
+   - Run TM1 processes from buttons in the workbook (no scripting required)
+   - Drill through to source data from any cell
+   - Annotations attach the *why* to the number
+
+---
+
 ## Features → Advantages → Benefits (FAB)
 
 | Feature | Advantage | Benefit (copy-ready) |

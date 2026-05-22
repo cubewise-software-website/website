@@ -47,6 +47,42 @@ See `strategy/personas.md` → Analyst.
 
 ---
 
+## Top 5 features
+
+The five Atmosphere capabilities every sales rep must be able to explain in 60 seconds. Sourced from `/atmosphere/` and `/atmosphere/integrations/` (the `/atmosphere/features/` sub-page is currently a placeholder).
+
+1. **34+ Pre-built Connectors** — Ready-made pipelines for the systems Finance teams already use.
+   - D365 Finance & Operations (full endpoint coverage)
+   - NetSuite, SAP (ERP and S/4HANA), Salesforce
+   - Snowflake, Databricks
+   - Plus 25+ more across ERP, CRM, data-warehouse and cloud systems
+
+2. **Two-way Pipelines** — Atmosphere is not just an importer — data flows out as well as in.
+   - Continuously update BI, data warehouse and data lake environments with the latest actuals and forecasts
+   - Push plan data and business structures back to downstream systems automatically
+   - Optimised for large datasets and fast ingestion formats
+   - Keeps downstream teams aligned with the plan
+
+3. **Finance-aware Automation** — Pipelines that understand your GL and ERP structures.
+   - Map fields, clean data, shape it into hierarchies — ready for planning and month-end
+   - Bring operational, financial and master data across with one click
+   - Refresh only what's changed using filters, deltas and selective loads
+   - Pipelines understand Departments, Accounts and other Finance structures — not just raw tables
+
+4. **Finance-owned Scheduling** — Run pipelines without an IT ticket queue.
+   - Finance can own schedules and make changes
+   - Transparent tracking across all integrations and updates
+   - Eliminates IT backlog while keeping IT comfortable
+   - The pillar-4 hook: *"Owned by Finance. Trusted by IT."*
+
+5. **Security & Compliance** — IT-grade controls without the IT bottleneck.
+   - Encrypted in-transit
+   - No data stored by Atmosphere — reduced compliance surface area
+   - Enterprise-grade access controls
+   - Optimised for month-end and other busy cycles without breaking
+
+---
+
 ## Features → Advantages → Benefits (FAB)
 
 ### Get data in
