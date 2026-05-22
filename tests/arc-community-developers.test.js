@@ -2,10 +2,16 @@ import { describe, it, expect } from 'vitest'
 import { readFileSync } from 'fs'
 
 let communityHtml = ''
+let communityDist = ''
 try {
   communityHtml = readFileSync('src/pages/arc/community/index.html', 'utf8')
 } catch {
   // file not yet created — all toContain assertions will fail as expected
+}
+try {
+  communityDist = readFileSync('dist/arc/community/index.html', 'utf8')
+} catch {
+  // dist not built yet
 }
 
 describe('Arc Community page', () => {
@@ -54,15 +60,21 @@ describe('Arc Community page', () => {
   })
 
   it('has lang-switcher with correct data-current-path', () => {
-    expect(communityHtml).toContain('data-current-path="/arc/community/"')
+    expect(communityDist).toContain('data-current-path="/arc/community/"')
   })
 })
 
 let developersHtml = ''
+let developersDist = ''
 try {
   developersHtml = readFileSync('src/pages/arc/developers/index.html', 'utf8')
 } catch {
   // file not yet created — all toContain assertions will fail as expected
+}
+try {
+  developersDist = readFileSync('dist/arc/developers/index.html', 'utf8')
+} catch {
+  // dist not built yet
 }
 
 describe('Arc Developers page', () => {
@@ -113,6 +125,6 @@ describe('Arc Developers page', () => {
   })
 
   it('has lang-switcher with correct data-current-path', () => {
-    expect(developersHtml).toContain('data-current-path="/arc/developers/"')
+    expect(developersDist).toContain('data-current-path="/arc/developers/"')
   })
 })

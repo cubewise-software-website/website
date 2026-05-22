@@ -145,23 +145,28 @@ async function copyPagesWithLocales(templateVars = {}) {
     }
   }
 
+  const partials = {
+    header: await loadTemplate('_header'),
+    footer: await loadTemplate('_footer'),
+  }
   const pagePaths = []
-  await walkAndWrite(PAGES_DIR, DIST_DIR, translations, '', pagePaths, templateVars)
+  await walkAndWrite(PAGES_DIR, DIST_DIR, translations, '', pagePaths, templateVars, partials)
   return pagePaths
 }
 
-async function walkAndWrite(srcDir, distDir, translations, relDir = '', pagePaths = [], templateVars = {}) {
+async function walkAndWrite(srcDir, distDir, translations, relDir = '', pagePaths = [], templateVars = {}, partials = {}) {
   const entries = await readdir(join(srcDir, relDir))
   for (const entry of entries) {
     const rel = relDir ? `${relDir}/${entry}` : entry
     const srcPath = join(srcDir, rel)
     const s = await stat(srcPath)
     if (s.isDirectory()) {
-      await walkAndWrite(srcDir, distDir, translations, rel, pagePaths, templateVars)
+      await walkAndWrite(srcDir, distDir, translations, rel, pagePaths, templateVars, partials)
     } else if (entry.endsWith('.html')) {
       const raw = await readFile(srcPath, 'utf8')
-      const html = injectTemplate(raw, templateVars)
       const pagePath = getPagePath(`src/pages/${rel}`)
+      const header = injectTemplate(partials.header, { pagePath, ...templateVars })
+      const html = injectTemplate(raw, { header, footer: partials.footer, ...templateVars })
       pagePaths.push(pagePath)
 
       // English — write verbatim (with hreflang and og:meta added)

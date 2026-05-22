@@ -4,5 +4,20 @@
       "Bash(powershell -Command \"Stop-Process -Id 28916 -Force; Stop-Process -Id 22748 -Force\")",
       "Bash(npx http-server:*)"
     ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "input=$(cat); echo \"$input\" | grep -qE '\"command\":[[:space:]]*\"[^\"]*((serve[^\"]*dist|dist[^\"]*serve)|npm run preview)' && npm test 2>&1 || true",
+            "timeout": 120,
+            "statusMessage": "Running tests after preview server start"
+          }
+        ]
+      }
+    ]
   }
 }

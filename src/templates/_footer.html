@@ -1,0 +1,47 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="/assets/logos/Cubewise_Code_RGB.svg" alt="Cubewise" height="24">
+      <p data-i18n="footer.tagline">IBM Planning Analytics / TM1 specialists.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="/platform/" data-i18n="footer.platform">Platform</a>
+      <a href="https://cubewisecare.atlassian.net/servicedesk/customer/portal/13" data-i18n="footer.support">Support</a>
+      <a href="/docs/" data-i18n="footer.docs">Docs</a>
+      <a href="/blog/" data-i18n="footer.blog">Blog</a>
+      <a href="/partners/" data-i18n="footer.partners">Partners</a>
+      <a href="/about/" data-i18n="footer.about">About</a>
+      <a href="/contact/" data-i18n="footer.contact">Contact</a>
+    </nav>
+    <p class="footer-copy">© Cubewise</p>
+  </div>
+</footer>
+<script src="/assets/js/nav.js"></script>
+<script>
+  (function () {
+    const switchers = document.querySelectorAll('.lang-switcher')
+    const LABELS = { en: 'EN', fr: 'FR', de: 'DE', 'zh-hans': '中文' }
+    const LOCALE_PATHS = { en: '', fr: '/fr', de: '/de', 'zh-hans': '/zh-hans' }
+    switchers.forEach(function (sw) {
+      const currentLocale = sw.dataset.currentLocale || 'en'
+      const pagePath = sw.dataset.currentPath || '/'
+      const labelEl = sw.querySelector('.lang-switcher__current')
+      const dropdown = sw.querySelector('.lang-switcher__dropdown')
+      if (labelEl) labelEl.textContent = LABELS[currentLocale] || 'EN'
+      sw.querySelectorAll('[data-locale]').forEach(function (opt) {
+        const locale = opt.dataset.locale
+        opt.href = LOCALE_PATHS[locale] + pagePath
+        if (locale === currentLocale) opt.classList.add('lang-switcher__option--active')
+      })
+      sw.addEventListener('click', function (e) {
+        e.stopPropagation()
+        dropdown.classList.toggle('lang-switcher__dropdown--open')
+      })
+    })
+    document.addEventListener('click', function () {
+      document.querySelectorAll('.lang-switcher__dropdown--open').forEach(function (d) {
+        d.classList.remove('lang-switcher__dropdown--open')
+      })
+    })
+  })()
+</script>
