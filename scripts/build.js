@@ -6,6 +6,7 @@ import { renderPage } from './render.js'
 import { spaces, DIST_DIR, TEMPLATES_DIR, ASSETS_DIR, PAGES_DIR } from '../config.js'
 import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath, injectOgMeta, generateSitemap } from './i18n.js'
 import { LOCALES, SITE_URL, I18N_DIR } from '../config.js'
+import { PAGE_CTAS, renderPageCta } from './page-ctas.js'
 
 export function injectTemplate(template, context) {
   return template.replace(/\{\{(\w+)\}\}/g, (_, key) => context[key] ?? '')
@@ -148,6 +149,7 @@ async function copyPagesWithLocales(templateVars = {}) {
   const partials = {
     header: await loadTemplate('_header'),
     footer: await loadTemplate('_footer'),
+    pageCta: await loadTemplate('_page-cta'),
   }
   const pagePaths = []
   await walkAndWrite(PAGES_DIR, DIST_DIR, translations, '', pagePaths, templateVars, partials)
@@ -166,7 +168,8 @@ async function walkAndWrite(srcDir, distDir, translations, relDir = '', pagePath
       const raw = await readFile(srcPath, 'utf8')
       const pagePath = getPagePath(`src/pages/${rel}`)
       const header = injectTemplate(partials.header, { pagePath, ...templateVars })
-      const html = injectTemplate(raw, { header, footer: partials.footer, ...templateVars })
+      const pageCta = renderPageCta(PAGE_CTAS[pagePath], partials.pageCta, injectTemplate)
+      const html = injectTemplate(raw, { header, footer: partials.footer, pageCta, ...templateVars })
       pagePaths.push(pagePath)
 
       // English — write verbatim (with hreflang and og:meta added)

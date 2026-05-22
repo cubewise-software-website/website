@@ -27,7 +27,12 @@
   ═══════════════════════════════════════════ -->
   <section class="home-hero">
     <div class="home-hero-inner">
-      <div class="home-hero-label" data-i18n="home.hero-label">Everything your TM1 team needs. In one platform.</div>
+      <div class="home-hero-label home-hero-rotator" data-rotator>
+        <span data-rotator-item data-i18n="home.hero-label">Everything your TM1 team needs. In one platform.</span>
+        <span data-rotator-item data-i18n="home.hero-rotator-2">Built by TM1 experts, for TM1 teams.</span>
+        <span data-rotator-item data-i18n="home.hero-rotator-3">From development to deployment to insight.</span>
+        <span data-rotator-item data-i18n="home.hero-rotator-4">Six specialised software. One mission.</span>
+      </div>
       <h1 data-i18n="home.hero-heading">The Cubewise Platform</h1>
       <p data-i18n="home.hero-body">Six specialised software for IBM Planning Analytics — built by TM1 experts, trusted by finance and technology teams worldwide.</p>
       <div class="home-hero-actions">
@@ -38,16 +43,43 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
+       STATS STRIP
+  ═══════════════════════════════════════════ -->
+  <section class="home-stats" data-reveal="fade-up">
+    <div class="home-stats-inner">
+      <div class="home-stat">
+        <span class="home-stat-number" data-count-target="22">22</span>
+        <span class="home-stat-label" data-i18n="home.stat-years">Years of TM1 expertise</span>
+      </div>
+      <div class="home-stat-divider"></div>
+      <div class="home-stat">
+        <span class="home-stat-number" data-count-target="340" data-count-suffix="+">340+</span>
+        <span class="home-stat-label" data-i18n="home.stat-customers">Customers worldwide</span>
+      </div>
+      <div class="home-stat-divider"></div>
+      <div class="home-stat">
+        <span class="home-stat-number" data-count-target="6">6</span>
+        <span class="home-stat-label" data-i18n="home.stat-software">Specialised software</span>
+      </div>
+      <div class="home-stat-divider"></div>
+      <div class="home-stat">
+        <span class="home-stat-number" data-count-target="34" data-count-suffix="+">34+</span>
+        <span class="home-stat-label" data-i18n="home.stat-connectors">Pre-built connectors</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        PRODUCTS GRID
   ═══════════════════════════════════════════ -->
   <section class="home-products">
     <div class="home-products-inner">
-      <div class="home-section-header">
+      <div class="home-section-header" data-reveal="fade-up">
         <h2 data-i18n="home.products-heading">One platform. Six powerful components.</h2>
         <p data-i18n="home.products-subheading">Each product solves a specific challenge for TM1 teams — and they're designed to work together.</p>
       </div>
 
-      <div class="home-product-cards">
+      <div class="home-product-cards" data-reveal-stagger>
 
         <a href="/arc/" class="home-product-card">
           <div class="home-product-logo">
@@ -136,11 +168,11 @@
   ═══════════════════════════════════════════ -->
   <section class="home-roles">
     <div class="home-roles-inner">
-      <div class="home-section-header home-section-header--light">
+      <div class="home-section-header home-section-header--light" data-reveal="fade-up">
         <h2 data-i18n="home.roles-heading">Built for every role on your TM1 team</h2>
         <p data-i18n="home.roles-subheading">Whether you build, administer, or consume IBM Planning Analytics, the Cubewise Platform has a product for you.</p>
       </div>
-      <div class="home-role-cards">
+      <div class="home-role-cards" data-reveal-stagger>
 
         <div class="home-role-card">
           <div class="home-role-icon">
@@ -201,10 +233,10 @@
   ═══════════════════════════════════════════ -->
   <section class="home-testimonials">
     <div class="home-testimonials-inner">
-      <div class="home-section-header">
+      <div class="home-section-header" data-reveal="fade-up">
         <h2 data-i18n="home.testimonials-heading">Trusted by TM1 teams around the world</h2>
       </div>
-      <div class="home-testimonial-grid">
+      <div class="home-testimonial-grid" data-carousel="testimonial" data-reveal="fade-up">
 
         <div class="home-testimonial">
           <blockquote data-i18n="home.testimonial-1-quote">"Arc is quite simply a game changer for TM1 development which I cannot recommend highly enough. The efficiency it brings to the development cycle is undeniable. I cannot over-state just how quickly key features that have been missing for decades become essential."</blockquote>
@@ -241,7 +273,7 @@
        BOTTOM CTA
   ═══════════════════════════════════════════ -->
   <section class="home-bottom-cta">
-    <div class="home-bottom-cta-inner">
+    <div class="home-bottom-cta-inner" data-reveal="zoom">
       <h2 data-i18n="home.cta-heading">Ready to transform how your team works with IBM Planning Analytics?</h2>
       <p data-i18n="home.cta-body">Talk to a Cubewise specialist to find the right products for your team.</p>
       <div class="home-hero-actions">

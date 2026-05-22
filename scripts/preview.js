@@ -4,10 +4,12 @@ import { join, dirname } from 'path'
 import { DIST_DIR, ASSETS_DIR, PAGES_DIR, TEMPLATES_DIR } from '../config.js'
 import { applyTranslations, applyLocaleLinks, injectHreflang, getPagePath, injectOgMeta, generateSitemap } from './i18n.js'
 import { injectTemplate } from './build.js'
+import { PAGE_CTAS, renderPageCta } from './page-ctas.js'
 import { LOCALES, SITE_URL, I18N_DIR } from '../config.js'
 
 const headerPartial = await readFile(join(TEMPLATES_DIR, '_header.html'), 'utf8')
 const footerPartial = await readFile(join(TEMPLATES_DIR, '_footer.html'), 'utf8')
+const pageCtaPartial = await readFile(join(TEMPLATES_DIR, '_page-cta.html'), 'utf8')
 
 // Wipe dist/ first so stale files don't linger
 await rm(DIST_DIR, { recursive: true, force: true })
@@ -27,7 +29,8 @@ async function walkAndWrite(srcDir, distDir, translations, relDir = '', pagePath
       const raw = await readFile(srcPath, 'utf8')
       const pagePath = getPagePath(`src/pages/${rel}`)
       const header = injectTemplate(headerPartial, { pagePath, announcementTitle: '', announcementPath: '' })
-      const html = injectTemplate(raw, { header, footer: footerPartial })
+      const pageCta = renderPageCta(PAGE_CTAS[pagePath], pageCtaPartial, injectTemplate)
+      const html = injectTemplate(raw, { header, footer: footerPartial, pageCta })
       pagePaths.push(pagePath)
       let enHtml = injectHreflang(html, pagePath, SITE_URL, LOCALES)
       enHtml = injectOgMeta(enHtml, pagePath, 'en', SITE_URL, LOCALES)
