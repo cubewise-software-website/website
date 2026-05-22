@@ -122,8 +122,11 @@ Orange Gold is the central colour of the Cubewise brand. It is an energetic and 
 
 | Component | Tagline | Primary colour |
 |---|---|---|
-| Arc+ | <!-- --> | <!-- --> |
-| Pulse | <!-- --> | <!-- --> |
-| Slice | <!-- --> | <!-- --> |
-| Atmosphere | <!-- --> | <!-- --> |
-| PowerConnect | <!-- --> | <!-- --> |
+| Arc | The professional IDE for IBM Planning Analytics development | `#F08287` (coral) |
+| Arc+ | DevOps for IBM Planning Analytics | `#F78E21` (Orange Gold) |
+| Pulse | Monitor, understand and manage your TM1 environment | `#5EA7DC` (blue) |
+| Slice | The modern Excel add-in for IBM Planning Analytics | `#53B476` (green) |
+| Atmosphere | Self-service data integration for Finance teams | `#004A69` (deep teal) |
+| PowerConnect | IBM Planning Analytics data in Microsoft Power BI | `#F2C816` (yellow) |
+
+Primary colours are sourced from each component's logo (`src/assets/logos/Products/`). Wordmarks across all logos use Charcoal `#434B53`.
